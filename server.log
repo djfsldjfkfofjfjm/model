@@ -1,0 +1,1528 @@
+
+> financial-dashboard@0.1.0 start
+> react-scripts start
+
+(node:17511) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:17511) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+Starting the development server...
+
+Compiled with warnings.
+
+[eslint] 
+src/FinancialDashboard.tsx
+  Line 2:10:   'LineChart' is defined but never used                                                                                       @typescript-eslint/no-unused-vars
+  Line 3:40:   'Scatter' is defined but never used                                                                                         @typescript-eslint/no-unused-vars
+  Line 112:6:  React Hook useEffect has a missing dependency: 'calculateFinancialModel'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  Line 322:6:  React Hook useCallback has an unnecessary dependency: 'apiCost'. Either exclude it or remove the dependency array           react-hooks/exhaustive-deps
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/FinancialDashboard.tsx
+  Line 2:10:   'LineChart' is defined but never used                                                                                       @typescript-eslint/no-unused-vars
+  Line 3:40:   'Scatter' is defined but never used                                                                                         @typescript-eslint/no-unused-vars
+  Line 112:6:  React Hook useEffect has a missing dependency: 'calculateFinancialModel'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  Line 322:6:  React Hook useCallback has an unnecessary dependency: 'apiCost'. Either exclude it or remove the dependency array           react-hooks/exhaustive-deps
+
+webpack compiled with 1 warning
+WARNING in src/FinancialDashboard.tsx:895:52
+TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
+  Type 'string' is not assignable to type 'number'.
+    893 |             />
+    894 |             <Tooltip 
+  > 895 |               formatter={(value) => formatCurrency(value)}
+        |                                                    ^^^^^
+    896 |               contentStyle={{ 
+    897 |                 backgroundColor: theme.tooltipBackground,
+    898 |                 borderRadius: '12px',
+
+WARNING in src/FinancialDashboard.tsx:967:38
+TS7031: Binding element 'cx' implicitly has an 'any' type.
+    965 |     
+    966 |     const RADIAN = Math.PI / 180;
+  > 967 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                      ^^
+    968 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    969 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    970 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:967:42
+TS7031: Binding element 'cy' implicitly has an 'any' type.
+    965 |     
+    966 |     const RADIAN = Math.PI / 180;
+  > 967 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                          ^^
+    968 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    969 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    970 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:967:46
+TS7031: Binding element 'midAngle' implicitly has an 'any' type.
+    965 |     
+    966 |     const RADIAN = Math.PI / 180;
+  > 967 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                              ^^^^^^^^
+    968 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    969 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    970 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:967:56
+TS7031: Binding element 'innerRadius' implicitly has an 'any' type.
+    965 |     
+    966 |     const RADIAN = Math.PI / 180;
+  > 967 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                                        ^^^^^^^^^^^
+    968 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    969 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    970 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:967:69
+TS7031: Binding element 'outerRadius' implicitly has an 'any' type.
+    965 |     
+    966 |     const RADIAN = Math.PI / 180;
+  > 967 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                                                     ^^^^^^^^^^^
+    968 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    969 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    970 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:967:82
+TS7031: Binding element 'percent' implicitly has an 'any' type.
+    965 |     
+    966 |     const RADIAN = Math.PI / 180;
+  > 967 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                                                                  ^^^^^^^
+    968 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    969 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    970 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:967:91
+TS7031: Binding element 'index' implicitly has an 'any' type.
+    965 |     
+    966 |     const RADIAN = Math.PI / 180;
+  > 967 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                                                                           ^^^^^
+    968 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    969 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    970 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:967:98
+TS7031: Binding element 'name' implicitly has an 'any' type.
+    965 |     
+    966 |     const RADIAN = Math.PI / 180;
+  > 967 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                                                                                  ^^^^
+    968 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    969 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    970 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:967:104
+TS7031: Binding element 'value' implicitly has an 'any' type.
+    965 |     
+    966 |     const RADIAN = Math.PI / 180;
+  > 967 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                                                                                        ^^^^^
+    968 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    969 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    970 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:1002:54
+TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
+  Type 'string' is not assignable to type 'number'.
+    1000 |               </Pie>
+    1001 |               <Tooltip 
+  > 1002 |                 formatter={(value) => formatCurrency(value)}
+         |                                                      ^^^^^
+    1003 |                 contentStyle={{ 
+    1004 |                   backgroundColor: theme.tooltipBackground,
+    1005 |                   borderRadius: '12px',
+
+WARNING in src/FinancialDashboard.tsx:1036:54
+TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
+  Type 'string' is not assignable to type 'number'.
+    1034 |               </Pie>
+    1035 |               <Tooltip 
+  > 1036 |                 formatter={(value) => formatCurrency(value)}
+         |                                                      ^^^^^
+    1037 |                 contentStyle={{ 
+    1038 |                   backgroundColor: theme.tooltipBackground,
+    1039 |                   borderRadius: '12px',
+
+WARNING in src/FinancialDashboard.tsx:1216:52
+TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
+  Type 'string' is not assignable to type 'number'.
+    1214 |             />
+    1215 |             <Tooltip 
+  > 1216 |               formatter={(value) => formatCurrency(value)}
+         |                                                    ^^^^^
+    1217 |               contentStyle={{ 
+    1218 |                 backgroundColor: theme.tooltipBackground,
+    1219 |                 borderRadius: '12px',
+
+WARNING in src/FinancialDashboard.tsx:1301:50
+TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
+  Type 'string' is not assignable to type 'number'.
+    1299 |           />
+    1300 |           <Tooltip 
+  > 1301 |             formatter={(value) => formatCurrency(value)}
+         |                                                  ^^^^^
+    1302 |             contentStyle={{ 
+    1303 |               backgroundColor: theme.tooltipBackground,
+    1304 |               borderRadius: '12px',
+
+WARNING in src/FinancialDashboard.tsx:1568:32
+TS7006: Parameter 'newValue' implicitly has an 'any' type.
+    1566 |                   <EditableCell
+    1567 |                     value={value}
+  > 1568 |                     onChange={(newValue) => {
+         |                                ^^^^^^^^
+    1569 |                       const newData = [...newClients75];
+    1570 |                       newData[index] = newValue;
+    1571 |                       setNewClients75(newData);
+
+WARNING in src/FinancialDashboard.tsx:1587:32
+TS7006: Parameter 'newValue' implicitly has an 'any' type.
+    1585 |                   <EditableCell
+    1586 |                     value={value}
+  > 1587 |                     onChange={(newValue) => {
+         |                                ^^^^^^^^
+    1588 |                       const newData = [...newClients150];
+    1589 |                       newData[index] = newValue;
+    1590 |                       setNewClients150(newData);
+
+WARNING in src/FinancialDashboard.tsx:1606:32
+TS7006: Parameter 'newValue' implicitly has an 'any' type.
+    1604 |                   <EditableCell
+    1605 |                     value={value}
+  > 1606 |                     onChange={(newValue) => {
+         |                                ^^^^^^^^
+    1607 |                       const newData = [...newClients250];
+    1608 |                       newData[index] = newValue;
+    1609 |                       setNewClients250(newData);
+
+WARNING in src/FinancialDashboard.tsx:1625:32
+TS7006: Parameter 'newValue' implicitly has an 'any' type.
+    1623 |                   <EditableCell
+    1624 |                     value={value}
+  > 1625 |                     onChange={(newValue) => {
+         |                                ^^^^^^^^
+    1626 |                       const newData = [...newClients500];
+    1627 |                       newData[index] = newValue;
+    1628 |                       setNewClients500(newData);
+
+WARNING in src/FinancialDashboard.tsx:1644:32
+TS7006: Parameter 'newValue' implicitly has an 'any' type.
+    1642 |                   <EditableCell
+    1643 |                     value={value}
+  > 1644 |                     onChange={(newValue) => {
+         |                                ^^^^^^^^
+    1645 |                       const newData = [...newClients1000];
+    1646 |                       newData[index] = newValue;
+    1647 |                       setNewClients1000(newData);
+
+WARNING in src/FinancialDashboard.tsx:1681:32
+TS7006: Parameter 'newValue' implicitly has an 'any' type.
+    1679 |                   <EditableCell 
+    1680 |                     value={value} 
+  > 1681 |                     onChange={(newValue) => {
+         |                                ^^^^^^^^
+    1682 |                       const newArray = [...fotOptimistic];
+    1683 |                       newArray[index] = newValue;
+    1684 |                       setFotOptimistic(newArray);
+
+WARNING in src/FinancialDashboard.tsx:1697:32
+TS7006: Parameter 'newValue' implicitly has an 'any' type.
+    1695 |                   <EditableCell 
+    1696 |                     value={value} 
+  > 1697 |                     onChange={(newValue) => {
+         |                                ^^^^^^^^
+    1698 |                       const newArray = [...fotPessimistic];
+    1699 |                       newArray[index] = newValue;
+    1700 |                       setFotPessimistic(newArray);
+
+WARNING in src/FinancialDashboard.tsx:2362:60
+TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
+  Type 'string' is not assignable to type 'number'.
+    2360 |                     </Pie>
+    2361 |                     <Tooltip 
+  > 2362 |                       formatter={(value) => formatCurrency(value)}
+         |                                                            ^^^^^
+    2363 |                       contentStyle={{ 
+    2364 |                         backgroundColor: theme.tooltipBackground,
+    2365 |                         borderRadius: '12px',
+
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/FinancialDashboard.tsx
+  Line 2:10:   'LineChart' is defined but never used                                                                                       @typescript-eslint/no-unused-vars
+  Line 3:40:   'Scatter' is defined but never used                                                                                         @typescript-eslint/no-unused-vars
+  Line 112:6:  React Hook useEffect has a missing dependency: 'calculateFinancialModel'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  Line 322:6:  React Hook useCallback has an unnecessary dependency: 'apiCost'. Either exclude it or remove the dependency array           react-hooks/exhaustive-deps
+
+[eslint] 
+src/FinancialDashboard.tsx
+  Line 2234:14:  'AutomationROIChart' is not defined  react/jsx-no-undef
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/FinancialDashboard.tsx
+  Line 2:10:   'LineChart' is defined but never used                                                                                       @typescript-eslint/no-unused-vars
+  Line 3:40:   'Scatter' is defined but never used                                                                                         @typescript-eslint/no-unused-vars
+  Line 112:6:  React Hook useEffect has a missing dependency: 'calculateFinancialModel'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  Line 322:6:  React Hook useCallback has an unnecessary dependency: 'apiCost'. Either exclude it or remove the dependency array           react-hooks/exhaustive-deps
+
+WARNING in [eslint] 
+src/FinancialDashboard.tsx
+  Line 2234:14:  'AutomationROIChart' is not defined  react/jsx-no-undef
+
+webpack compiled with 2 warnings
+Compiling...
+WARNING in src/FinancialDashboard.tsx:878:52
+TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
+  Type 'string' is not assignable to type 'number'.
+    876 |             />
+    877 |             <Tooltip 
+  > 878 |               formatter={(value) => formatCurrency(value)}
+        |                                                    ^^^^^
+    879 |               contentStyle={{ 
+    880 |                 backgroundColor: theme.tooltipBackground,
+    881 |                 borderRadius: '12px',
+
+WARNING in src/FinancialDashboard.tsx:950:38
+TS7031: Binding element 'cx' implicitly has an 'any' type.
+    948 |     
+    949 |     const RADIAN = Math.PI / 180;
+  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                      ^^
+    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:950:42
+TS7031: Binding element 'cy' implicitly has an 'any' type.
+    948 |     
+    949 |     const RADIAN = Math.PI / 180;
+  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                          ^^
+    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:950:46
+TS7031: Binding element 'midAngle' implicitly has an 'any' type.
+    948 |     
+    949 |     const RADIAN = Math.PI / 180;
+  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                              ^^^^^^^^
+    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:950:56
+TS7031: Binding element 'innerRadius' implicitly has an 'any' type.
+    948 |     
+    949 |     const RADIAN = Math.PI / 180;
+  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                                        ^^^^^^^^^^^
+    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:950:69
+TS7031: Binding element 'outerRadius' implicitly has an 'any' type.
+    948 |     
+    949 |     const RADIAN = Math.PI / 180;
+  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                                                     ^^^^^^^^^^^
+    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:950:82
+TS7031: Binding element 'percent' implicitly has an 'any' type.
+    948 |     
+    949 |     const RADIAN = Math.PI / 180;
+  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                                                                  ^^^^^^^
+    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:950:91
+TS7031: Binding element 'index' implicitly has an 'any' type.
+    948 |     
+    949 |     const RADIAN = Math.PI / 180;
+  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                                                                           ^^^^^
+    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:950:98
+TS7031: Binding element 'name' implicitly has an 'any' type.
+    948 |     
+    949 |     const RADIAN = Math.PI / 180;
+  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                                                                                  ^^^^
+    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:950:104
+TS7031: Binding element 'value' implicitly has an 'any' type.
+    948 |     
+    949 |     const RADIAN = Math.PI / 180;
+  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                                                                                        ^^^^^
+    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:985:54
+TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
+  Type 'string' is not assignable to type 'number'.
+    983 |               </Pie>
+    984 |               <Tooltip 
+  > 985 |                 formatter={(value) => formatCurrency(value)}
+        |                                                      ^^^^^
+    986 |                 contentStyle={{ 
+    987 |                   backgroundColor: theme.tooltipBackground,
+    988 |                   borderRadius: '12px',
+
+WARNING in src/FinancialDashboard.tsx:1019:54
+TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
+  Type 'string' is not assignable to type 'number'.
+    1017 |               </Pie>
+    1018 |               <Tooltip 
+  > 1019 |                 formatter={(value) => formatCurrency(value)}
+         |                                                      ^^^^^
+    1020 |                 contentStyle={{ 
+    1021 |                   backgroundColor: theme.tooltipBackground,
+    1022 |                   borderRadius: '12px',
+
+WARNING in src/FinancialDashboard.tsx:1199:52
+TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
+  Type 'string' is not assignable to type 'number'.
+    1197 |             />
+    1198 |             <Tooltip 
+  > 1199 |               formatter={(value) => formatCurrency(value)}
+         |                                                    ^^^^^
+    1200 |               contentStyle={{ 
+    1201 |                 backgroundColor: theme.tooltipBackground,
+    1202 |                 borderRadius: '12px',
+
+WARNING in src/FinancialDashboard.tsx:1284:50
+TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
+  Type 'string' is not assignable to type 'number'.
+    1282 |           />
+    1283 |           <Tooltip 
+  > 1284 |             formatter={(value) => formatCurrency(value)}
+         |                                                  ^^^^^
+    1285 |             contentStyle={{ 
+    1286 |               backgroundColor: theme.tooltipBackground,
+    1287 |               borderRadius: '12px',
+
+WARNING in src/FinancialDashboard.tsx:1551:32
+TS7006: Parameter 'newValue' implicitly has an 'any' type.
+    1549 |                   <EditableCell
+    1550 |                     value={value}
+  > 1551 |                     onChange={(newValue) => {
+         |                                ^^^^^^^^
+    1552 |                       const newData = [...newClients75];
+    1553 |                       newData[index] = newValue;
+    1554 |                       setNewClients75(newData);
+
+WARNING in src/FinancialDashboard.tsx:1570:32
+TS7006: Parameter 'newValue' implicitly has an 'any' type.
+    1568 |                   <EditableCell
+    1569 |                     value={value}
+  > 1570 |                     onChange={(newValue) => {
+         |                                ^^^^^^^^
+    1571 |                       const newData = [...newClients150];
+    1572 |                       newData[index] = newValue;
+    1573 |                       setNewClients150(newData);
+
+WARNING in src/FinancialDashboard.tsx:1589:32
+TS7006: Parameter 'newValue' implicitly has an 'any' type.
+    1587 |                   <EditableCell
+    1588 |                     value={value}
+  > 1589 |                     onChange={(newValue) => {
+         |                                ^^^^^^^^
+    1590 |                       const newData = [...newClients250];
+    1591 |                       newData[index] = newValue;
+    1592 |                       setNewClients250(newData);
+
+WARNING in src/FinancialDashboard.tsx:1608:32
+TS7006: Parameter 'newValue' implicitly has an 'any' type.
+    1606 |                   <EditableCell
+    1607 |                     value={value}
+  > 1608 |                     onChange={(newValue) => {
+         |                                ^^^^^^^^
+    1609 |                       const newData = [...newClients500];
+    1610 |                       newData[index] = newValue;
+    1611 |                       setNewClients500(newData);
+
+WARNING in src/FinancialDashboard.tsx:1627:32
+TS7006: Parameter 'newValue' implicitly has an 'any' type.
+    1625 |                   <EditableCell
+    1626 |                     value={value}
+  > 1627 |                     onChange={(newValue) => {
+         |                                ^^^^^^^^
+    1628 |                       const newData = [...newClients1000];
+    1629 |                       newData[index] = newValue;
+    1630 |                       setNewClients1000(newData);
+
+WARNING in src/FinancialDashboard.tsx:1664:32
+TS7006: Parameter 'newValue' implicitly has an 'any' type.
+    1662 |                   <EditableCell 
+    1663 |                     value={value} 
+  > 1664 |                     onChange={(newValue) => {
+         |                                ^^^^^^^^
+    1665 |                       const newArray = [...fotOptimistic];
+    1666 |                       newArray[index] = newValue;
+    1667 |                       setFotOptimistic(newArray);
+
+WARNING in src/FinancialDashboard.tsx:1680:32
+TS7006: Parameter 'newValue' implicitly has an 'any' type.
+    1678 |                   <EditableCell 
+    1679 |                     value={value} 
+  > 1680 |                     onChange={(newValue) => {
+         |                                ^^^^^^^^
+    1681 |                       const newArray = [...fotPessimistic];
+    1682 |                       newArray[index] = newValue;
+    1683 |                       setFotPessimistic(newArray);
+
+WARNING in src/FinancialDashboard.tsx:2234:14
+TS2304: Cannot find name 'AutomationROIChart'.
+    2232 |             <CumulativeChart />
+    2233 |             <KPIRadarChart />
+  > 2234 |             <AutomationROIChart />
+         |              ^^^^^^^^^^^^^^^^^^
+    2235 |           </>
+    2236 |         )}
+    2237 |         
+
+WARNING in src/FinancialDashboard.tsx:2313:60
+TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
+  Type 'string' is not assignable to type 'number'.
+    2311 |                     </Pie>
+    2312 |                     <Tooltip 
+  > 2313 |                       formatter={(value) => formatCurrency(value)}
+         |                                                            ^^^^^
+    2314 |                       contentStyle={{ 
+    2315 |                         backgroundColor: theme.tooltipBackground,
+    2316 |                         borderRadius: '12px',
+
+Compiled with warnings.
+
+[eslint] 
+src/FinancialDashboard.tsx
+  Line 2:10:   'LineChart' is defined but never used                                                                                       @typescript-eslint/no-unused-vars
+  Line 3:40:   'Scatter' is defined but never used                                                                                         @typescript-eslint/no-unused-vars
+  Line 112:6:  React Hook useEffect has a missing dependency: 'calculateFinancialModel'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  Line 322:6:  React Hook useCallback has an unnecessary dependency: 'apiCost'. Either exclude it or remove the dependency array           react-hooks/exhaustive-deps
+
+[eslint] 
+src/FinancialDashboard.tsx
+  Line 2234:14:  'AutomationROIChart' is not defined  react/jsx-no-undef
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/FinancialDashboard.tsx
+  Line 2:10:   'LineChart' is defined but never used                                                                                       @typescript-eslint/no-unused-vars
+  Line 3:40:   'Scatter' is defined but never used                                                                                         @typescript-eslint/no-unused-vars
+  Line 112:6:  React Hook useEffect has a missing dependency: 'calculateFinancialModel'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  Line 322:6:  React Hook useCallback has an unnecessary dependency: 'apiCost'. Either exclude it or remove the dependency array           react-hooks/exhaustive-deps
+
+WARNING in [eslint] 
+src/FinancialDashboard.tsx
+  Line 2234:14:  'AutomationROIChart' is not defined  react/jsx-no-undef
+
+webpack compiled with 2 warnings
+WARNING in src/FinancialDashboard.tsx:878:52
+TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
+  Type 'string' is not assignable to type 'number'.
+    876 |             />
+    877 |             <Tooltip 
+  > 878 |               formatter={(value) => formatCurrency(value)}
+        |                                                    ^^^^^
+    879 |               contentStyle={{ 
+    880 |                 backgroundColor: theme.tooltipBackground,
+    881 |                 borderRadius: '12px',
+
+WARNING in src/FinancialDashboard.tsx:950:38
+TS7031: Binding element 'cx' implicitly has an 'any' type.
+    948 |     
+    949 |     const RADIAN = Math.PI / 180;
+  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                      ^^
+    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:950:42
+TS7031: Binding element 'cy' implicitly has an 'any' type.
+    948 |     
+    949 |     const RADIAN = Math.PI / 180;
+  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                          ^^
+    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:950:46
+TS7031: Binding element 'midAngle' implicitly has an 'any' type.
+    948 |     
+    949 |     const RADIAN = Math.PI / 180;
+  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                              ^^^^^^^^
+    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:950:56
+TS7031: Binding element 'innerRadius' implicitly has an 'any' type.
+    948 |     
+    949 |     const RADIAN = Math.PI / 180;
+  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                                        ^^^^^^^^^^^
+    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:950:69
+TS7031: Binding element 'outerRadius' implicitly has an 'any' type.
+    948 |     
+    949 |     const RADIAN = Math.PI / 180;
+  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                                                     ^^^^^^^^^^^
+    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:950:82
+TS7031: Binding element 'percent' implicitly has an 'any' type.
+    948 |     
+    949 |     const RADIAN = Math.PI / 180;
+  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                                                                  ^^^^^^^
+    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:950:91
+TS7031: Binding element 'index' implicitly has an 'any' type.
+    948 |     
+    949 |     const RADIAN = Math.PI / 180;
+  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                                                                           ^^^^^
+    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:950:98
+TS7031: Binding element 'name' implicitly has an 'any' type.
+    948 |     
+    949 |     const RADIAN = Math.PI / 180;
+  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                                                                                  ^^^^
+    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:950:104
+TS7031: Binding element 'value' implicitly has an 'any' type.
+    948 |     
+    949 |     const RADIAN = Math.PI / 180;
+  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                                                                                        ^^^^^
+    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:985:54
+TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
+  Type 'string' is not assignable to type 'number'.
+    983 |               </Pie>
+    984 |               <Tooltip 
+  > 985 |                 formatter={(value) => formatCurrency(value)}
+        |                                                      ^^^^^
+    986 |                 contentStyle={{ 
+    987 |                   backgroundColor: theme.tooltipBackground,
+    988 |                   borderRadius: '12px',
+
+WARNING in src/FinancialDashboard.tsx:1019:54
+TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
+  Type 'string' is not assignable to type 'number'.
+    1017 |               </Pie>
+    1018 |               <Tooltip 
+  > 1019 |                 formatter={(value) => formatCurrency(value)}
+         |                                                      ^^^^^
+    1020 |                 contentStyle={{ 
+    1021 |                   backgroundColor: theme.tooltipBackground,
+    1022 |                   borderRadius: '12px',
+
+WARNING in src/FinancialDashboard.tsx:1199:52
+TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
+  Type 'string' is not assignable to type 'number'.
+    1197 |             />
+    1198 |             <Tooltip 
+  > 1199 |               formatter={(value) => formatCurrency(value)}
+         |                                                    ^^^^^
+    1200 |               contentStyle={{ 
+    1201 |                 backgroundColor: theme.tooltipBackground,
+    1202 |                 borderRadius: '12px',
+
+WARNING in src/FinancialDashboard.tsx:1284:50
+TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
+  Type 'string' is not assignable to type 'number'.
+    1282 |           />
+    1283 |           <Tooltip 
+  > 1284 |             formatter={(value) => formatCurrency(value)}
+         |                                                  ^^^^^
+    1285 |             contentStyle={{ 
+    1286 |               backgroundColor: theme.tooltipBackground,
+    1287 |               borderRadius: '12px',
+
+WARNING in src/FinancialDashboard.tsx:1551:32
+TS7006: Parameter 'newValue' implicitly has an 'any' type.
+    1549 |                   <EditableCell
+    1550 |                     value={value}
+  > 1551 |                     onChange={(newValue) => {
+         |                                ^^^^^^^^
+    1552 |                       const newData = [...newClients75];
+    1553 |                       newData[index] = newValue;
+    1554 |                       setNewClients75(newData);
+
+WARNING in src/FinancialDashboard.tsx:1570:32
+TS7006: Parameter 'newValue' implicitly has an 'any' type.
+    1568 |                   <EditableCell
+    1569 |                     value={value}
+  > 1570 |                     onChange={(newValue) => {
+         |                                ^^^^^^^^
+    1571 |                       const newData = [...newClients150];
+    1572 |                       newData[index] = newValue;
+    1573 |                       setNewClients150(newData);
+
+WARNING in src/FinancialDashboard.tsx:1589:32
+TS7006: Parameter 'newValue' implicitly has an 'any' type.
+    1587 |                   <EditableCell
+    1588 |                     value={value}
+  > 1589 |                     onChange={(newValue) => {
+         |                                ^^^^^^^^
+    1590 |                       const newData = [...newClients250];
+    1591 |                       newData[index] = newValue;
+    1592 |                       setNewClients250(newData);
+
+WARNING in src/FinancialDashboard.tsx:1608:32
+TS7006: Parameter 'newValue' implicitly has an 'any' type.
+    1606 |                   <EditableCell
+    1607 |                     value={value}
+  > 1608 |                     onChange={(newValue) => {
+         |                                ^^^^^^^^
+    1609 |                       const newData = [...newClients500];
+    1610 |                       newData[index] = newValue;
+    1611 |                       setNewClients500(newData);
+
+WARNING in src/FinancialDashboard.tsx:1627:32
+TS7006: Parameter 'newValue' implicitly has an 'any' type.
+    1625 |                   <EditableCell
+    1626 |                     value={value}
+  > 1627 |                     onChange={(newValue) => {
+         |                                ^^^^^^^^
+    1628 |                       const newData = [...newClients1000];
+    1629 |                       newData[index] = newValue;
+    1630 |                       setNewClients1000(newData);
+
+WARNING in src/FinancialDashboard.tsx:1664:32
+TS7006: Parameter 'newValue' implicitly has an 'any' type.
+    1662 |                   <EditableCell 
+    1663 |                     value={value} 
+  > 1664 |                     onChange={(newValue) => {
+         |                                ^^^^^^^^
+    1665 |                       const newArray = [...fotOptimistic];
+    1666 |                       newArray[index] = newValue;
+    1667 |                       setFotOptimistic(newArray);
+
+WARNING in src/FinancialDashboard.tsx:1680:32
+TS7006: Parameter 'newValue' implicitly has an 'any' type.
+    1678 |                   <EditableCell 
+    1679 |                     value={value} 
+  > 1680 |                     onChange={(newValue) => {
+         |                                ^^^^^^^^
+    1681 |                       const newArray = [...fotPessimistic];
+    1682 |                       newArray[index] = newValue;
+    1683 |                       setFotPessimistic(newArray);
+
+WARNING in src/FinancialDashboard.tsx:2234:14
+TS2304: Cannot find name 'AutomationROIChart'.
+    2232 |             <CumulativeChart />
+    2233 |             <KPIRadarChart />
+  > 2234 |             <AutomationROIChart />
+         |              ^^^^^^^^^^^^^^^^^^
+    2235 |           </>
+    2236 |         )}
+    2237 |         
+
+WARNING in src/FinancialDashboard.tsx:2313:60
+TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
+  Type 'string' is not assignable to type 'number'.
+    2311 |                     </Pie>
+    2312 |                     <Tooltip 
+  > 2313 |                       formatter={(value) => formatCurrency(value)}
+         |                                                            ^^^^^
+    2314 |                       contentStyle={{ 
+    2315 |                         backgroundColor: theme.tooltipBackground,
+    2316 |                         borderRadius: '12px',
+
+Compiling...
+Compiled with warnings.
+
+[eslint] 
+src/FinancialDashboard.tsx
+  Line 2:10:   'LineChart' is defined but never used                                                                                       @typescript-eslint/no-unused-vars
+  Line 3:40:   'Scatter' is defined but never used                                                                                         @typescript-eslint/no-unused-vars
+  Line 112:6:  React Hook useEffect has a missing dependency: 'calculateFinancialModel'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  Line 322:6:  React Hook useCallback has an unnecessary dependency: 'apiCost'. Either exclude it or remove the dependency array           react-hooks/exhaustive-deps
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/FinancialDashboard.tsx
+  Line 2:10:   'LineChart' is defined but never used                                                                                       @typescript-eslint/no-unused-vars
+  Line 3:40:   'Scatter' is defined but never used                                                                                         @typescript-eslint/no-unused-vars
+  Line 112:6:  React Hook useEffect has a missing dependency: 'calculateFinancialModel'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  Line 322:6:  React Hook useCallback has an unnecessary dependency: 'apiCost'. Either exclude it or remove the dependency array           react-hooks/exhaustive-deps
+
+webpack compiled with 1 warning
+Compiling...
+WARNING in src/FinancialDashboard.tsx:878:52
+TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
+  Type 'string' is not assignable to type 'number'.
+    876 |             />
+    877 |             <Tooltip 
+  > 878 |               formatter={(value) => formatCurrency(value)}
+        |                                                    ^^^^^
+    879 |               contentStyle={{ 
+    880 |                 backgroundColor: theme.tooltipBackground,
+    881 |                 borderRadius: '12px',
+
+WARNING in src/FinancialDashboard.tsx:950:38
+TS7031: Binding element 'cx' implicitly has an 'any' type.
+    948 |     
+    949 |     const RADIAN = Math.PI / 180;
+  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                      ^^
+    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:950:42
+TS7031: Binding element 'cy' implicitly has an 'any' type.
+    948 |     
+    949 |     const RADIAN = Math.PI / 180;
+  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                          ^^
+    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:950:46
+TS7031: Binding element 'midAngle' implicitly has an 'any' type.
+    948 |     
+    949 |     const RADIAN = Math.PI / 180;
+  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                              ^^^^^^^^
+    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:950:56
+TS7031: Binding element 'innerRadius' implicitly has an 'any' type.
+    948 |     
+    949 |     const RADIAN = Math.PI / 180;
+  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                                        ^^^^^^^^^^^
+    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:950:69
+TS7031: Binding element 'outerRadius' implicitly has an 'any' type.
+    948 |     
+    949 |     const RADIAN = Math.PI / 180;
+  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                                                     ^^^^^^^^^^^
+    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:950:82
+TS7031: Binding element 'percent' implicitly has an 'any' type.
+    948 |     
+    949 |     const RADIAN = Math.PI / 180;
+  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                                                                  ^^^^^^^
+    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:950:91
+TS7031: Binding element 'index' implicitly has an 'any' type.
+    948 |     
+    949 |     const RADIAN = Math.PI / 180;
+  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                                                                           ^^^^^
+    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:950:98
+TS7031: Binding element 'name' implicitly has an 'any' type.
+    948 |     
+    949 |     const RADIAN = Math.PI / 180;
+  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                                                                                  ^^^^
+    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:950:104
+TS7031: Binding element 'value' implicitly has an 'any' type.
+    948 |     
+    949 |     const RADIAN = Math.PI / 180;
+  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                                                                                        ^^^^^
+    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:985:54
+TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
+  Type 'string' is not assignable to type 'number'.
+    983 |               </Pie>
+    984 |               <Tooltip 
+  > 985 |                 formatter={(value) => formatCurrency(value)}
+        |                                                      ^^^^^
+    986 |                 contentStyle={{ 
+    987 |                   backgroundColor: theme.tooltipBackground,
+    988 |                   borderRadius: '12px',
+
+WARNING in src/FinancialDashboard.tsx:1019:54
+TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
+  Type 'string' is not assignable to type 'number'.
+    1017 |               </Pie>
+    1018 |               <Tooltip 
+  > 1019 |                 formatter={(value) => formatCurrency(value)}
+         |                                                      ^^^^^
+    1020 |                 contentStyle={{ 
+    1021 |                   backgroundColor: theme.tooltipBackground,
+    1022 |                   borderRadius: '12px',
+
+WARNING in src/FinancialDashboard.tsx:1199:52
+TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
+  Type 'string' is not assignable to type 'number'.
+    1197 |             />
+    1198 |             <Tooltip 
+  > 1199 |               formatter={(value) => formatCurrency(value)}
+         |                                                    ^^^^^
+    1200 |               contentStyle={{ 
+    1201 |                 backgroundColor: theme.tooltipBackground,
+    1202 |                 borderRadius: '12px',
+
+WARNING in src/FinancialDashboard.tsx:1284:50
+TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
+  Type 'string' is not assignable to type 'number'.
+    1282 |           />
+    1283 |           <Tooltip 
+  > 1284 |             formatter={(value) => formatCurrency(value)}
+         |                                                  ^^^^^
+    1285 |             contentStyle={{ 
+    1286 |               backgroundColor: theme.tooltipBackground,
+    1287 |               borderRadius: '12px',
+
+WARNING in src/FinancialDashboard.tsx:1551:32
+TS7006: Parameter 'newValue' implicitly has an 'any' type.
+    1549 |                   <EditableCell
+    1550 |                     value={value}
+  > 1551 |                     onChange={(newValue) => {
+         |                                ^^^^^^^^
+    1552 |                       const newData = [...newClients75];
+    1553 |                       newData[index] = newValue;
+    1554 |                       setNewClients75(newData);
+
+WARNING in src/FinancialDashboard.tsx:1570:32
+TS7006: Parameter 'newValue' implicitly has an 'any' type.
+    1568 |                   <EditableCell
+    1569 |                     value={value}
+  > 1570 |                     onChange={(newValue) => {
+         |                                ^^^^^^^^
+    1571 |                       const newData = [...newClients150];
+    1572 |                       newData[index] = newValue;
+    1573 |                       setNewClients150(newData);
+
+WARNING in src/FinancialDashboard.tsx:1589:32
+TS7006: Parameter 'newValue' implicitly has an 'any' type.
+    1587 |                   <EditableCell
+    1588 |                     value={value}
+  > 1589 |                     onChange={(newValue) => {
+         |                                ^^^^^^^^
+    1590 |                       const newData = [...newClients250];
+    1591 |                       newData[index] = newValue;
+    1592 |                       setNewClients250(newData);
+
+WARNING in src/FinancialDashboard.tsx:1608:32
+TS7006: Parameter 'newValue' implicitly has an 'any' type.
+    1606 |                   <EditableCell
+    1607 |                     value={value}
+  > 1608 |                     onChange={(newValue) => {
+         |                                ^^^^^^^^
+    1609 |                       const newData = [...newClients500];
+    1610 |                       newData[index] = newValue;
+    1611 |                       setNewClients500(newData);
+
+WARNING in src/FinancialDashboard.tsx:1627:32
+TS7006: Parameter 'newValue' implicitly has an 'any' type.
+    1625 |                   <EditableCell
+    1626 |                     value={value}
+  > 1627 |                     onChange={(newValue) => {
+         |                                ^^^^^^^^
+    1628 |                       const newData = [...newClients1000];
+    1629 |                       newData[index] = newValue;
+    1630 |                       setNewClients1000(newData);
+
+WARNING in src/FinancialDashboard.tsx:1664:32
+TS7006: Parameter 'newValue' implicitly has an 'any' type.
+    1662 |                   <EditableCell 
+    1663 |                     value={value} 
+  > 1664 |                     onChange={(newValue) => {
+         |                                ^^^^^^^^
+    1665 |                       const newArray = [...fotOptimistic];
+    1666 |                       newArray[index] = newValue;
+    1667 |                       setFotOptimistic(newArray);
+
+WARNING in src/FinancialDashboard.tsx:1680:32
+TS7006: Parameter 'newValue' implicitly has an 'any' type.
+    1678 |                   <EditableCell 
+    1679 |                     value={value} 
+  > 1680 |                     onChange={(newValue) => {
+         |                                ^^^^^^^^
+    1681 |                       const newArray = [...fotPessimistic];
+    1682 |                       newArray[index] = newValue;
+    1683 |                       setFotPessimistic(newArray);
+
+WARNING in src/FinancialDashboard.tsx:2312:60
+TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
+  Type 'string' is not assignable to type 'number'.
+    2310 |                     </Pie>
+    2311 |                     <Tooltip 
+  > 2312 |                       formatter={(value) => formatCurrency(value)}
+         |                                                            ^^^^^
+    2313 |                       contentStyle={{ 
+    2314 |                         backgroundColor: theme.tooltipBackground,
+    2315 |                         borderRadius: '12px',
+
+Compiled with warnings.
+
+[eslint] 
+src/FinancialDashboard.tsx
+  Line 2:10:   'LineChart' is defined but never used                                                                                       @typescript-eslint/no-unused-vars
+  Line 3:40:   'Scatter' is defined but never used                                                                                         @typescript-eslint/no-unused-vars
+  Line 112:6:  React Hook useEffect has a missing dependency: 'calculateFinancialModel'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  Line 322:6:  React Hook useCallback has an unnecessary dependency: 'apiCost'. Either exclude it or remove the dependency array           react-hooks/exhaustive-deps
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+WARNING in [eslint] 
+src/FinancialDashboard.tsx
+  Line 2:10:   'LineChart' is defined but never used                                                                                       @typescript-eslint/no-unused-vars
+  Line 3:40:   'Scatter' is defined but never used                                                                                         @typescript-eslint/no-unused-vars
+  Line 112:6:  React Hook useEffect has a missing dependency: 'calculateFinancialModel'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  Line 322:6:  React Hook useCallback has an unnecessary dependency: 'apiCost'. Either exclude it or remove the dependency array           react-hooks/exhaustive-deps
+
+webpack compiled with 1 warning
+WARNING in src/FinancialDashboard.tsx:878:52
+TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
+  Type 'string' is not assignable to type 'number'.
+    876 |             />
+    877 |             <Tooltip 
+  > 878 |               formatter={(value) => formatCurrency(value)}
+        |                                                    ^^^^^
+    879 |               contentStyle={{ 
+    880 |                 backgroundColor: theme.tooltipBackground,
+    881 |                 borderRadius: '12px',
+
+WARNING in src/FinancialDashboard.tsx:950:38
+TS7031: Binding element 'cx' implicitly has an 'any' type.
+    948 |     
+    949 |     const RADIAN = Math.PI / 180;
+  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                      ^^
+    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:950:42
+TS7031: Binding element 'cy' implicitly has an 'any' type.
+    948 |     
+    949 |     const RADIAN = Math.PI / 180;
+  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                          ^^
+    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:950:46
+TS7031: Binding element 'midAngle' implicitly has an 'any' type.
+    948 |     
+    949 |     const RADIAN = Math.PI / 180;
+  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                              ^^^^^^^^
+    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:950:56
+TS7031: Binding element 'innerRadius' implicitly has an 'any' type.
+    948 |     
+    949 |     const RADIAN = Math.PI / 180;
+  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                                        ^^^^^^^^^^^
+    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:950:69
+TS7031: Binding element 'outerRadius' implicitly has an 'any' type.
+    948 |     
+    949 |     const RADIAN = Math.PI / 180;
+  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                                                     ^^^^^^^^^^^
+    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:950:82
+TS7031: Binding element 'percent' implicitly has an 'any' type.
+    948 |     
+    949 |     const RADIAN = Math.PI / 180;
+  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                                                                  ^^^^^^^
+    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:950:91
+TS7031: Binding element 'index' implicitly has an 'any' type.
+    948 |     
+    949 |     const RADIAN = Math.PI / 180;
+  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                                                                           ^^^^^
+    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:950:98
+TS7031: Binding element 'name' implicitly has an 'any' type.
+    948 |     
+    949 |     const RADIAN = Math.PI / 180;
+  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                                                                                  ^^^^
+    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:950:104
+TS7031: Binding element 'value' implicitly has an 'any' type.
+    948 |     
+    949 |     const RADIAN = Math.PI / 180;
+  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                                                                                        ^^^^^
+    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:985:54
+TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
+  Type 'string' is not assignable to type 'number'.
+    983 |               </Pie>
+    984 |               <Tooltip 
+  > 985 |                 formatter={(value) => formatCurrency(value)}
+        |                                                      ^^^^^
+    986 |                 contentStyle={{ 
+    987 |                   backgroundColor: theme.tooltipBackground,
+    988 |                   borderRadius: '12px',
+
+WARNING in src/FinancialDashboard.tsx:1019:54
+TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
+  Type 'string' is not assignable to type 'number'.
+    1017 |               </Pie>
+    1018 |               <Tooltip 
+  > 1019 |                 formatter={(value) => formatCurrency(value)}
+         |                                                      ^^^^^
+    1020 |                 contentStyle={{ 
+    1021 |                   backgroundColor: theme.tooltipBackground,
+    1022 |                   borderRadius: '12px',
+
+WARNING in src/FinancialDashboard.tsx:1199:52
+TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
+  Type 'string' is not assignable to type 'number'.
+    1197 |             />
+    1198 |             <Tooltip 
+  > 1199 |               formatter={(value) => formatCurrency(value)}
+         |                                                    ^^^^^
+    1200 |               contentStyle={{ 
+    1201 |                 backgroundColor: theme.tooltipBackground,
+    1202 |                 borderRadius: '12px',
+
+WARNING in src/FinancialDashboard.tsx:1284:50
+TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
+  Type 'string' is not assignable to type 'number'.
+    1282 |           />
+    1283 |           <Tooltip 
+  > 1284 |             formatter={(value) => formatCurrency(value)}
+         |                                                  ^^^^^
+    1285 |             contentStyle={{ 
+    1286 |               backgroundColor: theme.tooltipBackground,
+    1287 |               borderRadius: '12px',
+
+WARNING in src/FinancialDashboard.tsx:1551:32
+TS7006: Parameter 'newValue' implicitly has an 'any' type.
+    1549 |                   <EditableCell
+    1550 |                     value={value}
+  > 1551 |                     onChange={(newValue) => {
+         |                                ^^^^^^^^
+    1552 |                       const newData = [...newClients75];
+    1553 |                       newData[index] = newValue;
+    1554 |                       setNewClients75(newData);
+
+WARNING in src/FinancialDashboard.tsx:1570:32
+TS7006: Parameter 'newValue' implicitly has an 'any' type.
+    1568 |                   <EditableCell
+    1569 |                     value={value}
+  > 1570 |                     onChange={(newValue) => {
+         |                                ^^^^^^^^
+    1571 |                       const newData = [...newClients150];
+    1572 |                       newData[index] = newValue;
+    1573 |                       setNewClients150(newData);
+
+WARNING in src/FinancialDashboard.tsx:1589:32
+TS7006: Parameter 'newValue' implicitly has an 'any' type.
+    1587 |                   <EditableCell
+    1588 |                     value={value}
+  > 1589 |                     onChange={(newValue) => {
+         |                                ^^^^^^^^
+    1590 |                       const newData = [...newClients250];
+    1591 |                       newData[index] = newValue;
+    1592 |                       setNewClients250(newData);
+
+WARNING in src/FinancialDashboard.tsx:1608:32
+TS7006: Parameter 'newValue' implicitly has an 'any' type.
+    1606 |                   <EditableCell
+    1607 |                     value={value}
+  > 1608 |                     onChange={(newValue) => {
+         |                                ^^^^^^^^
+    1609 |                       const newData = [...newClients500];
+    1610 |                       newData[index] = newValue;
+    1611 |                       setNewClients500(newData);
+
+WARNING in src/FinancialDashboard.tsx:1627:32
+TS7006: Parameter 'newValue' implicitly has an 'any' type.
+    1625 |                   <EditableCell
+    1626 |                     value={value}
+  > 1627 |                     onChange={(newValue) => {
+         |                                ^^^^^^^^
+    1628 |                       const newData = [...newClients1000];
+    1629 |                       newData[index] = newValue;
+    1630 |                       setNewClients1000(newData);
+
+WARNING in src/FinancialDashboard.tsx:1664:32
+TS7006: Parameter 'newValue' implicitly has an 'any' type.
+    1662 |                   <EditableCell 
+    1663 |                     value={value} 
+  > 1664 |                     onChange={(newValue) => {
+         |                                ^^^^^^^^
+    1665 |                       const newArray = [...fotOptimistic];
+    1666 |                       newArray[index] = newValue;
+    1667 |                       setFotOptimistic(newArray);
+
+WARNING in src/FinancialDashboard.tsx:1680:32
+TS7006: Parameter 'newValue' implicitly has an 'any' type.
+    1678 |                   <EditableCell 
+    1679 |                     value={value} 
+  > 1680 |                     onChange={(newValue) => {
+         |                                ^^^^^^^^
+    1681 |                       const newArray = [...fotPessimistic];
+    1682 |                       newArray[index] = newValue;
+    1683 |                       setFotPessimistic(newArray);
+
+WARNING in src/FinancialDashboard.tsx:2312:60
+TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
+  Type 'string' is not assignable to type 'number'.
+    2310 |                     </Pie>
+    2311 |                     <Tooltip 
+  > 2312 |                       formatter={(value) => formatCurrency(value)}
+         |                                                            ^^^^^
+    2313 |                       contentStyle={{ 
+    2314 |                         backgroundColor: theme.tooltipBackground,
+    2315 |                         borderRadius: '12px',
+
+Failed to compile.
+
+Module build failed: Error: ENOENT: no such file or directory, open '/Users/vitalijtravin/Desktop/чатбот- фин модель/financial-dashboard/node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js'
+WARNING in [eslint] 
+src/FinancialDashboard.tsx
+  Line 2:10:   'LineChart' is defined but never used                                                                                       @typescript-eslint/no-unused-vars
+  Line 3:40:   'Scatter' is defined but never used                                                                                         @typescript-eslint/no-unused-vars
+  Line 112:6:  React Hook useEffect has a missing dependency: 'calculateFinancialModel'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  Line 322:6:  React Hook useCallback has an unnecessary dependency: 'apiCost'. Either exclude it or remove the dependency array           react-hooks/exhaustive-deps
+
+ERROR in ./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js
+Module build failed: Error: ENOENT: no such file or directory, open '/Users/vitalijtravin/Desktop/чатбот- фин модель/financial-dashboard/node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js'
+
+ERROR in ./node_modules/@babel/runtime/helpers/esm/extends.js
+Module build failed: Error: ENOENT: no such file or directory, open '/Users/vitalijtravin/Desktop/чатбот- фин модель/financial-dashboard/node_modules/@babel/runtime/helpers/esm/extends.js'
+
+ERROR in ./node_modules/@babel/runtime/helpers/esm/inheritsLoose.js
+Module build failed: Error: ENOENT: no such file or directory, open '/Users/vitalijtravin/Desktop/чатбот- фин модель/financial-dashboard/node_modules/@babel/runtime/helpers/esm/inheritsLoose.js'
+
+ERROR in ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+Module build failed: Error: ENOENT: no such file or directory, open '/Users/vitalijtravin/Desktop/чатбот- фин модель/financial-dashboard/node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js'
+
+webpack compiled with 4 errors and 1 warning
+WARNING in src/FinancialDashboard.tsx:878:52
+TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
+  Type 'string' is not assignable to type 'number'.
+    876 |             />
+    877 |             <Tooltip 
+  > 878 |               formatter={(value) => formatCurrency(value)}
+        |                                                    ^^^^^
+    879 |               contentStyle={{ 
+    880 |                 backgroundColor: theme.tooltipBackground,
+    881 |                 borderRadius: '12px',
+
+WARNING in src/FinancialDashboard.tsx:950:38
+TS7031: Binding element 'cx' implicitly has an 'any' type.
+    948 |     
+    949 |     const RADIAN = Math.PI / 180;
+  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                      ^^
+    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:950:42
+TS7031: Binding element 'cy' implicitly has an 'any' type.
+    948 |     
+    949 |     const RADIAN = Math.PI / 180;
+  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                          ^^
+    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:950:46
+TS7031: Binding element 'midAngle' implicitly has an 'any' type.
+    948 |     
+    949 |     const RADIAN = Math.PI / 180;
+  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                              ^^^^^^^^
+    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:950:56
+TS7031: Binding element 'innerRadius' implicitly has an 'any' type.
+    948 |     
+    949 |     const RADIAN = Math.PI / 180;
+  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                                        ^^^^^^^^^^^
+    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:950:69
+TS7031: Binding element 'outerRadius' implicitly has an 'any' type.
+    948 |     
+    949 |     const RADIAN = Math.PI / 180;
+  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                                                     ^^^^^^^^^^^
+    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:950:82
+TS7031: Binding element 'percent' implicitly has an 'any' type.
+    948 |     
+    949 |     const RADIAN = Math.PI / 180;
+  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                                                                  ^^^^^^^
+    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:950:91
+TS7031: Binding element 'index' implicitly has an 'any' type.
+    948 |     
+    949 |     const RADIAN = Math.PI / 180;
+  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                                                                           ^^^^^
+    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:950:98
+TS7031: Binding element 'name' implicitly has an 'any' type.
+    948 |     
+    949 |     const RADIAN = Math.PI / 180;
+  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                                                                                  ^^^^
+    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:950:104
+TS7031: Binding element 'value' implicitly has an 'any' type.
+    948 |     
+    949 |     const RADIAN = Math.PI / 180;
+  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
+        |                                                                                                        ^^^^^
+    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
+    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+WARNING in src/FinancialDashboard.tsx:985:54
+TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
+  Type 'string' is not assignable to type 'number'.
+    983 |               </Pie>
+    984 |               <Tooltip 
+  > 985 |                 formatter={(value) => formatCurrency(value)}
+        |                                                      ^^^^^
+    986 |                 contentStyle={{ 
+    987 |                   backgroundColor: theme.tooltipBackground,
+    988 |                   borderRadius: '12px',
+
+WARNING in src/FinancialDashboard.tsx:1019:54
+TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
+  Type 'string' is not assignable to type 'number'.
+    1017 |               </Pie>
+    1018 |               <Tooltip 
+  > 1019 |                 formatter={(value) => formatCurrency(value)}
+         |                                                      ^^^^^
+    1020 |                 contentStyle={{ 
+    1021 |                   backgroundColor: theme.tooltipBackground,
+    1022 |                   borderRadius: '12px',
+
+WARNING in src/FinancialDashboard.tsx:1199:52
+TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
+  Type 'string' is not assignable to type 'number'.
+    1197 |             />
+    1198 |             <Tooltip 
+  > 1199 |               formatter={(value) => formatCurrency(value)}
+         |                                                    ^^^^^
+    1200 |               contentStyle={{ 
+    1201 |                 backgroundColor: theme.tooltipBackground,
+    1202 |                 borderRadius: '12px',
+
+WARNING in src/FinancialDashboard.tsx:1284:50
+TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
+  Type 'string' is not assignable to type 'number'.
+    1282 |           />
+    1283 |           <Tooltip 
+  > 1284 |             formatter={(value) => formatCurrency(value)}
+         |                                                  ^^^^^
+    1285 |             contentStyle={{ 
+    1286 |               backgroundColor: theme.tooltipBackground,
+    1287 |               borderRadius: '12px',
+
+WARNING in src/FinancialDashboard.tsx:1551:32
+TS7006: Parameter 'newValue' implicitly has an 'any' type.
+    1549 |                   <EditableCell
+    1550 |                     value={value}
+  > 1551 |                     onChange={(newValue) => {
+         |                                ^^^^^^^^
+    1552 |                       const newData = [...newClients75];
+    1553 |                       newData[index] = newValue;
+    1554 |                       setNewClients75(newData);
+
+WARNING in src/FinancialDashboard.tsx:1570:32
+TS7006: Parameter 'newValue' implicitly has an 'any' type.
+    1568 |                   <EditableCell
+    1569 |                     value={value}
+  > 1570 |                     onChange={(newValue) => {
+         |                                ^^^^^^^^
+    1571 |                       const newData = [...newClients150];
+    1572 |                       newData[index] = newValue;
+    1573 |                       setNewClients150(newData);
+
+WARNING in src/FinancialDashboard.tsx:1589:32
+TS7006: Parameter 'newValue' implicitly has an 'any' type.
+    1587 |                   <EditableCell
+    1588 |                     value={value}
+  > 1589 |                     onChange={(newValue) => {
+         |                                ^^^^^^^^
+    1590 |                       const newData = [...newClients250];
+    1591 |                       newData[index] = newValue;
+    1592 |                       setNewClients250(newData);
+
+WARNING in src/FinancialDashboard.tsx:1608:32
+TS7006: Parameter 'newValue' implicitly has an 'any' type.
+    1606 |                   <EditableCell
+    1607 |                     value={value}
+  > 1608 |                     onChange={(newValue) => {
+         |                                ^^^^^^^^
+    1609 |                       const newData = [...newClients500];
+    1610 |                       newData[index] = newValue;
+    1611 |                       setNewClients500(newData);
+
+WARNING in src/FinancialDashboard.tsx:1627:32
+TS7006: Parameter 'newValue' implicitly has an 'any' type.
+    1625 |                   <EditableCell
+    1626 |                     value={value}
+  > 1627 |                     onChange={(newValue) => {
+         |                                ^^^^^^^^
+    1628 |                       const newData = [...newClients1000];
+    1629 |                       newData[index] = newValue;
+    1630 |                       setNewClients1000(newData);
+
+WARNING in src/FinancialDashboard.tsx:1664:32
+TS7006: Parameter 'newValue' implicitly has an 'any' type.
+    1662 |                   <EditableCell 
+    1663 |                     value={value} 
+  > 1664 |                     onChange={(newValue) => {
+         |                                ^^^^^^^^
+    1665 |                       const newArray = [...fotOptimistic];
+    1666 |                       newArray[index] = newValue;
+    1667 |                       setFotOptimistic(newArray);
+
+WARNING in src/FinancialDashboard.tsx:1680:32
+TS7006: Parameter 'newValue' implicitly has an 'any' type.
+    1678 |                   <EditableCell 
+    1679 |                     value={value} 
+  > 1680 |                     onChange={(newValue) => {
+         |                                ^^^^^^^^
+    1681 |                       const newArray = [...fotPessimistic];
+    1682 |                       newArray[index] = newValue;
+    1683 |                       setFotPessimistic(newArray);
+
+WARNING in src/FinancialDashboard.tsx:2312:60
+TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
+  Type 'string' is not assignable to type 'number'.
+    2310 |                     </Pie>
+    2311 |                     <Tooltip 
+  > 2312 |                       formatter={(value) => formatCurrency(value)}
+         |                                                            ^^^^^
+    2313 |                       contentStyle={{ 
+    2314 |                         backgroundColor: theme.tooltipBackground,
+    2315 |                         borderRadius: '12px',
+
