@@ -73,7 +73,7 @@ const FOTEditor: React.FC<FOTEditorProps> = ({
                     <td className="px-2 py-2 whitespace-nowrap">
                       <EditableCell 
                         value={fotOptimistic[month]} 
-                        onChange={(value) => updateFOTArray(fotOptimistic, setFotOptimistic, month, value)}
+                        onChange={(value: number) => updateFOTArray(fotOptimistic, setFotOptimistic, month, value)}
                         min={0}
                         max={10000}
                         step={100}
@@ -110,7 +110,7 @@ const FOTEditor: React.FC<FOTEditorProps> = ({
                     <td className="px-2 py-2 whitespace-nowrap">
                       <EditableCell 
                         value={fotPessimistic[month]} 
-                        onChange={(value) => updateFOTArray(fotPessimistic, setFotPessimistic, month, value)}
+                        onChange={(value: number) => updateFOTArray(fotPessimistic, setFotPessimistic, month, value)}
                         min={0}
                         max={10000}
                         step={100}

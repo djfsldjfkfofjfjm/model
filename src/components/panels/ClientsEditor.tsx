@@ -86,7 +86,7 @@ const ClientsEditor: React.FC<ClientsEditorProps> = ({
                 <td className="px-2 py-2 whitespace-nowrap">
                   <EditableCell 
                     value={newClients75[month]} 
-                    onChange={(value) => updateClientArray(newClients75, setNewClients75, month, value)}
+                    onChange={(value: number) => updateClientArray(newClients75, setNewClients75, month, value)}
                     min={0}
                     max={100}
                   />
@@ -94,7 +94,7 @@ const ClientsEditor: React.FC<ClientsEditorProps> = ({
                 <td className="px-2 py-2 whitespace-nowrap">
                   <EditableCell 
                     value={newClients150[month]} 
-                    onChange={(value) => updateClientArray(newClients150, setNewClients150, month, value)}
+                    onChange={(value: number) => updateClientArray(newClients150, setNewClients150, month, value)}
                     min={0}
                     max={100}
                   />
@@ -102,7 +102,7 @@ const ClientsEditor: React.FC<ClientsEditorProps> = ({
                 <td className="px-2 py-2 whitespace-nowrap">
                   <EditableCell 
                     value={newClients250[month]} 
-                    onChange={(value) => updateClientArray(newClients250, setNewClients250, month, value)}
+                    onChange={(value: number) => updateClientArray(newClients250, setNewClients250, month, value)}
                     min={0}
                     max={100}
                   />
@@ -110,7 +110,7 @@ const ClientsEditor: React.FC<ClientsEditorProps> = ({
                 <td className="px-2 py-2 whitespace-nowrap">
                   <EditableCell 
                     value={newClients500[month]} 
-                    onChange={(value) => updateClientArray(newClients500, setNewClients500, month, value)}
+                    onChange={(value: number) => updateClientArray(newClients500, setNewClients500, month, value)}
                     min={0}
                     max={100}
                   />
@@ -118,7 +118,7 @@ const ClientsEditor: React.FC<ClientsEditorProps> = ({
                 <td className="px-2 py-2 whitespace-nowrap">
                   <EditableCell 
                     value={newClients1000[month]} 
-                    onChange={(value) => updateClientArray(newClients1000, setNewClients1000, month, value)}
+                    onChange={(value: number) => updateClientArray(newClients1000, setNewClients1000, month, value)}
                     min={0}
                     max={100}
                   />

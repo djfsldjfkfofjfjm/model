@@ -9,7 +9,6 @@ import RevenueChart from './charts/RevenueChart';
 import ClientsChart from './charts/ClientsChart';
 import KPIRadarChart from './charts/KPIRadarChart';
 import { useFormatting } from '../hooks';
-import { theme } from '../constants';
 
 const FinancialDashboard = (): ReactElement => {
   const { 
