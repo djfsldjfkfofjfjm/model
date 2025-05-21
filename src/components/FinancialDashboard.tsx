@@ -23,7 +23,7 @@ const FinancialDashboard = (): ReactElement => {
   
   // Табы навигации
   const renderTabs = () => (
-    <div className="flex space-x-1 bg-white p-1 rounded-t-lg shadow overflow-x-auto">
+    <div className="flex flex-wrap space-x-1 bg-white p-1 rounded-t-lg shadow overflow-x-auto">
       <button 
         className={`px-4 py-2 font-medium rounded-t-lg transition-colors duration-200 ${activeTab === 'dashboard' ? 'bg-indigo-50 text-indigo-600' : 'hover:bg-gray-100'}`}
         onClick={() => setActiveTab('dashboard')}
@@ -58,8 +58,8 @@ const FinancialDashboard = (): ReactElement => {
   );
   
   const renderSummaryHeader = () => (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-      <div className="bg-white shadow rounded-lg p-6 flex flex-col hover:shadow-lg transition-shadow duration-200">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-6">
+      <div className="bg-white shadow rounded-2xl p-6 flex flex-col hover:shadow-lg transition-shadow duration-200">
         <span className="text-gray-500 mb-1 text-sm uppercase tracking-wide">Выручка (12 мес)</span>
         <span className="text-gray-800 text-2xl font-bold">{currency(totalData.totalRevenue || 0)}</span>
         <div className="mt-2 flex items-center">
@@ -71,7 +71,7 @@ const FinancialDashboard = (): ReactElement => {
           </span>
         </div>
       </div>
-      <div className="bg-white shadow rounded-lg p-6 flex flex-col hover:shadow-lg transition-shadow duration-200">
+      <div className="bg-white shadow rounded-2xl p-6 flex flex-col hover:shadow-lg transition-shadow duration-200">
         <span className="text-gray-500 mb-1 text-sm uppercase tracking-wide">Прибыль (12 мес)</span>
         <span className={`text-2xl font-bold ${(totalData.totalNetProfit || 0) >= 0 ? 'text-green-600' : 'text-red-600'}`}>
           {currency(totalData.totalNetProfit || 0)}
@@ -85,7 +85,7 @@ const FinancialDashboard = (): ReactElement => {
           </span>
         </div>
       </div>
-      <div className="bg-white shadow rounded-lg p-6 flex flex-col hover:shadow-lg transition-shadow duration-200">
+      <div className="bg-white shadow rounded-2xl p-6 flex flex-col hover:shadow-lg transition-shadow duration-200">
         <span className="text-gray-500 mb-1 text-sm uppercase tracking-wide">LTV/CAC</span>
         <span className="text-gray-800 text-2xl font-bold">{totalData.ltvCacRatio ? totalData.ltvCacRatio.toFixed(1) : '0'}</span>
         <div className="mt-2 flex items-center">
@@ -101,35 +101,33 @@ const FinancialDashboard = (): ReactElement => {
   );
   
   const renderDashboard = () => (
-    <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 mb-6">
-      <div className="lg:col-span-4">
+    <div className="grid grid-cols-1 xl:grid-cols-12 gap-6 mb-6">
+      <div className="xl:col-span-8 space-y-6">
         {renderSummaryHeader()}
+        <div className="bg-white shadow rounded-2xl p-4 hover:shadow-lg transition-shadow duration-200">
+          <h2 className="text-xl font-semibold text-gray-800 mb-4">Выручка и прибыль</h2>
+          <RevenueChart data={monthlyData} />
+        </div>
+        <div className="bg-white shadow rounded-2xl p-4 hover:shadow-lg transition-shadow duration-200">
+          <h2 className="text-xl font-semibold text-gray-800 mb-4">Клиенты</h2>
+          <ClientsChart data={monthlyData} />
+        </div>
       </div>
-      
-      <div className="lg:col-span-2 bg-white shadow rounded-lg p-4 hover:shadow-lg transition-shadow duration-200">
-        <h2 className="text-xl font-semibold text-gray-800 mb-4">Выручка и прибыль</h2>
-        <RevenueChart data={monthlyData} />
-      </div>
-      
-      <div className="lg:col-span-2 bg-white shadow rounded-lg p-4 hover:shadow-lg transition-shadow duration-200">
-        <h2 className="text-xl font-semibold text-gray-800 mb-4">Клиенты</h2>
-        <ClientsChart data={monthlyData} />
-      </div>
-      
-      <div className="lg:col-span-2 bg-white shadow rounded-lg p-4 hover:shadow-lg transition-shadow duration-200">
-        <h2 className="text-xl font-semibold text-gray-800 mb-4">Ключевые метрики</h2>
-        <KeyMetricsPanel />
-      </div>
-      
-      <div className="lg:col-span-2 bg-white shadow rounded-lg p-4 hover:shadow-lg transition-shadow duration-200">
-        <h2 className="text-xl font-semibold text-gray-800 mb-4">Radar KPI</h2>
-        <KPIRadarChart />
+      <div className="xl:col-span-4 space-y-6">
+        <div className="bg-white shadow rounded-2xl p-4 hover:shadow-lg transition-shadow duration-200">
+          <h2 className="text-xl font-semibold text-gray-800 mb-4">Ключевые метрики</h2>
+          <KeyMetricsPanel />
+        </div>
+        <div className="bg-white shadow rounded-2xl p-4 hover:shadow-lg transition-shadow duration-200">
+          <h2 className="text-xl font-semibold text-gray-800 mb-4">Radar KPI</h2>
+          <KPIRadarChart />
+        </div>
       </div>
     </div>
   );
   
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className="min-h-screen bg-gradient-to-b from-indigo-50 via-white to-white py-8">
       <div className="container mx-auto px-4 max-w-7xl">
         <header className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900">Финансовая модель</h1>
@@ -138,7 +136,7 @@ const FinancialDashboard = (): ReactElement => {
         
         {renderTabs()}
         
-        <div className="bg-white shadow rounded-b-lg p-6">
+        <div className="bg-white shadow rounded-b-2xl p-6">
           {activeTab === 'dashboard' && renderDashboard()}
           {activeTab === 'settings' && <SettingsPanel />}
           {activeTab === 'clients' && <ClientsEditor />}

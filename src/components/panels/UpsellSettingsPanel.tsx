@@ -40,7 +40,7 @@ const UpsellSettingsPanel: React.FC<UpsellSettingsPanelProps> = ({
   const { currency } = useFormatting();
   
   return (
-    <div className={`bg-white p-6 rounded-2xl shadow-sm ${className}`}>
+    <div className={`bg-white p-6 rounded-2xl shadow ${className}`}>
       <h2 className="text-xl font-bold mb-6 text-indigo-600">
         Upsell-параметры
       </h2>
@@ -48,7 +48,7 @@ const UpsellSettingsPanel: React.FC<UpsellSettingsPanelProps> = ({
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="space-y-6">
           {/* Блок 1: Дополнительные боты */}
-          <div className="bg-white p-4 rounded-lg border border-indigo-100 shadow-sm">
+          <div className="bg-white p-4 rounded-lg border border-indigo-100 shadow">
             <h4 className="text-sm font-medium text-indigo-700 mb-2 flex items-center">
               1. Дополнительные боты
               <InfoTooltip text="Выручка от продажи дополнительных ботов существующим клиентам" />
@@ -83,7 +83,7 @@ const UpsellSettingsPanel: React.FC<UpsellSettingsPanelProps> = ({
           </div>
           
           {/* Блок 2: Новые функции */}
-          <div className="bg-white p-4 rounded-lg border border-pink-100 shadow-sm">
+          <div className="bg-white p-4 rounded-lg border border-pink-100 shadow">
             <h4 className="text-sm font-medium text-pink-700 mb-2 flex items-center">
               2. Новые функции
               <InfoTooltip text="Выручка от продажи дополнительных функций существующим клиентам" />
@@ -120,7 +120,7 @@ const UpsellSettingsPanel: React.FC<UpsellSettingsPanelProps> = ({
         
         <div className="space-y-6">
           {/* Блок 3: Расширение объема сообщений */}
-          <div className="bg-white p-4 rounded-lg border border-emerald-100 shadow-sm">
+          <div className="bg-white p-4 rounded-lg border border-emerald-100 shadow">
             <h4 className="text-sm font-medium text-emerald-700 mb-2 flex items-center">
               3. Расширение объема сообщений
               <InfoTooltip text="Выручка от продажи дополнительных пакетов сообщений" />
@@ -155,7 +155,7 @@ const UpsellSettingsPanel: React.FC<UpsellSettingsPanelProps> = ({
           </div>
           
           {/* Блок 4: Дополнительные интеграции */}
-          <div className="bg-white p-4 rounded-lg border border-amber-100 shadow-sm">
+          <div className="bg-white p-4 rounded-lg border border-amber-100 shadow">
             <h4 className="text-sm font-medium text-amber-700 mb-2 flex items-center">
               4. Дополнительные интеграции
               <InfoTooltip text="Выручка от создания дополнительных интеграций для существующих клиентов" />
