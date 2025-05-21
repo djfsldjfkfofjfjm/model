@@ -26,8 +26,8 @@ export interface EditableCellProps {
 const EditableCell: React.FC<EditableCellProps> = ({ 
   value, 
   onChange, 
-  min = 0, 
-  max = 100, 
+  min = 0,
+  max = Infinity,
   step = 1,
   className = "",
   'data-testid': dataTestId
@@ -39,6 +39,8 @@ const EditableCell: React.FC<EditableCellProps> = ({
       onChange(newValue);
     }
   };
+
+  const maxProp = Number.isFinite(max) ? max : undefined;
   
   return (
     <input
@@ -46,7 +48,7 @@ const EditableCell: React.FC<EditableCellProps> = ({
       value={value}
       onChange={handleChange}
       min={min}
-      max={max}
+      max={maxProp}
       step={step}
       className={`w-full rounded-md border border-gray-300 p-2 text-gray-800 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-center ${className}`}
       data-testid={dataTestId}

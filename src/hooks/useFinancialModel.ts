@@ -153,19 +153,11 @@ export const useFinancialModel = (
       
       const apiCostsMonth = (subscriptionRevenueMonth + additionalMessagesRevenueMonth) * (params.apiCostPercentage / 100);
 
-      // Базовые значения для компонентов CAC
-      const partnerCommissionsBase = integrationRevenueMonth * (params.partnerCommissionRate / 100);
-      const salesTeamCostsBase = totalRevenueMonth * (params.salesTeamPercentage / 100);
-      const marketingCostsBase = integrationRevenueMonth * (params.marketingPercentage / 100);
-      const leadGenerationCostsBase = totalNewClientsMonth * params.leadGenerationPerClient;
-
-      // Общий коэффициент расхода на CAC
-      const cacFactor = params.cacPercentage / 100;
-
-      const partnerCommissionsMonth = partnerCommissionsBase * cacFactor;
-      const salesTeamCostsMonth = salesTeamCostsBase * cacFactor;
-      const marketingCostsMonth = marketingCostsBase * cacFactor;
-      const leadGenerationCostsMonth = leadGenerationCostsBase * cacFactor;
+      // CAC без учета глобального коэффициента
+      const partnerCommissionsMonth = integrationRevenueMonth * (params.partnerCommissionRate / 100);
+      const salesTeamCostsMonth = totalRevenueMonth * (params.salesTeamPercentage / 100);
+      const marketingCostsMonth = integrationRevenueMonth * (params.marketingPercentage / 100);
+      const leadGenerationCostsMonth = totalNewClientsMonth * params.leadGenerationPerClient;
       const calculatedImplCostsMonth = params.integrationPrice * (params.implementationPercentage / 100);
       const implementationCostsPerClientMonth = Math.min(calculatedImplCostsMonth, params.maxImplementationCost);
       const implementationCostsMonth = totalNewClientsMonth * implementationCostsPerClientMonth;
