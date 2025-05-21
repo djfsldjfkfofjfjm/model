@@ -38,7 +38,7 @@ const ClientsChart: React.FC<ClientsChartProps> = ({
   // Используем данные из пропсов, если они есть, иначе из контекста
   const data = propData || monthlyData;
   return (
-    <div className={`bg-white p-6 rounded-2xl shadow-sm border border-gray-100 ${className}`}>
+    <div className={`bg-white p-6 rounded-2xl shadow border border-gray-100 ${className}`}>
       <h2 className="text-lg font-medium text-gray-800 mb-4 flex items-center">
         {title}
         <InfoTooltip 

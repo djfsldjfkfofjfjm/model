@@ -46,7 +46,7 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({
   const setTaxRateOptimistic = () => {}; // Пустая функция, так как мы не меняем налоговые ставки
   const setTaxRatePessimistic = () => {};
   return (
-    <div className={`bg-white p-6 rounded-2xl shadow-sm border border-gray-100 mb-6 ${className}`}>
+    <div className={`bg-white p-6 rounded-2xl shadow border border-gray-100 mb-6 ${className}`}>
       <h2 className="text-xl font-bold mb-6 text-indigo-600">
         Параметры финансовой модели
       </h2>
@@ -58,7 +58,7 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({
             <button
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                 taxMode === 'optimistic'
-                  ? 'bg-indigo-500 text-white shadow-sm'
+                  ? 'bg-indigo-500 text-white shadow'
                   : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
               }`}
               onClick={() => setTaxMode('optimistic')}
@@ -69,7 +69,7 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({
             <button
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                 taxMode === 'pessimistic'
-                  ? 'bg-indigo-500 text-white shadow-sm'
+                  ? 'bg-indigo-500 text-white shadow'
                   : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
               }`}
               onClick={() => setTaxMode('pessimistic')}
@@ -105,7 +105,7 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({
             <button
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                 fotMode === 'optimistic'
-                  ? 'bg-indigo-500 text-white shadow-sm'
+                  ? 'bg-indigo-500 text-white shadow'
                   : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
               }`}
               onClick={() => setFotMode('optimistic')}
@@ -115,7 +115,7 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({
             <button
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                 fotMode === 'pessimistic'
-                  ? 'bg-indigo-500 text-white shadow-sm'
+                  ? 'bg-indigo-500 text-white shadow'
                   : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
               }`}
               onClick={() => setFotMode('pessimistic')}

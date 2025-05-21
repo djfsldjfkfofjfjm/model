@@ -43,7 +43,7 @@ const KPIRadarChart: React.FC<KPIRadarChartProps> = ({
   ];
 
   return (
-    <div className={`bg-white p-6 rounded-2xl shadow-sm border border-gray-100 mb-6 ${className}`}>
+    <div className={`bg-white p-6 rounded-2xl shadow border border-gray-100 mb-6 ${className}`}>
       <h2 className="text-xl font-bold mb-6 text-indigo-600">
         {title}
       </h2>
