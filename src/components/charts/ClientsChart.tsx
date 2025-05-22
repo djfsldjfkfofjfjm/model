@@ -48,9 +48,19 @@ const ClientsChart: React.FC<ClientsChartProps> = ({
   
   // Используем данные из пропсов, если они есть, иначе из контекста
   const rawData = propData || monthlyData;
-  
-  // Проверяем и фильтруем данные
-  const data = Array.isArray(rawData) ? rawData.filter(item => item && typeof item === 'object') : [];
+
+  // Приводим данные к ожидаемому формату
+  const data = Array.isArray(rawData)
+    ? rawData.map(item => ({
+        month: item?.month,
+        activeClients75: item?.activeClients75 || 0,
+        activeClients150: item?.activeClients150 || 0,
+        activeClients250: item?.activeClients250 || 0,
+        activeClients500: item?.activeClients500 || 0,
+        activeClients1000: item?.activeClients1000 || 0,
+        totalActiveClients: item?.totalActiveClients || 0,
+      }))
+    : [];
   
   // Проверяем, есть ли хотя бы одно значение клиентов больше 0
   const hasClientData = data.some(item => 
