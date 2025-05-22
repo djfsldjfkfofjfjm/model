@@ -26,7 +26,7 @@ export interface MetricCardProps {
   /** Дополнительные CSS классы */
   className?: string;
   /** data-testid для тестирования */
-  ['data-testid']?: string;
+  'data-testid'?: string;
 }
 
 /**
@@ -43,7 +43,7 @@ const MetricCard: React.FC<MetricCardProps> = ({
   tooltip = null,
   formatValue,
   className = "",
-  ['data-testid']: dataTestId // Принимаем data-testid из props
+  'data-testid': dataTestId // Принимаем data-testid из props
 }) => {
   // Функция форматирования по умолчанию
   const defaultFormatCurrency = (value: number | string): string => {

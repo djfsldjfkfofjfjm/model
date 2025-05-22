@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Legend, 
   ResponsiveContainer 
@@ -33,21 +33,97 @@ const ClientsChart: React.FC<ClientsChartProps> = ({
   showAllGroups = true,
   className = ""
 }) => {
-  const { monthlyData } = useFinancialContext();
+  const { monthlyData } = useFinancialContext();  
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+    
+    checkIsMobile();
+    window.addEventListener('resize', checkIsMobile);
+    return () => window.removeEventListener('resize', checkIsMobile);
+  }, []);
   
   // Используем данные из пропсов, если они есть, иначе из контекста
-  const data = propData || monthlyData;
+  const rawData = propData || monthlyData;
+  
+  // Проверяем и фильтруем данные
+  const data = Array.isArray(rawData) ? rawData.filter(item => item && typeof item === 'object') : [];
+  
+  // Проверяем, есть ли хотя бы одно значение клиентов больше 0
+  const hasClientData = data.some(item => 
+    (item.activeClients75 || 0) > 0 ||
+    (item.activeClients150 || 0) > 0 ||
+    (item.activeClients250 || 0) > 0 ||
+    (item.activeClients500 || 0) > 0 ||
+    (item.activeClients1000 || 0) > 0 ||
+    (item.totalActiveClients || 0) > 0
+  );
+
+  // Отладка только при отсутствии данных
+  if (!hasClientData) {
+    console.log('ClientsChart - НЕТ ДАННЫХ КЛИЕНТОВ:', {
+      dataLength: data.length,
+      hasClientData,
+      sampleMonth: data[2] ? {
+        month: data[2].month,
+        activeClients75: data[2].activeClients75,
+        activeClients150: data[2].activeClients150,
+        activeClients250: data[2].activeClients250,
+        activeClients500: data[2].activeClients500,
+        activeClients1000: data[2].activeClients1000,
+        totalActiveClients: data[2].totalActiveClients
+      } : 'нет 3-го месяца'
+    });
+  }
+  
+  
+  // Если данных нет ИЛИ все значения клиентов равны 0, показываем заглушку
+  if (!data.length || !hasClientData) {
+    return (
+      <div className={className}>
+        <div className="flex items-center mb-4">
+          <h3 className="text-lg font-medium text-gray-800">
+            {title}
+          </h3>
+          <InfoTooltip 
+            text="График показывает количество активных клиентов по месяцам в разбивке по тарифам" 
+            className="ml-2"
+          />
+        </div>
+        <div className="flex items-center justify-center bg-gray-50 rounded-lg" style={{height: height}}>
+          <div className="text-center">
+            <div className="text-gray-400 text-4xl mb-4">📊</div>
+            <p className="text-gray-500">Данные клиентов отсутствуют</p>
+            <p className="text-xs text-gray-400 mt-2">Добавьте клиентов во вкладке "Клиенты" или проверьте логи в браузере</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
   return (
-    <div className={`bg-white p-6 rounded-2xl shadow-sm border border-gray-100 ${className}`}>
-      <h2 className="text-lg font-medium text-gray-800 mb-4 flex items-center">
-        {title}
+    <div className={className}>
+      <div className="flex items-center mb-4">
+        <h3 className="text-lg font-medium text-gray-800">
+          {title}
+        </h3>
         <InfoTooltip 
           text="График показывает количество активных клиентов по месяцам в разбивке по тарифам" 
           className="ml-2"
         />
-      </h2>
+      </div>
       <ResponsiveContainer width="100%" height={height}>
-        <AreaChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 10 }}>
+        <AreaChart 
+          data={data} 
+          margin={{ 
+            top: 20, 
+            right: isMobile ? 10 : 30, 
+            left: isMobile ? 10 : 20, 
+            bottom: isMobile ? 5 : 10 
+          }}
+        >
           <defs>
             <linearGradient id="clients75Gradient" x1="0" y1="0" x2="0" y2="1">
               <stop offset="5%" stopColor="#6366F1" stopOpacity={0.8}/>
@@ -98,8 +174,12 @@ const ClientsChart: React.FC<ClientsChartProps> = ({
           />
           <Legend 
             verticalAlign="top" 
-            height={36} 
+            height={isMobile ? 60 : 36} 
             iconType="circle"
+            wrapperStyle={{
+              fontSize: isMobile ? '12px' : '14px',
+              paddingBottom: '10px'
+            }}
           />
 
           {showAllGroups ? (

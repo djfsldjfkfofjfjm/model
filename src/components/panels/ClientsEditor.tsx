@@ -1,5 +1,5 @@
 import React from 'react';
-import { EditableCell, InfoTooltip, BulkInput } from '../common';
+import { EditableCell, InfoTooltip, MassEditPanel } from '../common';
 import { useFinancialContext } from '../../contexts/FinancialContext';
 
 /**
@@ -53,13 +53,53 @@ const ClientsEditor: React.FC<ClientsEditorProps> = ({
         />
       </h3>
 
-      {/* Кнопки для массового ввода значений по каждому тарифу */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 mb-4">
-        <BulkInput count={12} onApply={setNewClients75} title="$75" />
-        <BulkInput count={12} onApply={setNewClients150} title="$150" />
-        <BulkInput count={12} onApply={setNewClients250} title="$250" />
-        <BulkInput count={12} onApply={setNewClients500} title="$500" />
-        <BulkInput count={12} onApply={setNewClients1000} title="$1000" />
+      {/* Панели массового редактирования для каждого тарифа */}
+      <div className="space-y-3 mb-6">
+        <MassEditPanel
+          count={12}
+          onApply={setNewClients75}
+          currentValues={newClients75}
+          title="Клиенты $75 (API-only)"
+          tooltip="Редактирование количества новых клиентов тарифа $75 по месяцам"
+          min={0}
+          max={100}
+        />
+        <MassEditPanel
+          count={12}
+          onApply={setNewClients150}
+          currentValues={newClients150}
+          title="Клиенты $150 (Базовый)"
+          tooltip="Редактирование количества новых клиентов тарифа $150 по месяцам"
+          min={0}
+          max={100}
+        />
+        <MassEditPanel
+          count={12}
+          onApply={setNewClients250}
+          currentValues={newClients250}
+          title="Клиенты $250 (Стандарт)"
+          tooltip="Редактирование количества новых клиентов тарифа $250 по месяцам"
+          min={0}
+          max={100}
+        />
+        <MassEditPanel
+          count={12}
+          onApply={setNewClients500}
+          currentValues={newClients500}
+          title="Клиенты $500 (Премиум)"
+          tooltip="Редактирование количества новых клиентов тарифа $500 по месяцам"
+          min={0}
+          max={100}
+        />
+        <MassEditPanel
+          count={12}
+          onApply={setNewClients1000}
+          currentValues={newClients1000}
+          title="Клиенты $1000 (Корпоративный)"
+          tooltip="Редактирование количества новых клиентов тарифа $1000 по месяцам"
+          min={0}
+          max={100}
+        />
       </div>
       
       <div className="overflow-x-auto">

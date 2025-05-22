@@ -1,99 +1,382 @@
-# CLAUDE.md
+# CLAUDE.md - Финансовая модель SaaS-проекта
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+Этот файл содержит исчерпывающую информацию о финансовой модели для SaaS-проекта с чат-ботами.
 
-## Common Commands
+## Команды разработки
 
-### Development
-- `npm start` - Runs the development server at http://localhost:3000
-- `npm test` - Runs tests in interactive watch mode
-- `npm run build` - Builds the app for production
+### Основные команды
+- `npm start` - Запуск приложения в режиме разработки (http://localhost:3000)
+- `npm test` - Запуск тестов в интерактивном режиме  
+- `npm run build` - Сборка продакшн версии
+- `npm run eject` - Извлечение конфигурации CRA (необратимо)
 
-### TypeScript Compilation
-The project has TypeScript error suppression enabled via environment variables:
-- `ESLINT_NO_DEV_ERRORS=true`
-- `TSC_COMPILE_ON_ERROR=true`
+### Настройки среды разработки
+В `.env` файле настроены флаги для подавления ошибок компиляции:
+- `ESLINT_NO_DEV_ERRORS=true` - ESLint ошибки не останавливают разработку
+- `TSC_COMPILE_ON_ERROR=true` - TypeScript ошибки не блокируют компиляцию
 
-Warnings will still appear but won't prevent compilation. 
+**ВАЖНО**: При разработке не закрывайте запущенное приложение - TypeScript ошибки не мешают работе благодаря флагу `TSC_COMPILE_ON_ERROR=true`.
 
-**ВАЖНО**: Не закрывайте запущенное приложение при внесении правок. TypeScript ошибки не мешают работе приложения из-за включенного флага `TSC_COMPILE_ON_ERROR=true`.
+## Техническая архитектура
 
-## Architecture Overview
+### Стек технологий
+- **React 19.1.0** с TypeScript 4.9.5
+- **Create React App** (CRA) без eject
+- **Tailwind CSS 3.4.17** для стилизации + PostCSS + Autoprefixer
+- **Recharts 2.15.3** для визуализации данных
+- **Testing Library** для тестирования (DOM, React, User Event, Jest-DOM)
 
-### Tech Stack
-- **React 19** with TypeScript
-- **Create React App** (CRA) for project structure
-- **Tailwind CSS v3** for styling via PostCSS
-- **Recharts** for data visualization
+### Структура проекта
 
-### Project Structure
-
-The application is a single-page financial dashboard with:
-
-- Main component: `src/FinancialDashboard.tsx` - contains all business logic and state management
-- Entry point: `src/index.tsx` - renders the App component
-- Minimal component architecture (currently single-file application)
-
-### Key Features
-
-1. **Financial Modeling**
-   - SaaS revenue forecasting
-   - Client segmentation by subscription tiers ($75, $150, $250, $500, $1000)
-   - Tax calculation (optimistic 9% PVT / pessimistic 35%)
-   - Employee cost tracking (FOT - Fund of Labor)
-
-2. **State Management**
-   - All state managed in FinancialDashboard component using React hooks
-   - No external state management library
-   - Complex calculations in useCallback/useEffect hooks
-
-3. **Data Visualization**
-   - Multiple chart types: Line, Area, Bar, Pie, Radar
-   - All charts use Recharts library
-   - Real-time updates based on user input
-
-4. **Interactive Features**
-   - Editable cells for financial parameters
-   - Mass editing tools for client numbers and FOT values
-   - Multiple viewing tabs: dashboard, detailed monthly breakdown
-
-### Planned Changes and Features
-Refer to the `ПЛАН_ВНЕСЕНИЯ_ПРАВОК.md` file for a detailed roadmap of planned changes. Key features to be implemented include:
-
-1. Parameter renaming and value range updates
-2. Adding OpenAI API logic with automatic cost adjustments
-3. Adding tooltips for metrics and inputs
-4. Visual improvements to charts
-5. Decomposition of Customer Acquisition Cost (CAC)
-6. Changing from subscription model to message package model
-7. Enhanced upsell tracking
-8. Sales funnel visualization
-9. Tax optimization options
-10. Bulk editing features
-11. Detailed monthly breakdown table
-12. Data export functionality
-
-### Tax Calculation
-
-Important: Tax is calculated from total revenue (gross), not profit:
-```typescript
-const tax = totalRevenue > 0 ? totalRevenue * taxRate : 0;
+```
+src/
+├── components/              # Все React компоненты
+│   ├── FinancialDashboard.tsx  # Главный компонент дашборда
+│   ├── charts/             # Компоненты графиков
+│   │   ├── RevenueChart.tsx    # График доходов (Area Chart)
+│   │   ├── ClientsChart.tsx    # График клиентов (Area Chart)
+│   │   └── KPIRadarChart.tsx   # Радарный график KPI
+│   ├── panels/             # Панели управления
+│   │   ├── SettingsPanel.tsx      # Основные настройки
+│   │   ├── ClientsEditor.tsx      # Редактор клиентов
+│   │   ├── FOTEditor.tsx          # Редактор ФОТ
+│   │   ├── KeyMetricsPanel.tsx    # Ключевые метрики
+│   │   └── UpsellSettingsPanel.tsx # Настройки Upsell
+│   └── common/             # Переиспользуемые компоненты
+│       ├── MetricCard.tsx      # Карточка метрики
+│       ├── EditableCell.tsx    # Редактируемая ячейка
+│       ├── BulkInput.tsx       # Массовый ввод
+│       └── InfoTooltip.tsx     # Информационная подсказка
+├── contexts/               # React Context для управления состоянием
+│   └── FinancialContext.tsx   # Основной контекст финансовой модели
+├── hooks/                  # Кастомные React хуки
+│   ├── useFinancialModel.ts   # Хук для расчетов финансовой модели
+│   └── useFormatting.ts       # Хук для форматирования
+├── types/                  # TypeScript определения типов
+│   └── FinancialTypes.ts      # Все типы финансовой модели
+├── constants/              # Константы и конфигурация
+│   ├── DefaultValues.ts       # Дефолтные значения
+│   ├── FormatOptions.ts       # Опции форматирования
+│   └── Theme.ts               # Цветовая схема и темы
+├── tests/                  # Unit тесты
+│   ├── App.test.tsx
+│   ├── MetricCard.test.tsx
+│   ├── EditableCell.test.tsx
+│   ├── BulkInput.test.tsx
+│   ├── InfoTooltip.test.tsx
+│   └── SettingsGraphsInteraction.test.tsx
+└── App.tsx                 # Точка входа приложения
 ```
 
-### Known Issues
-- Multiple TypeScript warnings for implicit 'any' types in Recharts components
-- Missing useCallback dependencies 
-- Unused imports (LineChart, Scatter)
-- Most state setter functions are currently unused
+## Бизнес-модель и финансовая логика
 
-## Development Notes
+### Концепция продукта
+Приложение моделирует финансы SaaS-платформы для создания чат-ботов с:
+- **Единоразовой интеграцией** - настройка бота для клиента ($500 по умолчанию)
+- **Месячными подписками** - 5 тарифных планов ($75, $150, $250, $500, $1000)
+- **Пакетной системой сообщений** - каждый тариф включает определенное количество сообщений
+- **Дополнительными сообщениями** - оплата сверх лимита ($0.30 за сообщение)
+- **Upsell продажами** - дополнительные боты, функции, интеграции
 
-1. When modifying financial calculations, check the main calculation function around line 115-320 in FinancialDashboard.tsx
+### Тарифные планы
 
-2. The application uses environment variables to suppress TypeScript errors during development
+| Тариф | Цена/мес | Сообщений | Описание |
+|-------|----------|-----------|----------|
+| $75   | $75      | 105       | API-only (новый тариф) |
+| $150  | $150     | 210       | Базовый |
+| $250  | $250     | 350       | Стандарт |
+| $500  | $500     | 700       | Премиум |
+| $1000 | $1000    | 1400      | Корпоративный |
 
-3. Tailwind CSS configuration is minimal with no custom theme extensions
+### Финансовая модель (детально)
 
-4. The project follows a modular approach based on the change plan in `ПЛАН_ВНЕСЕНИЯ_ПРАВОК.md`, with each change being a self-contained task
+#### Источники доходов
+1. **Доход от интеграции** - единоразово при подключении нового клиента
+2. **Доход от подписок** - ежемесячно от активных клиентов 
+3. **Доход от дополнительных сообщений** - когда клиент превышает лимит
+4. **Upsell доходы** - 4 категории дополнительных продаж:
+   - Дополнительные боты (2% клиентов/мес × $100)
+   - Новые функции (1.5% клиентов/мес × $75)
+   - Расширение сообщений (3% клиентов/мес × $50)
+   - Дополнительные интеграции (0.8% клиентов/мес × $150)
 
-5. After each modification, verify that all calculations remain correct by comparing the results with previous values
+#### Структура расходов
+1. **API расходы** - 30% от выручки подписок и доп. сообщений
+2. **CAC (Customer Acquisition Cost)** - декомпозирован на:
+   - Комиссии партнерам (40% от внедрения)
+   - Зарплата отдела продаж (10% от общей выручки)
+   - Маркетинг и реклама (5% от внедрения)
+   - Генерация лидов ($20 за клиента)
+3. **Расходы на внедрение** - 20% от стоимости интеграции (макс. $200)
+4. **ФОТ (Фонд оплаты труда)** - помесячные расходы на персонал
+5. **Налоги** - оптимистичный (9% ПВТ) или пессимистичный (35%)
+
+#### Система сообщений
+- **Использование**: 80% от доступных сообщений по умолчанию
+- **Перенос**: 100% неиспользованных сообщений переносится на следующий месяц
+- **Доплата**: $0.30 за дополнительное сообщение при превышении лимита
+
+#### Churn Rate (отток клиентов)
+- По умолчанию: 2% в месяц
+- Применяется ко всем тарифам пропорционально
+- Влияет на расчет NRR (Net Revenue Retention)
+
+## Управление состоянием
+
+### Архитектура состояния
+Приложение использует **React Context API** вместо внешних библиотек управления состоянием:
+
+```typescript
+// Основной контекст
+FinancialContext -> FinancialProvider -> useFinancialContext()
+```
+
+### Ключевые состояния
+- **Базовые параметры**: налоговый режим, режим ФОТ, churn rate, API costs
+- **Клиентские данные**: количество новых клиентов по месяцам для каждого тарифа
+- **Ценовые параметры**: стоимость подписок, интеграции, дополнительных услуг
+- **Upsell настройки**: проценты и цены для каждого типа дополнительных продаж
+- **ФОТ данные**: оптимистичные и пессимистичные значения по месяцам
+
+### Расчеты финансовой модели
+Все расчеты производятся в хуке `useFinancialModel.ts`:
+1. **Месячные расчеты** - по каждому из 12 месяцев:
+   - Активные клиенты = предыдущие + новые - отток
+   - Доходы = интеграция + подписки + доп. сообщения + upsell
+   - Расходы = API + CAC + внедрение + ФОТ
+   - Прибыль = доходы - расходы - налоги
+
+2. **Итоговые метрики**:
+   - ARPU (Average Revenue Per User)
+   - LTV (Life Time Value) = ARPU × 36 месяцев
+   - CAC Payback Period = CAC / ARPU
+   - ROI = чистая прибыль / общие расходы × 100%
+   - NRR = (MRR + expansion - churn) / MRR × 100%
+
+## Компоненты пользовательского интерфейса
+
+### Навигация
+Приложение имеет табовую навигацию с 5 разделами:
+1. **Дашборд** - главная страница с графиками и метриками
+2. **Настройки** - основные параметры модели
+3. **Клиенты** - редактирование количества новых клиентов по месяцам
+4. **ФОТ** - настройка фонда оплаты труда
+5. **Upsell** - параметры дополнительных продаж
+
+### Компоненты графиков (Recharts)
+1. **RevenueChart** (AreaChart):
+   - Стековый график доходов по источникам
+   - Отображает: интеграция, подписки, доп. сообщения, накопительная прибыль
+   - Градиентные заливки и интерактивные подсказки
+
+2. **ClientsChart** (AreaChart):
+   - Стековый график активных клиентов по тарифам
+   - Цветовая дифференциация по тарифам
+   - Возможность показа общего количества или детализации
+
+3. **KPIRadarChart** (RadarChart):
+   - Радарная диаграмма ключевых KPI
+   - Метрики: ROI, NRR, маржа внедрения, CAC Payback, удержание клиентов
+   - Нормализация всех значений к шкале 0-100
+
+### Переиспользуемые компоненты
+1. **MetricCard** - карточки для отображения метрик:
+   - Поддержка трендов (up/down/neutral)
+   - Кастомные форматеры значений
+   - Тултипы и иконки
+   - Адаптивный размер (обычный/large)
+
+2. **EditableCell** - редактируемые числовые поля:
+   - Валидация min/max значений
+   - Поддержка дробных чисел (step)
+   - Автоматическое форматирование
+
+3. **BulkInput** - массовый ввод значений:
+   - Парсинг строки с числами (разделители: пробел, запятая, точка с запятой)
+   - Валидация количества введенных чисел
+   - Сворачиваемый интерфейс
+
+4. **InfoTooltip** - информационные подсказки:
+   - 4 позиции размещения (top/right/bottom/left)
+   - Кастомизация цветов
+   - Анимация появления/скрытия
+
+## Типизация (TypeScript)
+
+### Основные интерфейсы
+
+```typescript
+// Месячные данные (45+ полей)
+interface MonthlyData {
+  month: number;
+  // Клиенты
+  newClients75-1000: number;
+  activeClients75-1000: number;
+  churnClients75-1000: number;
+  // Доходы
+  integrationRevenue: number;
+  subscriptionRevenue: number;
+  additionalMessagesRevenue: number;
+  upsellRevenue: number;
+  // Расходы и прибыль
+  totalExpenses: number;
+  grossProfit: number;
+  netProfit: number;
+  // ... и много других полей
+}
+
+// Итоговые данные (35+ полей)
+interface TotalData {
+  totalRevenue: number;
+  totalExpenses: number;
+  totalNetProfit: number;
+  avgArpu: number;
+  ltv: number;
+  cacPerClient: number;
+  // ... и много других метрик
+}
+
+// Параметры модели
+interface FinancialModelParams {
+  taxMode: 'optimistic' | 'pessimistic';
+  fotMode: 'optimistic' | 'pessimistic';
+  churnRate: number;
+  apiCostPercentage: number;
+  // ... другие параметры
+}
+```
+
+## Стилизация и дизайн
+
+### Tailwind CSS конфигурация
+- **Минимальная настройка** без кастомных расширений
+- **Контент**: сканирование `./src/**/*.{js,jsx,ts,tsx}`
+- **Плагины**: не используются
+
+### Цветовая схема (Theme.ts)
+```typescript
+const theme = {
+  dark: '#0F172A',      // Темные заголовки
+  primary: '#6366F1',   // Основной индиго
+  secondary: '#EC4899', // Розовый акцент
+  accent: '#F59E0B',    // Желтый/оранжевый
+  success: '#10B981',   // Зеленый успех
+  warning: '#FBBF24',   // Желтое предупреждение
+  danger: '#EF4444',    // Красная опасность
+  // ... специальные цвета для графиков
+}
+```
+
+### Дизайн-система
+- **Карточки**: белый фон, скругленные углы (rounded-2xl), тени
+- **Кнопки**: индиго цвет, состояния hover/active
+- **Формы**: серая рамка, фокус на индиго
+- **Графики**: градиентные заливки, полупрозрачность
+- **Адаптивность**: grid-система Tailwind, breakpoints md/lg
+
+## Тестирование
+
+### Покрытие тестами
+Протестированы ключевые компоненты:
+- **App.test.tsx** - основное приложение
+- **MetricCard.test.tsx** - карточки метрик (детальное тестирование)
+- **EditableCell.test.tsx** - редактируемые поля (валидация)
+- **BulkInput.test.tsx** - массовый ввод
+- **InfoTooltip.test.tsx** - подсказки
+- **SettingsGraphsInteraction.test.tsx** - интеграционные тесты
+
+### Стратегия тестирования
+- **Моки Context API** для изолированного тестирования
+- **Моки Recharts** для тестирования графиков без рендеринга SVG
+- **Testing Library** подход: тестирование поведения, а не реализации
+- **data-testid** атрибуты для стабильного доступа к элементам
+
+### Настройка тестирования
+```json
+// package.json
+"scripts": {
+  "test": "react-scripts test"
+}
+```
+- **Jest** встроен в CRA
+- **@testing-library/react** для рендеринга компонентов
+- **@testing-library/jest-dom** для дополнительных матчеров
+
+## Форматирование и интернационализация
+
+### Форматирование чисел
+```typescript
+// FormatOptions.ts
+const CURRENCY_FORMAT_OPTIONS = {
+  style: 'currency',
+  currency: 'USD',
+  minimumFractionDigits: 0,
+  maximumFractionDigits: 0
+};
+
+// Использует русскую локаль: 'ru-RU'
+formatCurrency(1000) // "1 000 $"
+```
+
+### Пользовательский интерфейс
+- **Язык интерфейса**: Русский
+- **Валюта**: USD (доллары США)
+- **Числовой формат**: Русский (пробелы как разделители тысяч)
+
+## Производительность и оптимизация
+
+### React оптимизации
+- **useCallback** для функций расчета финансовой модели
+- **useMemo** для форматеров в хуках
+- **Context провайдер** вместо props drilling
+- **Lazy loading** не используется (SPA с одним роутом)
+
+### Расчеты
+- **Синхронные вычисления** - все расчеты происходят в основном потоке
+- **Пересчет при изменениях** - useEffect следит за всеми параметрами модели
+- **Кэширование** не используется - расчеты выполняются заново при каждом изменении
+
+## Известные ограничения и технический долг
+
+### TypeScript предупреждения
+- Неявные `any` типы в Recharts компонентах
+- Отсутствующие зависимости в useCallback
+- Неиспользуемые импорты (LineChart, Scatter)
+
+### Архитектурные решения
+- **Монолитный компонент** `FinancialDashboard` содержит всю бизнес-логику
+- **Отсутствие роутинга** - SPA с табовой навигацией
+- **Нет персистентности** - состояние не сохраняется между сессиями
+- **Синхронные расчеты** - может быть медленно при больших объемах данных
+
+### Потенциальные улучшения
+1. **Разделение компонентов** - выделить бизнес-логику из UI
+2. **Мемоизация расчетов** - избежать повторных вычислений
+3. **Валидация данных** - более строгая проверка пользовательского ввода
+4. **Сохранение состояния** - localStorage или внешнее API
+5. **Асинхронные расчеты** - Web Workers для тяжелых вычислений
+
+## Файловая структура и важные файлы
+
+### Конфигурационные файлы
+- **package.json** - зависимости и скрипты
+- **tsconfig.json** - настройки TypeScript (strict режим)
+- **tailwind.config.js** - конфигурация Tailwind CSS
+- **postcss.config.js** - обработка CSS
+- **.env** - переменные среды (подавление ошибок)
+
+### Ключевые файлы разработки
+- **src/App.tsx** - точка входа (9 строк)
+- **src/contexts/FinancialContext.tsx** - управление состоянием (512 строк)
+- **src/hooks/useFinancialModel.ts** - основная логика расчетов (318 строк)
+- **src/types/FinancialTypes.ts** - определения типов (316 строк)
+- **src/components/FinancialDashboard.tsx** - главный UI компонент (152 строки)
+
+### Статистика проекта
+- **Общие файлы**: ~50 файлов
+- **TypeScript файлы**: ~35 файлов
+- **Тестовые файлы**: 6 файлов
+- **Общий объем кода**: ~3000+ строк
+- **Размер зависимостей**: package-lock.json ~700KB
+
+Этот проект представляет собой полнофункциональную финансовую модель для SaaS-бизнеса с современной архитектурой React, полной типизацией TypeScript и комплексным тестированием.

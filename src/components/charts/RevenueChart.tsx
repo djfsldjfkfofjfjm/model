@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Legend, 
   ResponsiveContainer 
@@ -33,20 +33,41 @@ const RevenueChart: React.FC<RevenueChartProps> = ({
 }) => {
   const { monthlyData } = useFinancialContext();
   const { currency } = useFormatting();
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+    
+    checkIsMobile();
+    window.addEventListener('resize', checkIsMobile);
+    return () => window.removeEventListener('resize', checkIsMobile);
+  }, []);
   
   // Используем данные из пропсов, если они есть, иначе из контекста
   const data = propData || monthlyData;
   return (
-    <div className={`bg-white p-6 rounded-2xl shadow-sm border border-gray-100 ${className}`}>
-      <h2 className="text-lg font-medium text-gray-800 mb-4 flex items-center">
-        {title}
+    <div className={className}>
+      <div className="flex items-center mb-4">
+        <h3 className="text-lg font-medium text-gray-800">
+          {title}
+        </h3>
         <InfoTooltip 
           text="График показывает разбивку доходов по трем источникам: внедрение (единоразовое), подписка (ежемесячное) и дополнительные сообщения." 
           className="ml-2"
         />
-      </h2>
+      </div>
       <ResponsiveContainer width="100%" height={height}>
-        <AreaChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 10 }}>
+        <AreaChart 
+          data={data} 
+          margin={{ 
+            top: 20, 
+            right: isMobile ? 10 : 30, 
+            left: isMobile ? 10 : 20, 
+            bottom: isMobile ? 5 : 10 
+          }}
+        >
           <defs>
             <linearGradient id="revenueAreaGradient" x1="0" y1="0" x2="0" y2="1">
               <stop offset="5%" stopColor={theme.income.primary} stopOpacity={0.8}/>
@@ -90,8 +111,12 @@ const RevenueChart: React.FC<RevenueChartProps> = ({
           />
           <Legend 
             verticalAlign="top" 
-            height={36} 
+            height={isMobile ? 60 : 36} 
             iconType="circle"
+            wrapperStyle={{
+              fontSize: isMobile ? '12px' : '14px',
+              paddingBottom: '10px'
+            }}
           />
           <Area 
             type="monotone" 

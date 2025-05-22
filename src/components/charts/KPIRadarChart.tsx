@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   RadarChart, Radar, PolarGrid, PolarAngleAxis, PolarRadiusAxis,
-  ResponsiveContainer, Legend 
+  ResponsiveContainer 
 } from 'recharts';
 import { theme } from '../../constants/Theme';
 import { useFinancialContext } from '../../contexts/FinancialContext';
@@ -27,73 +27,85 @@ const KPIRadarChart: React.FC<KPIRadarChartProps> = ({
   className = ""
 }) => {
   const { totalData, churnRate } = useFinancialContext();
-  // Нормализуем данные для радарной диаграммы, все значения в диапазоне 0-100
-  const normalizedData = [
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+    
+    checkIsMobile();
+    window.addEventListener('resize', checkIsMobile);
+    return () => window.removeEventListener('resize', checkIsMobile);
+  }, []);
+  // Правильная структура данных для RadarChart - каждая метрика как отдельный объект
+  const radarData = [
     {
-      name: 'KPI',
-      // ROI: totalData.roi уже в процентах. Нормализуем к [0, 100] для радара.
-      "ROI": Math.min(100, Math.max(0, totalData.roi || 0)), 
-      // NRR: totalData.nrr уже в процентах. Нормализуем к [0, 100].
-      "NRR": Math.min(100, Math.max(0, totalData.nrr || 0)), 
-      // Маржа внедрения: totalData.implementationMargin уже в процентах. Нормализуем к [0, 100].
-      "Маржа внедрения": Math.min(100, Math.max(0, totalData.implementationMargin || 0)),
-      "CAC Payback": Math.min(100, Math.max(0, totalData.cacPaybackPeriod ? (12 - Math.min(12, totalData.cacPaybackPeriod)) / 12 * 100 : 0)), // Чем меньше месяцев, тем лучше (ближе к 100)
-      "Удержание клиентов": Math.min(100, Math.max(0, (20 - Math.min(20, churnRate || 0)) / 20 * 100)), // Чем меньше churn, тем лучше (ближе к 100)
+      subject: 'ROI',
+      value: Math.min(100, Math.max(0, totalData.roi || 0)),
+      fullMark: 100
+    },
+    {
+      subject: 'NRR',
+      value: Math.min(100, Math.max(0, totalData.nrr || 100)),
+      fullMark: 100
+    },
+    {
+      subject: 'Маржа внедрения',
+      value: Math.min(100, Math.max(0, totalData.implementationMargin || 0)),
+      fullMark: 100
+    },
+    {
+      subject: 'CAC Payback',
+      value: Math.min(100, Math.max(0, totalData.cacPaybackPeriod ? (12 - Math.min(12, totalData.cacPaybackPeriod)) / 12 * 100 : 0)),
+      fullMark: 100
+    },
+    {
+      subject: 'Удержание',
+      value: Math.min(100, Math.max(0, (20 - Math.min(20, churnRate || 0)) / 20 * 100)),
+      fullMark: 100
     }
   ];
 
   return (
-    <div className={`bg-white p-6 rounded-2xl shadow-sm border border-gray-100 mb-6 ${className}`}>
-      <h2 className="text-xl font-bold mb-6 text-indigo-600">
+    <div className={className}>
+      <h3 className="text-lg font-medium text-gray-800 mb-6">
         {title}
-      </h2>
+      </h3>
       <div className="flex flex-col lg:flex-row">
         <div className="lg:w-2/3">
           <ResponsiveContainer width="100%" height={height}>
-            <RadarChart cx="50%" cy="50%" outerRadius="80%" data={normalizedData}>
+            <RadarChart 
+              cx="50%" 
+              cy="50%" 
+              outerRadius={isMobile ? "60%" : "80%"} 
+              data={radarData}
+              margin={{ top: 20, right: 20, bottom: 20, left: 20 }}
+            >
               <PolarGrid stroke={theme.lightGray} />
-              <PolarAngleAxis dataKey="name" tick={false} />
-              <PolarRadiusAxis angle={30} domain={[0, 100]} tick={false} axisLine={false} />
+              <PolarAngleAxis 
+                dataKey="subject" 
+                tick={{ fill: theme.darkGray, fontSize: isMobile ? 10 : 12 }}
+              />
+              <PolarRadiusAxis 
+                angle={90} 
+                domain={[0, 100]} 
+                tick={false} 
+                axisLine={false} 
+              />
               <Radar 
-                name="ROI" 
-                dataKey="ROI" 
+                name="KPI" 
+                dataKey="value" 
                 stroke={theme.primary} 
                 fill={theme.primary} 
-                fillOpacity={0.5} 
+                fillOpacity={0.3}
+                strokeWidth={3}
+                dot={{ fill: theme.primary, strokeWidth: 2, r: 4 }}
               />
-              <Radar 
-                name="NRR" 
-                dataKey="NRR" 
-                stroke={theme.secondary} 
-                fill={theme.secondary} 
-                fillOpacity={0.5} 
-              />
-              <Radar 
-                name="Маржа внедрения" 
-                dataKey="Маржа внедрения" 
-                stroke={theme.accent} 
-                fill={theme.accent} 
-                fillOpacity={0.5} 
-              />
-              <Radar 
-                name="CAC Payback" 
-                dataKey="CAC Payback" 
-                stroke={theme.success} 
-                fill={theme.success} 
-                fillOpacity={0.5} 
-              />
-              <Radar 
-                name="Удержание клиентов" 
-                dataKey="Удержание клиентов" 
-                stroke={theme.warning} 
-                fill={theme.warning} 
-                fillOpacity={0.5} 
-              />
-              <Legend />
             </RadarChart>
           </ResponsiveContainer>
         </div>
-        <div className="lg:w-1/3 flex flex-col justify-center space-y-6">
+        <div className="lg:w-1/3 flex flex-col justify-center space-y-4 mt-6 lg:mt-0">
           <div className="bg-indigo-50 p-4 rounded-lg border border-indigo-100">
             <h3 className="text-sm font-medium text-indigo-700 mb-1">ROI</h3>
             <p className="text-2xl font-bold text-indigo-800">{totalData.roi ? Math.round(totalData.roi) : 0}%</p>

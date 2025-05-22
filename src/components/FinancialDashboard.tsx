@@ -8,8 +8,9 @@ import UpsellSettingsPanel from './panels/UpsellSettingsPanel';
 import RevenueChart from './charts/RevenueChart';
 import ClientsChart from './charts/ClientsChart';
 import KPIRadarChart from './charts/KPIRadarChart';
+import { QuickModelPresets, MonthlyResultsTable } from './common';
 import { useFormatting } from '../hooks';
-import { theme } from '../constants';
+// import { theme } from '../constants'; // Пока не используется
 
 const FinancialDashboard = (): ReactElement => {
   const { 
@@ -101,29 +102,42 @@ const FinancialDashboard = (): ReactElement => {
   );
   
   const renderDashboard = () => (
-    <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 mb-6">
+    <div className="space-y-6">
+      {/* Верхняя панель с ключевыми показателями */}
       <div className="lg:col-span-4">
         {renderSummaryHeader()}
       </div>
       
-      <div className="lg:col-span-2 bg-white shadow rounded-lg p-4 hover:shadow-lg transition-shadow duration-200">
-        <h2 className="text-xl font-semibold text-gray-800 mb-4">Выручка и прибыль</h2>
-        <RevenueChart data={monthlyData} />
+      {/* Графики - ПОЛНОШИРИННАЯ компоновка */}
+      <div className="space-y-8">
+        {/* Графики доходов - ПОЛНАЯ ШИРИНА */}
+        <div className="bg-white shadow-lg rounded-xl p-8 hover:shadow-xl transition-shadow duration-200">
+          <h2 className="text-2xl font-bold text-gray-800 mb-6">💰 Выручка и прибыль</h2>
+          <RevenueChart data={monthlyData} height={450} />
+        </div>
+        
+        {/* График клиентов - ПОЛНАЯ ШИРИНА */}
+        <div className="bg-white shadow-lg rounded-xl p-8 hover:shadow-xl transition-shadow duration-200">
+          <h2 className="text-2xl font-bold text-gray-800 mb-6">👥 Динамика клиентской базы</h2>
+          <ClientsChart data={monthlyData} height={450} />
+        </div>
+        
+        {/* Ключевые метрики - ПОЛНАЯ ШИРИНА */}
+        <div className="bg-white shadow-lg rounded-xl p-8 hover:shadow-xl transition-shadow duration-200">
+          <h2 className="text-2xl font-bold text-gray-800 mb-6">📊 Ключевые метрики</h2>
+          <KeyMetricsPanel />
+        </div>
+        
+        {/* KPI радар-график - ПОЛНАЯ ШИРИНА */}
+        <div className="bg-white shadow-lg rounded-xl p-8 hover:shadow-xl transition-shadow duration-200">
+          <h2 className="text-2xl font-bold text-gray-800 mb-6">🎯 Ключевые показатели эффективности (KPI)</h2>
+          <KPIRadarChart />
+        </div>
       </div>
-      
-      <div className="lg:col-span-2 bg-white shadow rounded-lg p-4 hover:shadow-lg transition-shadow duration-200">
-        <h2 className="text-xl font-semibold text-gray-800 mb-4">Клиенты</h2>
-        <ClientsChart data={monthlyData} />
-      </div>
-      
-      <div className="lg:col-span-2 bg-white shadow rounded-lg p-4 hover:shadow-lg transition-shadow duration-200">
-        <h2 className="text-xl font-semibold text-gray-800 mb-4">Ключевые метрики</h2>
-        <KeyMetricsPanel />
-      </div>
-      
-      <div className="lg:col-span-2 bg-white shadow rounded-lg p-4 hover:shadow-lg transition-shadow duration-200">
-        <h2 className="text-xl font-semibold text-gray-800 mb-4">Radar KPI</h2>
-        <KPIRadarChart />
+
+      {/* НОВАЯ СЕКЦИЯ: Детальная таблица результатов */}
+      <div className="mt-8">
+        <MonthlyResultsTable data={monthlyData} />
       </div>
     </div>
   );
@@ -139,7 +153,12 @@ const FinancialDashboard = (): ReactElement => {
         {renderTabs()}
         
         <div className="bg-white shadow rounded-b-lg p-6">
-          {activeTab === 'dashboard' && renderDashboard()}
+          {activeTab === 'dashboard' && (
+            <>
+              <QuickModelPresets className="mb-6" />
+              {renderDashboard()}
+            </>
+          )}
           {activeTab === 'settings' && <SettingsPanel />}
           {activeTab === 'clients' && <ClientsEditor />}
           {activeTab === 'fot' && <FOTEditor />}

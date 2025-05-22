@@ -1,6 +1,5 @@
 import React from 'react';
-import { EditableCell, InfoTooltip, BulkInput } from '../common';
-// import { DEFAULT_FOT_VALUES } from '../../constants/DefaultValues'; // Больше не нужно
+import { EditableCell, InfoTooltip, MassEditPanel } from '../common';
 import { useFinancialContext } from '../../contexts/FinancialContext';
 
 /**
@@ -49,10 +48,33 @@ const FOTEditor: React.FC<FOTEditorProps> = ({
         />
       </h3>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="space-y-6">
+        <MassEditPanel
+          count={12}
+          onApply={setFotOptimistic}
+          currentValues={fotOptimistic}
+          title="ФОТ - Оптимистичный сценарий"
+          tooltip="Редактирование расходов на ФОТ (зарплаты) по месяцам в оптимистичном варианте развития"
+          min={0}
+          max={10000}
+          step={100}
+        />
+        
+        <MassEditPanel
+          count={12}
+          onApply={setFotPessimistic}
+          currentValues={fotPessimistic}
+          title="ФОТ - Пессимистичный сценарий"
+          tooltip="Редактирование расходов на ФОТ (зарплаты) по месяцам в пессимистичном варианте развития"
+          min={0}
+          max={10000}
+          step={100}
+        />
+      </div>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
         <div>
-          <h4 className="text-sm font-medium text-indigo-700 mb-3">Оптимистичный вариант</h4>
-          <BulkInput count={12} onApply={setFotOptimistic} title="Массовый ввод" />
+          <h4 className="text-sm font-medium text-indigo-700 mb-3">Оптимистичный вариант - Детализация</h4>
           <div className="overflow-y-auto max-h-72">
             <table className="min-w-full divide-y divide-gray-200">
               <thead className="bg-gray-50">
@@ -89,8 +111,7 @@ const FOTEditor: React.FC<FOTEditorProps> = ({
         </div>
         
         <div>
-          <h4 className="text-sm font-medium text-rose-700 mb-3">Пессимистичный вариант</h4>
-          <BulkInput count={12} onApply={setFotPessimistic} title="Массовый ввод" />
+          <h4 className="text-sm font-medium text-rose-700 mb-3">Пессимистичный вариант - Детализация</h4>
           <div className="overflow-y-auto max-h-72">
             <table className="min-w-full divide-y divide-gray-200">
               <thead className="bg-gray-50">

@@ -1,5 +1,5 @@
 import React from 'react';
-import { EditableCell, InfoTooltip, BulkInput } from '../common';
+import { EditableCell, InfoTooltip, MassEditPanel } from '../common';
 import { useFinancialContext } from '../../contexts/FinancialContext';
 import { useFormatting } from '../../hooks';
 
@@ -45,20 +45,31 @@ const UpsellSettingsPanel: React.FC<UpsellSettingsPanelProps> = ({
         Upsell-параметры
       </h2>
 
-      {/* Массовое изменение всех параметров сразу */}
-      <BulkInput
+      {/* Панель массового редактирования всех параметров Upsell */}
+      <MassEditPanel
         count={8}
-        title="Массовый ввод всех параметров"
+        title="Массовое редактирование всех Upsell параметров"
+        tooltip="Быстрое изменение всех параметров Upsell: [ДопБоты_%, ДопБоты_$, НовФункции_%, НовФункции_$, РасширСообщ_%, РасширСообщ_$, ДопИнтегр_%, ДопИнтегр_$]"
+        currentValues={[
+          additionalBotsRate, additionalBotsPrice,
+          newFeaturesRate, newFeaturesPrice,
+          messageExpansionRate, messageExpansionPrice,
+          additionalIntegrationsRate, additionalIntegrationsPrice
+        ]}
         onApply={(values) => {
-          setAdditionalBotsRate(values[0]);
-          setAdditionalBotsPrice(values[1]);
-          setNewFeaturesRate(values[2]);
-          setNewFeaturesPrice(values[3]);
-          setMessageExpansionRate(values[4]);
-          setMessageExpansionPrice(values[5]);
-          setAdditionalIntegrationsRate(values[6]);
-          setAdditionalIntegrationsPrice(values[7]);
+          setAdditionalBotsRate(values[0] || 0);
+          setAdditionalBotsPrice(values[1] || 0);
+          setNewFeaturesRate(values[2] || 0);
+          setNewFeaturesPrice(values[3] || 0);
+          setMessageExpansionRate(values[4] || 0);
+          setMessageExpansionPrice(values[5] || 0);
+          setAdditionalIntegrationsRate(values[6] || 0);
+          setAdditionalIntegrationsPrice(values[7] || 0);
         }}
+        min={0}
+        max={500}
+        step={0.1}
+        className="mb-6"
       />
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
