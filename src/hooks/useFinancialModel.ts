@@ -64,14 +64,6 @@ export const useFinancialModel = (
 
     let breakevenMonthCalc: number | undefined = undefined;
 
-    // Отладка входных данных клиентов
-    console.log('useFinancialModel clients data:', {
-      newClients75: clients.newClients75,
-      newClients150: clients.newClients150,
-      newClients250: clients.newClients250,
-      newClients500: clients.newClients500,
-      newClients1000: clients.newClients1000,
-    });
 
     for (let month = 0; month < 12; month++) {
       const newClientsForMonth75 = clients.newClients75[month] || 0;
@@ -102,14 +94,6 @@ export const useFinancialModel = (
       activeClients500 = activeClients500 + newClientsForMonth500 - churnNum500;
       activeClients1000 = activeClients1000 + newClientsForMonth1000 - churnNum1000;
       
-      // Отладка для первых месяцев
-      if (month <= 3) {
-        console.log(`Month ${month + 1} clients:`, {
-          новые: { c75: newClientsForMonth75, c150: newClientsForMonth150, c250: newClientsForMonth250, c500: newClientsForMonth500, c1000: newClientsForMonth1000 },
-          активные: { c75: activeClients75, c150: activeClients150, c250: activeClients250, c500: activeClients500, c1000: activeClients1000 },
-          всего: activeClients75 + activeClients150 + activeClients250 + activeClients500 + activeClients1000
-        });
-      }
       
       const totalActiveClientsMonth = activeClients75 + activeClients150 + activeClients250 + activeClients500 + activeClients1000;
       const totalNewClientsMonth = newClientsForMonth75 + newClientsForMonth150 + newClientsForMonth250 + newClientsForMonth500 + newClientsForMonth1000;
@@ -239,15 +223,6 @@ export const useFinancialModel = (
         cumulativeRevenue, cumulativeExpenses, cumulativeProfit, // Added
       };
       
-      // Отладка данных перед добавлением в массив
-      if (month <= 2) {
-        console.log(`Добавляем данные месяца ${month + 1}:`, {
-          activeClients75: monthData.activeClients75,
-          activeClients150: monthData.activeClients150,
-          activeClients250: monthData.activeClients250,
-          totalActiveClients: monthData.totalActiveClients
-        });
-      }
       
       data.push(monthData);
       

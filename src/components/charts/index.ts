@@ -2,6 +2,7 @@
 export { default as RevenueChart } from './RevenueChart';
 export { default as ClientsChart } from './ClientsChart';
 export { default as KPIRadarChart } from './KPIRadarChart';
+export { default as ClientGrowthFunnel } from './ClientGrowthFunnel';
 
 // Экспорт интерфейсов для TypeScript
 export type { RevenueChartProps } from './RevenueChart';

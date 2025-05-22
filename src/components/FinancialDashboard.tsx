@@ -6,8 +6,8 @@ import FOTEditor from './panels/FOTEditor';
 import KeyMetricsPanel from './panels/KeyMetricsPanel';
 import UpsellSettingsPanel from './panels/UpsellSettingsPanel';
 import RevenueChart from './charts/RevenueChart';
-import ClientsChart from './charts/ClientsChart';
 import KPIRadarChart from './charts/KPIRadarChart';
+import ClientGrowthFunnel from './charts/ClientGrowthFunnel';
 import { QuickModelPresets, MonthlyResultsTable } from './common';
 import { useFormatting } from '../hooks';
 // import { theme } from '../constants'; // Пока не используется
@@ -116,11 +116,8 @@ const FinancialDashboard = (): ReactElement => {
           <RevenueChart data={monthlyData} height={450} />
         </div>
         
-        {/* График клиентов - ПОЛНАЯ ШИРИНА */}
-        <div className="bg-white shadow-lg rounded-xl p-8 hover:shadow-xl transition-shadow duration-200">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6">👥 Динамика клиентской базы</h2>
-          <ClientsChart data={monthlyData} height={450} />
-        </div>
+        {/* Воронка роста клиентов - ПОЛНАЯ ШИРИНА */}
+        <ClientGrowthFunnel height={450} />
         
         {/* Ключевые метрики - ПОЛНАЯ ШИРИНА */}
         <div className="bg-white shadow-lg rounded-xl p-8 hover:shadow-xl transition-shadow duration-200">
