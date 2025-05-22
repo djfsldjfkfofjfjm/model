@@ -48,9 +48,9 @@ const ClientsChart: React.FC<ClientsChartProps> = ({
   
   // Используем данные из пропсов, если они есть, иначе из контекста
   const rawData = propData || monthlyData;
-  
-  // Проверяем и фильтруем данные
-  const data = Array.isArray(rawData) ? rawData.filter(item => item && typeof item === 'object') : [];
+
+  // Убеждаемся, что данные представляют собой массив объектов
+  const data = Array.isArray(rawData) ? rawData : [];
   
   // Проверяем, есть ли хотя бы одно значение клиентов больше 0
   const hasClientData = data.some(item => 
