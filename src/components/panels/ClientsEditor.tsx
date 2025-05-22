@@ -1,5 +1,5 @@
 import React from 'react';
-import { EditableCell, InfoTooltip } from '../common';
+import { EditableCell, InfoTooltip, BulkInput } from '../common';
 import { useFinancialContext } from '../../contexts/FinancialContext';
 
 /**
@@ -52,6 +52,15 @@ const ClientsEditor: React.FC<ClientsEditorProps> = ({
           className="ml-2"
         />
       </h3>
+
+      {/* Кнопки для массового ввода значений по каждому тарифу */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 mb-4">
+        <BulkInput count={12} onApply={setNewClients75} title="$75" />
+        <BulkInput count={12} onApply={setNewClients150} title="$150" />
+        <BulkInput count={12} onApply={setNewClients250} title="$250" />
+        <BulkInput count={12} onApply={setNewClients500} title="$500" />
+        <BulkInput count={12} onApply={setNewClients1000} title="$1000" />
+      </div>
       
       <div className="overflow-x-auto">
         <table className="min-w-full divide-y divide-gray-200">

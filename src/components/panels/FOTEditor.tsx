@@ -1,5 +1,5 @@
 import React from 'react';
-import { EditableCell, InfoTooltip } from '../common';
+import { EditableCell, InfoTooltip, BulkInput } from '../common';
 // import { DEFAULT_FOT_VALUES } from '../../constants/DefaultValues'; // Больше не нужно
 import { useFinancialContext } from '../../contexts/FinancialContext';
 
@@ -48,10 +48,11 @@ const FOTEditor: React.FC<FOTEditorProps> = ({
           className="ml-2"
         />
       </h3>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <h4 className="text-sm font-medium text-indigo-700 mb-3">Оптимистичный вариант</h4>
+          <BulkInput count={12} onApply={setFotOptimistic} title="Массовый ввод" />
           <div className="overflow-y-auto max-h-72">
             <table className="min-w-full divide-y divide-gray-200">
               <thead className="bg-gray-50">
@@ -89,6 +90,7 @@ const FOTEditor: React.FC<FOTEditorProps> = ({
         
         <div>
           <h4 className="text-sm font-medium text-rose-700 mb-3">Пессимистичный вариант</h4>
+          <BulkInput count={12} onApply={setFotPessimistic} title="Массовый ввод" />
           <div className="overflow-y-auto max-h-72">
             <table className="min-w-full divide-y divide-gray-200">
               <thead className="bg-gray-50">
