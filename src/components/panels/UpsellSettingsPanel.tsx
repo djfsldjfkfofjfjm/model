@@ -1,5 +1,5 @@
 import React from 'react';
-import { EditableCell, InfoTooltip } from '../common';
+import { EditableCell, InfoTooltip, BulkInput } from '../common';
 import { useFinancialContext } from '../../contexts/FinancialContext';
 import { useFormatting } from '../../hooks';
 
@@ -44,6 +44,22 @@ const UpsellSettingsPanel: React.FC<UpsellSettingsPanelProps> = ({
       <h2 className="text-xl font-bold mb-6 text-indigo-600">
         Upsell-параметры
       </h2>
+
+      {/* Массовое изменение всех параметров сразу */}
+      <BulkInput
+        count={8}
+        title="Массовый ввод всех параметров"
+        onApply={(values) => {
+          setAdditionalBotsRate(values[0]);
+          setAdditionalBotsPrice(values[1]);
+          setNewFeaturesRate(values[2]);
+          setNewFeaturesPrice(values[3]);
+          setMessageExpansionRate(values[4]);
+          setMessageExpansionPrice(values[5]);
+          setAdditionalIntegrationsRate(values[6]);
+          setAdditionalIntegrationsPrice(values[7]);
+        }}
+      />
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="space-y-6">
