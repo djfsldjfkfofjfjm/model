@@ -6,6 +6,9 @@ export { default as BulkInput } from './BulkInput';
 export { default as MassEditPanel } from './MassEditPanel';
 export { default as QuickModelPresets } from './QuickModelPresets';
 export { default as MonthlyResultsTable } from './MonthlyResultsTable';
+export { default as GrowthCurveEditor } from './GrowthCurveEditor';
+export { default as SmartGrowthSliders } from './SmartGrowthSliders';
+export { default as VisualPatternInput } from './VisualPatternInput';
 
 // Экспорт интерфейсов для TypeScript
 export type { EditableCellProps } from './EditableCell';

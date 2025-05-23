@@ -25,6 +25,7 @@ import {
 
 const defaultModelParams: FinancialModelParams = {
   taxMode: DEFAULT_BASE_PARAMS.taxMode,
+  customTaxRate: 15,
   fotMode: DEFAULT_BASE_PARAMS.fotMode,
   apiCostPercentage: DEFAULT_INTEGRATION_PARAMS.apiCostPercentage,
   churnRate: DEFAULT_BASE_PARAMS.churnRate,

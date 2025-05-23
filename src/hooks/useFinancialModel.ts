@@ -155,25 +155,54 @@ export const useFinancialModel = (
       
       const apiCostsMonth = (subscriptionRevenueMonth + additionalMessagesRevenueMonth) * (params.apiCostPercentage / 100);
 
-      // CAC без учета глобального коэффициента
-      const partnerCommissionsMonth = integrationRevenueMonth * (params.partnerCommissionRate / 100);
-      const salesTeamCostsMonth = totalRevenueMonth * (params.salesTeamPercentage / 100);
-      const marketingCostsMonth = integrationRevenueMonth * (params.marketingPercentage / 100);
-      const leadGenerationCostsMonth = totalNewClientsMonth * params.leadGenerationPerClient;
+      // CAC с учетом распределения каналов
+      const directChannelRatio = params.channelDistribution.direct / 100;
+      const partnerChannelRatio = params.channelDistribution.partner / 100;
+      
+      // Партнёрский канал
+      const partnerClientsMonth = Math.round(totalNewClientsMonth * partnerChannelRatio);
+      // Комиссия партнерам от выручки клиентов, которых они привели
+      const partnerClientsRevenue = (
+        Math.round(newClientsForMonth75 * partnerChannelRatio) * clients.subscriptionPrice75 +
+        Math.round(newClientsForMonth150 * partnerChannelRatio) * clients.subscriptionPrice150 +
+        Math.round(newClientsForMonth250 * partnerChannelRatio) * clients.subscriptionPrice250 +
+        Math.round(newClientsForMonth500 * partnerChannelRatio) * clients.subscriptionPrice500 +
+        Math.round(newClientsForMonth1000 * partnerChannelRatio) * clients.subscriptionPrice1000
+      );
+      const partnerCommissionsMonth = (integrationRevenueMonth * partnerChannelRatio + partnerClientsRevenue) * (params.partnerCommissionRate / 100);
+      const partnerLeadCostsMonth = partnerClientsMonth * params.partnerLeadCost;
+      
+      // Прямой канал
+      const directClientsMonth = Math.round(totalNewClientsMonth * directChannelRatio);
+      const salesTeamCostsMonth = totalRevenueMonth * (params.directSalesPercentage / 100) * directChannelRatio;
+      const marketingCostsMonth = totalRevenueMonth * (params.directMarketingPercentage / 100) * directChannelRatio;
+      const directLeadCostsMonth = directClientsMonth * params.directLeadCost;
+      
+      const leadGenerationCostsMonth = directLeadCostsMonth + partnerLeadCostsMonth;
       const calculatedImplCostsMonth = params.integrationPrice * (params.implementationPercentage / 100);
       const implementationCostsPerClientMonth = Math.min(calculatedImplCostsMonth, params.maxImplementationCost);
       const implementationCostsMonth = totalNewClientsMonth * implementationCostsPerClientMonth;
-      const fotCostsMonth = params.fotMode === 'optimistic' 
+      // Декомпозиция ФОТ (60% разработка, 40% продажи)
+      const fotDevelopmentRatio = 0.6;
+      const fotSalesRatio = 0.4;
+      
+      const totalFotMonth = params.fotMode === 'optimistic' 
         ? params.fotOptimistic[month] 
         : params.fotPessimistic[month];
+      
+      const fotDevelopmentMonth = totalFotMonth * fotDevelopmentRatio;
+      const fotSalesMonth = totalFotMonth * fotSalesRatio;
+      const fotCostsMonth = totalFotMonth;
       const cacCostsMonth = partnerCommissionsMonth + salesTeamCostsMonth + marketingCostsMonth + leadGenerationCostsMonth;
       const totalExpensesMonth = apiCostsMonth + cacCostsMonth + implementationCostsMonth + fotCostsMonth;
       
       const grossProfitMonth = totalRevenueMonth - totalExpensesMonth;
       const taxRateMonth = params.taxMode === 'optimistic' 
         ? DEFAULT_TAX_RATES.optimistic 
-        : DEFAULT_TAX_RATES.pessimistic;
-      // ИСПРАВЛЕНИЕ: Налог рассчитывается с выручки, а не с прибыли
+        : params.taxMode === 'pessimistic'
+        ? DEFAULT_TAX_RATES.pessimistic
+        : params.customTaxRate;
+      // Налог рассчитывается от выручки (не от прибыли!)
       const taxMonth = totalRevenueMonth > 0 ? totalRevenueMonth * (taxRateMonth / 100) : 0;
       const netProfitMonth = grossProfitMonth - taxMonth;
       
@@ -187,13 +216,28 @@ export const useFinancialModel = (
 
       let nrrMonth = 0;
       if (month > 0 && previousMonthMRR > 0) {
-        nrrMonth = ((previousMonthMRR + upsellRevenueMonth - churnedRevenueMonthly) / previousMonthMRR) * 100;
+        // NRR = (Начальный MRR + Expansion - Churn - Downgrades) / Начальный MRR * 100
+        // В нашем случае downgrades нет, только expansion (upsell) и churn
+        const currentMRR = subscriptionRevenueMonth;
+        const expansionRevenue = upsellRevenueMonth + additionalMessagesRevenueMonth;
+        nrrMonth = ((previousMonthMRR + expansionRevenue - churnedRevenueMonthly) / previousMonthMRR) * 100;
       }
       previousMonthMRR = subscriptionRevenueMonth;
       
       const monthData = {
         month: month + 1,
         newClients75: newClientsForMonth75, newClients150: newClientsForMonth150, newClients250: newClientsForMonth250, newClients500: newClientsForMonth500, newClients1000: newClientsForMonth1000,
+        // Распределение новых клиентов по каналам
+        newClients75Direct: Math.round(newClientsForMonth75 * directChannelRatio),
+        newClients75Partner: Math.round(newClientsForMonth75 * partnerChannelRatio),
+        newClients150Direct: Math.round(newClientsForMonth150 * directChannelRatio),
+        newClients150Partner: Math.round(newClientsForMonth150 * partnerChannelRatio),
+        newClients250Direct: Math.round(newClientsForMonth250 * directChannelRatio),
+        newClients250Partner: Math.round(newClientsForMonth250 * partnerChannelRatio),
+        newClients500Direct: Math.round(newClientsForMonth500 * directChannelRatio),
+        newClients500Partner: Math.round(newClientsForMonth500 * partnerChannelRatio),
+        newClients1000Direct: Math.round(newClientsForMonth1000 * directChannelRatio),
+        newClients1000Partner: Math.round(newClientsForMonth1000 * partnerChannelRatio),
         activeClients75, activeClients150, activeClients250, activeClients500, activeClients1000,
         totalActiveClients: totalActiveClientsMonth, totalNewClients: totalNewClientsMonth,
         churnClients75: churnNum75, churnClients150: churnNum150, churnClients250: churnNum250, churnClients500: churnNum500, churnClients1000: churnNum1000,
@@ -211,7 +255,16 @@ export const useFinancialModel = (
         additionalIntegrationsClients: additionalIntegrationsClientsMonth, additionalIntegrationsRevenue: additionalIntegrationsRevenueMonth,
         apiCosts: apiCostsMonth, cacCosts: cacCostsMonth,
         partnerCommissions: partnerCommissionsMonth, salesTeamCosts: salesTeamCostsMonth, marketingCosts: marketingCostsMonth, leadGenerationCosts: leadGenerationCostsMonth,
+        // Декомпозированные расходы по каналам
+        directSalesCosts: salesTeamCostsMonth,
+        directMarketingCosts: marketingCostsMonth,
+        directLeadGenerationCosts: directLeadCostsMonth,
+        partnerCommissionCosts: partnerCommissionsMonth,
+        partnerLeadGenerationCosts: partnerLeadCostsMonth,
         implementationCosts: implementationCostsMonth, fotCosts: fotCostsMonth,
+        // Декомпозированный ФОТ
+        fotDevelopmentCosts: fotDevelopmentMonth,
+        fotSalesCosts: fotSalesMonth,
         totalExpenses: totalExpensesMonth,
         grossProfit: grossProfitMonth, tax: taxMonth, netProfit: netProfitMonth,
         arpu: totalActiveClientsMonth > 0 ? subscriptionRevenueMonth / totalActiveClientsMonth : 0,
@@ -250,7 +303,9 @@ export const useFinancialModel = (
     const avgMonthlyProfitCalc = totalNetProfitCalc / 12;
     
     const avgArpuCalc = data.length > 0 ? data.reduce((sum, month) => sum + (month.arpu || 0), 0) / data.length : 0;
-    const ltvCalc = avgArpuCalc * 36; // LTV period is 36 months
+    // LTV с учетом churn rate: LTV = ARPU / (churn rate per month)
+    const monthlyChurnRate = params.churnRate / 100;
+    const ltvCalc = monthlyChurnRate > 0 ? avgArpuCalc / monthlyChurnRate : avgArpuCalc * 36;
     
     const totalNewClientsAgg = data.reduce((sum, month) => sum + month.totalNewClients, 0);
     const cacPerClientCalc = totalNewClientsAgg > 0 ? totalCacCostsCalc / totalNewClientsAgg : 0;

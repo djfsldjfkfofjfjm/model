@@ -1,7 +1,6 @@
 import React from 'react';
 import { EditableCell } from '../common';
 import { useFinancialContext } from '../../contexts/FinancialContext';
-import { DEFAULT_TAX_RATES } from '../../constants/DefaultValues';
 
 /**
  * Интерфейс свойств компонента SettingsPanel
@@ -20,6 +19,8 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({
   const {
     taxMode,
     setTaxMode,
+    customTaxRate,
+    setCustomTaxRate,
     fotMode,
     setFotMode,
     subscriptionPrice75,
@@ -40,11 +41,6 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({
     setChurnRate
   } = useFinancialContext();
   
-  // Используем константы для налоговых ставок, так как они не меняются
-  const taxRateOptimistic = DEFAULT_TAX_RATES.optimistic;
-  const taxRatePessimistic = DEFAULT_TAX_RATES.pessimistic;
-  const setTaxRateOptimistic = () => {}; // Пустая функция, так как мы не меняем налоговые ставки
-  const setTaxRatePessimistic = () => {};
   return (
     <div className={`bg-white p-6 rounded-2xl shadow-sm border border-gray-100 mb-6 ${className}`}>
       <h2 className="text-xl font-bold mb-6 text-indigo-600">
@@ -54,7 +50,7 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({
         {/* Блок настроек налогового режима */}
         <div className="bg-gray-50 p-6 rounded-xl">
           <label className="block text-sm font-medium text-gray-700 mb-2">Налоговый режим</label>
-          <div className="flex space-x-2">
+          <div className="flex flex-wrap gap-2">
             <button
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                 taxMode === 'optimistic'
@@ -77,24 +73,34 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({
             >
               Пессимистичный (35%)
             </button>
+            <button
+              className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                taxMode === 'custom'
+                  ? 'bg-indigo-500 text-white shadow-sm'
+                  : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
+              }`}
+              onClick={() => setTaxMode('custom')}
+              data-testid="btn-tax-custom"
+            >
+              Свой процент
+            </button>
           </div>
-          <div className="mt-2">
-            <label className="block text-xs text-gray-500 mb-1">Оптимистичная ставка (%)</label>
-            <EditableCell 
-              value={taxRateOptimistic} 
-              onChange={setTaxRateOptimistic} 
-              min={0}
-              max={100}
-            />
-          </div>
-          <div className="mt-2">
-            <label className="block text-xs text-gray-500 mb-1">Пессимистичная ставка (%)</label>
-            <EditableCell 
-              value={taxRatePessimistic} 
-              onChange={setTaxRatePessimistic} 
-              min={0}
-              max={100}
-            />
+          {taxMode === 'custom' && (
+            <div className="mt-4">
+              <label className="block text-xs text-gray-500 mb-1">Свой процент налога (%)</label>
+              <EditableCell 
+                value={customTaxRate} 
+                onChange={setCustomTaxRate} 
+                min={0}
+                max={100}
+                step={0.1}
+              />
+            </div>
+          )}
+          <div className="mt-2 text-xs text-gray-500">
+            {taxMode === 'optimistic' && 'Налоговая ставка: 9%'}
+            {taxMode === 'pessimistic' && 'Налоговая ставка: 35%'}
+            {taxMode === 'custom' && `Налоговая ставка: ${customTaxRate}%`}
           </div>
         </div>
         

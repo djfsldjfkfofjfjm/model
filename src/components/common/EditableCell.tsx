@@ -18,6 +18,8 @@ export interface EditableCellProps {
   className?: string;
   /** data-testid для input элемента */
   'data-testid'?: string;
+  /** Заблокировать редактирование */
+  disabled?: boolean;
 }
 
 /**
@@ -30,7 +32,8 @@ const EditableCell: React.FC<EditableCellProps> = ({
   max = Infinity,
   step = 1,
   className = "",
-  'data-testid': dataTestId
+  'data-testid': dataTestId,
+  disabled = false
 }) => {
   // Обработчик изменения ввода
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -50,7 +53,8 @@ const EditableCell: React.FC<EditableCellProps> = ({
       min={min}
       max={maxProp}
       step={step}
-      className={`w-full rounded-md border border-gray-300 p-2 text-gray-800 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-center ${className}`}
+      disabled={disabled}
+      className={`w-full rounded-md border border-gray-300 p-2 text-gray-800 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-center ${disabled ? 'bg-gray-100 cursor-not-allowed opacity-60' : ''} ${className}`}
       data-testid={dataTestId}
     />
   );

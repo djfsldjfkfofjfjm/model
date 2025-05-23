@@ -25,6 +25,19 @@ const MonthlyResultsTable: React.FC<MonthlyResultsTableProps> = ({
   const [sortBy, setSortBy] = useState<'month' | 'revenue' | 'profit' | 'clients'>('month');
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
 
+  // Защита от пустых данных
+  if (!data || data.length === 0) {
+    return (
+      <div className={`bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden p-8 text-center ${className}`}>
+        <div className="text-gray-500">
+          <div className="text-4xl mb-4">📊</div>
+          <h3 className="text-lg font-medium mb-2">Нет данных для отображения</h3>
+          <p className="text-sm">Настройте параметры модели для генерации отчетов</p>
+        </div>
+      </div>
+    );
+  }
+
   // Фильтрация данных
   const filteredData = data.filter(month => {
     if (activeFilter === 'all') return true;

@@ -2,9 +2,14 @@ import React, { ReactElement } from 'react';
 import { useFinancialContext } from '../contexts/FinancialContext';
 import SettingsPanel from './panels/SettingsPanel';
 import ClientsEditor from './panels/ClientsEditor';
+import ModernClientsEditor from './panels/ModernClientsEditor';
+import ModernFOTEditor from './panels/ModernFOTEditor';
+import ModernUpsellEditor from './panels/ModernUpsellEditor';
 import FOTEditor from './panels/FOTEditor';
 import KeyMetricsPanel from './panels/KeyMetricsPanel';
 import UpsellSettingsPanel from './panels/UpsellSettingsPanel';
+import AcquisitionChannelsEditor from './panels/AcquisitionChannelsEditor';
+import ChannelDistributionSettings from './panels/ChannelDistributionSettings';
 import RevenueChart from './charts/RevenueChart';
 import KPIRadarChart from './charts/KPIRadarChart';
 import ClientGrowthFunnel from './charts/ClientGrowthFunnel';
@@ -54,6 +59,12 @@ const FinancialDashboard = (): ReactElement => {
         onClick={() => setActiveTab('upsell')}
       >
         Upsell
+      </button>
+      <button 
+        className={`px-4 py-2 font-medium rounded-t-lg transition-colors duration-200 ${activeTab === 'channels' ? 'bg-indigo-50 text-indigo-600' : 'hover:bg-gray-100'}`}
+        onClick={() => setActiveTab('channels')}
+      >
+        Каналы
       </button>
     </div>
   );
@@ -157,9 +168,15 @@ const FinancialDashboard = (): ReactElement => {
             </>
           )}
           {activeTab === 'settings' && <SettingsPanel />}
-          {activeTab === 'clients' && <ClientsEditor />}
-          {activeTab === 'fot' && <FOTEditor />}
-          {activeTab === 'upsell' && <UpsellSettingsPanel />}
+          {activeTab === 'clients' && <ModernClientsEditor />}
+          {activeTab === 'fot' && <ModernFOTEditor />}
+          {activeTab === 'upsell' && <ModernUpsellEditor />}
+          {activeTab === 'channels' && (
+            <div className="space-y-6">
+              <AcquisitionChannelsEditor />
+              <ChannelDistributionSettings />
+            </div>
+          )}
         </div>
       </div>
     </div>

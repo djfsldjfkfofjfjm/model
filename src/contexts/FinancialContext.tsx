@@ -28,6 +28,8 @@ interface FinancialContextType {
   // Базовые параметры
   taxMode: TaxMode;
   setTaxMode: (mode: TaxMode) => void;
+  customTaxRate: number;
+  setCustomTaxRate: (rate: number) => void;
   fotMode: FOTMode;
   setFotMode: (mode: FOTMode) => void;
   apiCostPercentage: number;
@@ -121,6 +123,22 @@ interface FinancialContextType {
   additionalIntegrationsPrice: number; 
   setAdditionalIntegrationsPrice: (price: number) => void;
   
+  // Распределение каналов
+  channelDistribution: { direct: number; partner: number };
+  setChannelDistribution: (distribution: { direct: number; partner: number }) => void;
+  
+  // Параметры прямого канала
+  directSalesPercentage: number;
+  setDirectSalesPercentage: (percentage: number) => void;
+  directMarketingPercentage: number;
+  setDirectMarketingPercentage: (percentage: number) => void;
+  directLeadCost: number;
+  setDirectLeadCost: (cost: number) => void;
+  
+  // Параметры партнерского канала (partnerCommissionRate уже есть)
+  partnerLeadCost: number;
+  setPartnerLeadCost: (cost: number) => void;
+  
   // Методы
   calculateFinancialModel: () => void;
   
@@ -149,6 +167,7 @@ export const FinancialProvider: React.FC<FinancialProviderProps> = ({ children }
   
   // Базовые параметры модели
   const [taxMode, setTaxModeBase] = useState<TaxMode>(DEFAULT_BASE_PARAMS.taxMode);
+  const [customTaxRate, setCustomTaxRateBase] = useState<number>(15); // Дефолтное значение 15%
   const [fotMode, setFotModeBase] = useState<FOTMode>(DEFAULT_BASE_PARAMS.fotMode);
   const [apiCostPercentage, setApiCostPercentageBase] = useState(DEFAULT_INTEGRATION_PARAMS.apiCostPercentage);
   const [churnRate, setChurnRateBase] = useState(DEFAULT_BASE_PARAMS.churnRate);
@@ -161,6 +180,11 @@ export const FinancialProvider: React.FC<FinancialProviderProps> = ({ children }
   // Обертки для сеттеров, которые запускают пересчет
   const setTaxMode = (mode: TaxMode) => {
     setTaxModeBase(mode);
+    // calculateFinancialModel(); // Вызываем напрямую
+  };
+  
+  const setCustomTaxRate = (rate: number) => {
+    setCustomTaxRateBase(rate);
     // calculateFinancialModel(); // Вызываем напрямую
   };
   
@@ -309,6 +333,13 @@ export const FinancialProvider: React.FC<FinancialProviderProps> = ({ children }
   const [messageExpansionPrice, setMessageExpansionPriceBase] = useState(DEFAULT_UPSELL_PARAMS.messageExpansionPrice);
   const [additionalIntegrationsRate, setAdditionalIntegrationsRateBase] = useState(DEFAULT_UPSELL_PARAMS.additionalIntegrationsRate);
   const [additionalIntegrationsPrice, setAdditionalIntegrationsPriceBase] = useState(DEFAULT_UPSELL_PARAMS.additionalIntegrationsPrice);
+  
+  // Распределение каналов и параметры
+  const [channelDistribution, setChannelDistributionBase] = useState({ direct: 60, partner: 40 });
+  const [directSalesPercentage, setDirectSalesPercentageBase] = useState(10);
+  const [directMarketingPercentage, setDirectMarketingPercentageBase] = useState(5);
+  const [directLeadCost, setDirectLeadCostBase] = useState(30);
+  const [partnerLeadCost, setPartnerLeadCostBase] = useState(10);
 
   const setAdditionalBotsRate = (rate: number) => { setAdditionalBotsRateBase(rate); /* calculateFinancialModel(); */ };
   const setAdditionalBotsPrice = (price: number) => { setAdditionalBotsPriceBase(price); /* calculateFinancialModel(); */ };
@@ -319,9 +350,17 @@ export const FinancialProvider: React.FC<FinancialProviderProps> = ({ children }
   const setAdditionalIntegrationsRate = (rate: number) => { setAdditionalIntegrationsRateBase(rate); /* calculateFinancialModel(); */ };
   const setAdditionalIntegrationsPrice = (price: number) => { setAdditionalIntegrationsPriceBase(price); /* calculateFinancialModel(); */ };
   
+  // Обертки для каналов
+  const setChannelDistribution = (distribution: { direct: number; partner: number }) => { setChannelDistributionBase(distribution); /* calculateFinancialModel(); */ };
+  const setDirectSalesPercentage = (percentage: number) => { setDirectSalesPercentageBase(percentage); /* calculateFinancialModel(); */ };
+  const setDirectMarketingPercentage = (percentage: number) => { setDirectMarketingPercentageBase(percentage); /* calculateFinancialModel(); */ };
+  const setDirectLeadCost = (cost: number) => { setDirectLeadCostBase(cost); /* calculateFinancialModel(); */ };
+  const setPartnerLeadCost = (cost: number) => { setPartnerLeadCostBase(cost); /* calculateFinancialModel(); */ };
+  
   // Создаем модель на основе параметров
   const modelParams: FinancialModelParams = {
     taxMode,
+    customTaxRate,
     fotMode,
     apiCostPercentage,
     churnRate,
@@ -336,8 +375,13 @@ export const FinancialProvider: React.FC<FinancialProviderProps> = ({ children }
     messageUsageRate,
     carryOverPercentage,
     additionalMessagePrice,
-    fotOptimistic, // Added
-    fotPessimistic // Added
+    fotOptimistic,
+    fotPessimistic,
+    channelDistribution,
+    directSalesPercentage,
+    directMarketingPercentage,
+    directLeadCost,
+    partnerLeadCost
   };
   
   const clientsData: ClientsData = {
@@ -379,19 +423,20 @@ export const FinancialProvider: React.FC<FinancialProviderProps> = ({ children }
   // Запускаем расчет при изменении любого из параметров модели
   useEffect(() => {
     calculateFinancialModel();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     // Все состояния, от которых зависит модель, должны быть здесь
-    taxMode, fotMode, apiCostPercentage, churnRate, maxImplementationCost,
-    fotOptimistic, fotPessimistic, // Добавлено
+    taxMode, customTaxRate, fotMode, apiCostPercentage, churnRate, maxImplementationCost,
+    fotOptimistic, fotPessimistic,
     newClients75, newClients150, newClients250, newClients500, newClients1000,
     subscriptionPrice75, subscriptionPrice150, subscriptionPrice250, subscriptionPrice500, subscriptionPrice1000,
     messages75, messages150, messages250, messages500, messages1000,
     messageUsageRate, carryOverPercentage, additionalMessagePrice,
     integrationPrice, cacPercentage, implementationPercentage,
-    partnerCommissionRate, salesTeamPercentage, marketingPercentage, leadGenerationPerClient,
+    partnerCommissionRate,
     additionalBotsRate, additionalBotsPrice, newFeaturesRate, newFeaturesPrice,
     messageExpansionRate, messageExpansionPrice, additionalIntegrationsRate, additionalIntegrationsPrice,
-    calculateFinancialModel // Добавляем сам calculateFinancialModel, так как он часть useFinancialModel
+    channelDistribution, directSalesPercentage, directMarketingPercentage, directLeadCost, partnerLeadCost
   ]);
   
   const contextValue: FinancialContextType = {
@@ -402,6 +447,8 @@ export const FinancialProvider: React.FC<FinancialProviderProps> = ({ children }
     // Базовые параметры
     taxMode,
     setTaxMode,
+    customTaxRate,
+    setCustomTaxRate,
     fotMode,
     setFotMode,
     apiCostPercentage,
@@ -494,6 +541,18 @@ export const FinancialProvider: React.FC<FinancialProviderProps> = ({ children }
     setAdditionalIntegrationsRate,
     additionalIntegrationsPrice,
     setAdditionalIntegrationsPrice,
+    
+    // Распределение каналов
+    channelDistribution,
+    setChannelDistribution,
+    directSalesPercentage,
+    setDirectSalesPercentage,
+    directMarketingPercentage,
+    setDirectMarketingPercentage,
+    directLeadCost,
+    setDirectLeadCost,
+    partnerLeadCost,
+    setPartnerLeadCost,
     
     // Методы
     calculateFinancialModel,

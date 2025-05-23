@@ -5,12 +5,17 @@
 /**
  * Модель налогообложения
  */
-export type TaxMode = 'optimistic' | 'pessimistic';
+export type TaxMode = 'optimistic' | 'pessimistic' | 'custom';
 
 /**
  * Модель ФОТ
  */
 export type FOTMode = 'optimistic' | 'pessimistic';
+
+/**
+ * Канал привлечения клиентов
+ */
+export type AcquisitionChannel = 'direct' | 'partner';
 
 /**
  * Тренд изменения метрик
@@ -35,6 +40,28 @@ export interface MonthlyData {
   newClients500: number;
   /** Новые клиенты тарифа $1000 */
   newClients1000: number;
+  
+  // Новые клиенты по каналам привлечения
+  /** Новые клиенты $75 - прямые продажи */
+  newClients75Direct: number;
+  /** Новые клиенты $75 - партнёры */
+  newClients75Partner: number;
+  /** Новые клиенты $150 - прямые продажи */
+  newClients150Direct: number;
+  /** Новые клиенты $150 - партнёры */
+  newClients150Partner: number;
+  /** Новые клиенты $250 - прямые продажи */
+  newClients250Direct: number;
+  /** Новые клиенты $250 - партнёры */
+  newClients250Partner: number;
+  /** Новые клиенты $500 - прямые продажи */
+  newClients500Direct: number;
+  /** Новые клиенты $500 - партнёры */
+  newClients500Partner: number;
+  /** Новые клиенты $1000 - прямые продажи */
+  newClients1000Direct: number;
+  /** Новые клиенты $1000 - партнёры */
+  newClients1000Partner: number;
   /** Общее количество потерянных клиентов за месяц */
   churnedClients: number;
   /** Потерянные клиенты тарифа $75 */
@@ -99,10 +126,26 @@ export interface MonthlyData {
   marketingCosts: number;
   /** Расходы на генерацию лидов */
   leadGenerationCosts: number;
+  
+  // Расходы по каналам привлечения
+  /** Расходы на прямые продажи */
+  directSalesCosts: number;
+  /** Расходы на прямой маркетинг */
+  directMarketingCosts: number;
+  /** Расходы на лиды прямого канала */
+  directLeadGenerationCosts: number;
+  /** Комиссии партнёрам */
+  partnerCommissionCosts: number;
+  /** Расходы на лиды партнёрского канала */
+  partnerLeadGenerationCosts: number;
   /** Расходы на внедрение */
   implementationCosts: number;
   /** Расходы на ФОТ */
   fotCosts: number;
+  /** Расходы на ФОТ разработки */
+  fotDevelopmentCosts: number;
+  /** Расходы на ФОТ продаж */
+  fotSalesCosts: number;
   /** Общие расходы */
   totalExpenses: number;
   
@@ -261,6 +304,7 @@ export interface TotalData {
  */
 export interface FinancialModelParams {
   taxMode: TaxMode;
+  customTaxRate: number;
   fotMode: FOTMode;
   apiCostPercentage: number;
   churnRate: number;
@@ -269,14 +313,39 @@ export interface FinancialModelParams {
   cacPercentage: number;
   implementationPercentage: number;
   partnerCommissionRate: number;
-  salesTeamPercentage: number;
-  marketingPercentage: number;
-  leadGenerationPerClient: number;
+  salesTeamPercentage?: number; // deprecated
+  marketingPercentage?: number; // deprecated
+  leadGenerationPerClient?: number; // deprecated
   messageUsageRate: number;
   carryOverPercentage: number;
   additionalMessagePrice: number;
   fotOptimistic: number[]; // Added for editable FOT
   fotPessimistic: number[]; // Added for editable FOT
+  // Параметры каналов
+  channelDistribution: { direct: number; partner: number };
+  directSalesPercentage: number;
+  directMarketingPercentage: number;
+  directLeadCost: number;
+  partnerLeadCost: number;
+  // Декомпозированный ФОТ
+  fotDevelopmentOptimistic?: number[];
+  fotDevelopmentPessimistic?: number[];
+  fotSalesOptimistic?: number[];
+  fotSalesPessimistic?: number[];
+}
+
+/**
+ * Настройки каналов привлечения
+ */
+export interface AcquisitionChannelSettings {
+  // Прямые продажи (самостоятельное привлечение)
+  directSalesPercentage: number; // % от выручки на зарплату продаж
+  directMarketingPercentage: number; // % от выручки на маркетинг
+  directLeadCost: number; // Стоимость лида при прямом привлечении
+  
+  // Партнёрский канал
+  partnerCommissionRate: number; // % от выручки клиента партнёрам
+  partnerLeadCost: number; // Стоимость лида от партнёров
 }
 
 /**
@@ -288,6 +357,17 @@ export interface ClientsData {
   newClients250: number[];
   newClients500: number[];
   newClients1000: number[];
+  // Клиенты по каналам привлечения
+  newClients75Direct: number[];
+  newClients150Direct: number[];
+  newClients250Direct: number[];
+  newClients500Direct: number[];
+  newClients1000Direct: number[];
+  newClients75Partner: number[];
+  newClients150Partner: number[];
+  newClients250Partner: number[];
+  newClients500Partner: number[];
+  newClients1000Partner: number[];
   subscriptionPrice75: number;
   subscriptionPrice150: number;
   subscriptionPrice250: number;
