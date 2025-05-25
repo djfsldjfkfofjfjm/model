@@ -38,15 +38,9 @@ const MonthlyResultsTable: React.FC<MonthlyResultsTableProps> = ({
     );
   }
 
-  // Фильтрация данных
-  const filteredData = data.filter(month => {
-    if (activeFilter === 'all') return true;
-    if (activeFilter === 'revenue') return month.totalRevenue > 0;
-    if (activeFilter === 'clients') return month.totalActiveClients > 0;
-    if (activeFilter === 'profit') return month.netProfit !== 0;
-    if (activeFilter === 'kpi') return month.arpu > 0;
-    return true;
-  });
+  // Фильтрация данных - НЕ фильтруем строки, а показываем все месяцы
+  // Фильтр влияет только на отображаемые колонки
+  const filteredData = data;
 
   // Сортировка данных
   const sortedData = [...filteredData].sort((a, b) => {

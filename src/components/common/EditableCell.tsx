@@ -20,6 +20,10 @@ export interface EditableCellProps {
   'data-testid'?: string;
   /** Заблокировать редактирование */
   disabled?: boolean;
+  /** Префикс (например, $) */
+  prefix?: string;
+  /** Суффикс (например, %) */
+  suffix?: string;
 }
 
 /**
@@ -33,7 +37,9 @@ const EditableCell: React.FC<EditableCellProps> = ({
   step = 1,
   className = "",
   'data-testid': dataTestId,
-  disabled = false
+  disabled = false,
+  prefix = "",
+  suffix = ""
 }) => {
   // Обработчик изменения ввода
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -44,6 +50,26 @@ const EditableCell: React.FC<EditableCellProps> = ({
   };
 
   const maxProp = Number.isFinite(max) ? max : undefined;
+  
+  if (prefix || suffix) {
+    return (
+      <div className="flex items-center gap-1">
+        {prefix && <span className="text-gray-600">{prefix}</span>}
+        <input
+          type="number"
+          value={value}
+          onChange={handleChange}
+          min={min}
+          max={maxProp}
+          step={step}
+          disabled={disabled}
+          className={`w-full rounded-md border border-gray-300 p-2 text-gray-800 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-center ${disabled ? 'bg-gray-100 cursor-not-allowed opacity-60' : ''} ${className}`}
+          data-testid={dataTestId}
+        />
+        {suffix && <span className="text-gray-600">{suffix}</span>}
+      </div>
+    );
+  }
   
   return (
     <input

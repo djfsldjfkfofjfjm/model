@@ -82,8 +82,12 @@ interface FinancialContextType {
   setMessages1000: (count: number) => void;
   messageUsageRate: number;
   setMessageUsageRate: (rate: number) => void;
+  messageUsagePercentage: number;
+  setMessageUsagePercentage: (rate: number) => void;
   carryOverPercentage: number;
   setCarryOverPercentage: (percentage: number) => void;
+  unusedMessagesCarryOver: number;
+  setUnusedMessagesCarryOver: (percentage: number) => void;
   additionalMessagePrice: number;
   setAdditionalMessagePrice: (price: number) => void;
   
@@ -180,17 +184,14 @@ export const FinancialProvider: React.FC<FinancialProviderProps> = ({ children }
   // Обертки для сеттеров, которые запускают пересчет
   const setTaxMode = (mode: TaxMode) => {
     setTaxModeBase(mode);
-    // calculateFinancialModel(); // Вызываем напрямую
   };
   
   const setCustomTaxRate = (rate: number) => {
     setCustomTaxRateBase(rate);
-    // calculateFinancialModel(); // Вызываем напрямую
   };
   
   const setFotMode = (mode: FOTMode) => {
     setFotModeBase(mode);
-    // calculateFinancialModel(); // Вызываем напрямую
   };
 
   const setFotOptimistic = (values: number[]) => {
@@ -205,17 +206,15 @@ export const FinancialProvider: React.FC<FinancialProviderProps> = ({ children }
   
   const setApiCostPercentage = (value: number) => {
     setApiCostPercentageBase(value);
-    // calculateFinancialModel(); // Вызываем напрямую
   };
   
   const setChurnRate = (value: number) => {
     setChurnRateBase(value);
-    // calculateFinancialModel(); // Вызываем напрямую
   };
   
   const setMaxImplementationCost = (value: number) => {
+    console.log('📝 FinancialContext: setMaxImplementationCost вызван с:', value);
     setMaxImplementationCostBase(value);
-    // calculateFinancialModel(); // Вызываем напрямую
   };
   
   // Новые клиенты (приход по месяцам)
@@ -295,14 +294,23 @@ export const FinancialProvider: React.FC<FinancialProviderProps> = ({ children }
   const [carryOverPercentage, setCarryOverPercentageBase] = useState(DEFAULT_MESSAGE_PACKAGES.carryOverPercentage);
   const [additionalMessagePrice, setAdditionalMessagePriceBase] = useState(DEFAULT_MESSAGE_PACKAGES.additionalPrice);
 
-  const setMessages75 = (count: number) => { setMessages75Base(count); /* calculateFinancialModel(); */ };
-  const setMessages150 = (count: number) => { setMessages150Base(count); /* calculateFinancialModel(); */ };
-  const setMessages250 = (count: number) => { setMessages250Base(count); /* calculateFinancialModel(); */ };
-  const setMessages500 = (count: number) => { setMessages500Base(count); /* calculateFinancialModel(); */ };
-  const setMessages1000 = (count: number) => { setMessages1000Base(count); /* calculateFinancialModel(); */ };
-  const setMessageUsageRate = (rate: number) => { setMessageUsageRateBase(rate); /* calculateFinancialModel(); */ };
-  const setCarryOverPercentage = (percentage: number) => { setCarryOverPercentageBase(percentage); /* calculateFinancialModel(); */ };
-  const setAdditionalMessagePrice = (price: number) => { setAdditionalMessagePriceBase(price); /* calculateFinancialModel(); */ };
+  const setMessages75 = (count: number) => { setMessages75Base(count); };
+  const setMessages150 = (count: number) => { setMessages150Base(count); };
+  const setMessages250 = (count: number) => { setMessages250Base(count); };
+  const setMessages500 = (count: number) => { setMessages500Base(count); };
+  const setMessages1000 = (count: number) => { setMessages1000Base(count); };
+  const setMessageUsageRate = (rate: number) => { 
+    console.log('📝 FinancialContext: setMessageUsageRate вызван с:', rate);
+    setMessageUsageRateBase(rate); 
+  };
+  const setCarryOverPercentage = (percentage: number) => { 
+    console.log('📝 FinancialContext: setCarryOverPercentage вызван с:', percentage);
+    setCarryOverPercentageBase(percentage); 
+  };
+  const setAdditionalMessagePrice = (price: number) => { 
+    console.log('📝 FinancialContext: setAdditionalMessagePrice вызван с:', price);
+    setAdditionalMessagePriceBase(price); 
+  };
 
   // Стоимость интеграции и связанные расходы
   const [integrationPrice, setIntegrationPriceBase] = useState(DEFAULT_INTEGRATION_PARAMS.price);
@@ -403,14 +411,14 @@ export const FinancialProvider: React.FC<FinancialProviderProps> = ({ children }
   };
   
   const upsellSettings: UpsellSettings = {
-    additionalBotsRate,
+    additionalBotsPercentage: additionalBotsRate,
     additionalBotsPrice,
-    newFeaturesRate,
+    newFeaturesPercentage: newFeaturesRate,
     newFeaturesPrice,
-    messageExpansionRate,
-    messageExpansionPrice,
-    additionalIntegrationsRate,
-    additionalIntegrationsPrice
+    messagePacksPercentage: messageExpansionRate,
+    messagePacksPrice: messageExpansionPrice,
+    integrationsPercentage: additionalIntegrationsRate,
+    integrationsPrice: additionalIntegrationsPrice
   };
   
   // Используем кастомный хук для вычислений
@@ -422,22 +430,9 @@ export const FinancialProvider: React.FC<FinancialProviderProps> = ({ children }
   
   // Запускаем расчет при изменении любого из параметров модели
   useEffect(() => {
+    console.log('🔄 useEffect в FinancialContext сработал!');
     calculateFinancialModel();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [
-    // Все состояния, от которых зависит модель, должны быть здесь
-    taxMode, customTaxRate, fotMode, apiCostPercentage, churnRate, maxImplementationCost,
-    fotOptimistic, fotPessimistic,
-    newClients75, newClients150, newClients250, newClients500, newClients1000,
-    subscriptionPrice75, subscriptionPrice150, subscriptionPrice250, subscriptionPrice500, subscriptionPrice1000,
-    messages75, messages150, messages250, messages500, messages1000,
-    messageUsageRate, carryOverPercentage, additionalMessagePrice,
-    integrationPrice, cacPercentage, implementationPercentage,
-    partnerCommissionRate,
-    additionalBotsRate, additionalBotsPrice, newFeaturesRate, newFeaturesPrice,
-    messageExpansionRate, messageExpansionPrice, additionalIntegrationsRate, additionalIntegrationsPrice,
-    channelDistribution, directSalesPercentage, directMarketingPercentage, directLeadCost, partnerLeadCost
-  ]);
+  }, [calculateFinancialModel]);
   
   const contextValue: FinancialContextType = {
     // Данные модели
@@ -501,8 +496,12 @@ export const FinancialProvider: React.FC<FinancialProviderProps> = ({ children }
     setMessages1000,
     messageUsageRate,
     setMessageUsageRate,
+    messageUsagePercentage: messageUsageRate, // Уже в процентах!
+    setMessageUsagePercentage: (percentage: number) => setMessageUsageRate(percentage), // Просто передаем как есть
     carryOverPercentage,
     setCarryOverPercentage,
+    unusedMessagesCarryOver: carryOverPercentage, // Уже в процентах!
+    setUnusedMessagesCarryOver: (percentage: number) => setCarryOverPercentage(percentage), // Просто передаем как есть
     additionalMessagePrice,
     setAdditionalMessagePrice,
     

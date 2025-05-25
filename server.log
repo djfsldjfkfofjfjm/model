@@ -2,1527 +2,1533 @@
 > financial-dashboard@0.1.0 start
 > react-scripts start
 
-(node:17511) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(node:2919) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
 (Use `node --trace-deprecation ...` to show where the warning was created)
-(node:17511) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(node:2919) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
 Starting the development server...
 
-Compiled with warnings.
-
-[eslint] 
-src/FinancialDashboard.tsx
-  Line 2:10:   'LineChart' is defined but never used                                                                                       @typescript-eslint/no-unused-vars
-  Line 3:40:   'Scatter' is defined but never used                                                                                         @typescript-eslint/no-unused-vars
-  Line 112:6:  React Hook useEffect has a missing dependency: 'calculateFinancialModel'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
-  Line 322:6:  React Hook useCallback has an unnecessary dependency: 'apiCost'. Either exclude it or remove the dependency array           react-hooks/exhaustive-deps
-
-Search for the keywords to learn more about each warning.
-To ignore, add // eslint-disable-next-line to the line before.
-
-WARNING in [eslint] 
-src/FinancialDashboard.tsx
-  Line 2:10:   'LineChart' is defined but never used                                                                                       @typescript-eslint/no-unused-vars
-  Line 3:40:   'Scatter' is defined but never used                                                                                         @typescript-eslint/no-unused-vars
-  Line 112:6:  React Hook useEffect has a missing dependency: 'calculateFinancialModel'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
-  Line 322:6:  React Hook useCallback has an unnecessary dependency: 'apiCost'. Either exclude it or remove the dependency array           react-hooks/exhaustive-deps
-
-webpack compiled with 1 warning
-WARNING in src/FinancialDashboard.tsx:895:52
-TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
-  Type 'string' is not assignable to type 'number'.
-    893 |             />
-    894 |             <Tooltip 
-  > 895 |               formatter={(value) => formatCurrency(value)}
-        |                                                    ^^^^^
-    896 |               contentStyle={{ 
-    897 |                 backgroundColor: theme.tooltipBackground,
-    898 |                 borderRadius: '12px',
-
-WARNING in src/FinancialDashboard.tsx:967:38
-TS7031: Binding element 'cx' implicitly has an 'any' type.
-    965 |     
-    966 |     const RADIAN = Math.PI / 180;
-  > 967 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                      ^^
-    968 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    969 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    970 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:967:42
-TS7031: Binding element 'cy' implicitly has an 'any' type.
-    965 |     
-    966 |     const RADIAN = Math.PI / 180;
-  > 967 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                          ^^
-    968 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    969 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    970 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:967:46
-TS7031: Binding element 'midAngle' implicitly has an 'any' type.
-    965 |     
-    966 |     const RADIAN = Math.PI / 180;
-  > 967 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                              ^^^^^^^^
-    968 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    969 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    970 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:967:56
-TS7031: Binding element 'innerRadius' implicitly has an 'any' type.
-    965 |     
-    966 |     const RADIAN = Math.PI / 180;
-  > 967 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                                        ^^^^^^^^^^^
-    968 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    969 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    970 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:967:69
-TS7031: Binding element 'outerRadius' implicitly has an 'any' type.
-    965 |     
-    966 |     const RADIAN = Math.PI / 180;
-  > 967 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                                                     ^^^^^^^^^^^
-    968 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    969 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    970 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:967:82
-TS7031: Binding element 'percent' implicitly has an 'any' type.
-    965 |     
-    966 |     const RADIAN = Math.PI / 180;
-  > 967 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                                                                  ^^^^^^^
-    968 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    969 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    970 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:967:91
-TS7031: Binding element 'index' implicitly has an 'any' type.
-    965 |     
-    966 |     const RADIAN = Math.PI / 180;
-  > 967 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                                                                           ^^^^^
-    968 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    969 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    970 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:967:98
-TS7031: Binding element 'name' implicitly has an 'any' type.
-    965 |     
-    966 |     const RADIAN = Math.PI / 180;
-  > 967 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                                                                                  ^^^^
-    968 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    969 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    970 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:967:104
-TS7031: Binding element 'value' implicitly has an 'any' type.
-    965 |     
-    966 |     const RADIAN = Math.PI / 180;
-  > 967 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                                                                                        ^^^^^
-    968 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    969 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    970 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:1002:54
-TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
-  Type 'string' is not assignable to type 'number'.
-    1000 |               </Pie>
-    1001 |               <Tooltip 
-  > 1002 |                 formatter={(value) => formatCurrency(value)}
-         |                                                      ^^^^^
-    1003 |                 contentStyle={{ 
-    1004 |                   backgroundColor: theme.tooltipBackground,
-    1005 |                   borderRadius: '12px',
-
-WARNING in src/FinancialDashboard.tsx:1036:54
-TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
-  Type 'string' is not assignable to type 'number'.
-    1034 |               </Pie>
-    1035 |               <Tooltip 
-  > 1036 |                 formatter={(value) => formatCurrency(value)}
-         |                                                      ^^^^^
-    1037 |                 contentStyle={{ 
-    1038 |                   backgroundColor: theme.tooltipBackground,
-    1039 |                   borderRadius: '12px',
-
-WARNING in src/FinancialDashboard.tsx:1216:52
-TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
-  Type 'string' is not assignable to type 'number'.
-    1214 |             />
-    1215 |             <Tooltip 
-  > 1216 |               formatter={(value) => formatCurrency(value)}
-         |                                                    ^^^^^
-    1217 |               contentStyle={{ 
-    1218 |                 backgroundColor: theme.tooltipBackground,
-    1219 |                 borderRadius: '12px',
-
-WARNING in src/FinancialDashboard.tsx:1301:50
-TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
-  Type 'string' is not assignable to type 'number'.
-    1299 |           />
-    1300 |           <Tooltip 
-  > 1301 |             formatter={(value) => formatCurrency(value)}
-         |                                                  ^^^^^
-    1302 |             contentStyle={{ 
-    1303 |               backgroundColor: theme.tooltipBackground,
-    1304 |               borderRadius: '12px',
-
-WARNING in src/FinancialDashboard.tsx:1568:32
-TS7006: Parameter 'newValue' implicitly has an 'any' type.
-    1566 |                   <EditableCell
-    1567 |                     value={value}
-  > 1568 |                     onChange={(newValue) => {
-         |                                ^^^^^^^^
-    1569 |                       const newData = [...newClients75];
-    1570 |                       newData[index] = newValue;
-    1571 |                       setNewClients75(newData);
-
-WARNING in src/FinancialDashboard.tsx:1587:32
-TS7006: Parameter 'newValue' implicitly has an 'any' type.
-    1585 |                   <EditableCell
-    1586 |                     value={value}
-  > 1587 |                     onChange={(newValue) => {
-         |                                ^^^^^^^^
-    1588 |                       const newData = [...newClients150];
-    1589 |                       newData[index] = newValue;
-    1590 |                       setNewClients150(newData);
-
-WARNING in src/FinancialDashboard.tsx:1606:32
-TS7006: Parameter 'newValue' implicitly has an 'any' type.
-    1604 |                   <EditableCell
-    1605 |                     value={value}
-  > 1606 |                     onChange={(newValue) => {
-         |                                ^^^^^^^^
-    1607 |                       const newData = [...newClients250];
-    1608 |                       newData[index] = newValue;
-    1609 |                       setNewClients250(newData);
-
-WARNING in src/FinancialDashboard.tsx:1625:32
-TS7006: Parameter 'newValue' implicitly has an 'any' type.
-    1623 |                   <EditableCell
-    1624 |                     value={value}
-  > 1625 |                     onChange={(newValue) => {
-         |                                ^^^^^^^^
-    1626 |                       const newData = [...newClients500];
-    1627 |                       newData[index] = newValue;
-    1628 |                       setNewClients500(newData);
-
-WARNING in src/FinancialDashboard.tsx:1644:32
-TS7006: Parameter 'newValue' implicitly has an 'any' type.
-    1642 |                   <EditableCell
-    1643 |                     value={value}
-  > 1644 |                     onChange={(newValue) => {
-         |                                ^^^^^^^^
-    1645 |                       const newData = [...newClients1000];
-    1646 |                       newData[index] = newValue;
-    1647 |                       setNewClients1000(newData);
-
-WARNING in src/FinancialDashboard.tsx:1681:32
-TS7006: Parameter 'newValue' implicitly has an 'any' type.
-    1679 |                   <EditableCell 
-    1680 |                     value={value} 
-  > 1681 |                     onChange={(newValue) => {
-         |                                ^^^^^^^^
-    1682 |                       const newArray = [...fotOptimistic];
-    1683 |                       newArray[index] = newValue;
-    1684 |                       setFotOptimistic(newArray);
-
-WARNING in src/FinancialDashboard.tsx:1697:32
-TS7006: Parameter 'newValue' implicitly has an 'any' type.
-    1695 |                   <EditableCell 
-    1696 |                     value={value} 
-  > 1697 |                     onChange={(newValue) => {
-         |                                ^^^^^^^^
-    1698 |                       const newArray = [...fotPessimistic];
-    1699 |                       newArray[index] = newValue;
-    1700 |                       setFotPessimistic(newArray);
-
-WARNING in src/FinancialDashboard.tsx:2362:60
-TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
-  Type 'string' is not assignable to type 'number'.
-    2360 |                     </Pie>
-    2361 |                     <Tooltip 
-  > 2362 |                       formatter={(value) => formatCurrency(value)}
-         |                                                            ^^^^^
-    2363 |                       contentStyle={{ 
-    2364 |                         backgroundColor: theme.tooltipBackground,
-    2365 |                         borderRadius: '12px',
-
-Compiling...
-Compiled with warnings.
-
-[eslint] 
-src/FinancialDashboard.tsx
-  Line 2:10:   'LineChart' is defined but never used                                                                                       @typescript-eslint/no-unused-vars
-  Line 3:40:   'Scatter' is defined but never used                                                                                         @typescript-eslint/no-unused-vars
-  Line 112:6:  React Hook useEffect has a missing dependency: 'calculateFinancialModel'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
-  Line 322:6:  React Hook useCallback has an unnecessary dependency: 'apiCost'. Either exclude it or remove the dependency array           react-hooks/exhaustive-deps
-
-[eslint] 
-src/FinancialDashboard.tsx
-  Line 2234:14:  'AutomationROIChart' is not defined  react/jsx-no-undef
-
-Search for the keywords to learn more about each warning.
-To ignore, add // eslint-disable-next-line to the line before.
-
-WARNING in [eslint] 
-src/FinancialDashboard.tsx
-  Line 2:10:   'LineChart' is defined but never used                                                                                       @typescript-eslint/no-unused-vars
-  Line 3:40:   'Scatter' is defined but never used                                                                                         @typescript-eslint/no-unused-vars
-  Line 112:6:  React Hook useEffect has a missing dependency: 'calculateFinancialModel'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
-  Line 322:6:  React Hook useCallback has an unnecessary dependency: 'apiCost'. Either exclude it or remove the dependency array           react-hooks/exhaustive-deps
-
-WARNING in [eslint] 
-src/FinancialDashboard.tsx
-  Line 2234:14:  'AutomationROIChart' is not defined  react/jsx-no-undef
-
-webpack compiled with 2 warnings
-Compiling...
-WARNING in src/FinancialDashboard.tsx:878:52
-TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
-  Type 'string' is not assignable to type 'number'.
-    876 |             />
-    877 |             <Tooltip 
-  > 878 |               formatter={(value) => formatCurrency(value)}
-        |                                                    ^^^^^
-    879 |               contentStyle={{ 
-    880 |                 backgroundColor: theme.tooltipBackground,
-    881 |                 borderRadius: '12px',
-
-WARNING in src/FinancialDashboard.tsx:950:38
-TS7031: Binding element 'cx' implicitly has an 'any' type.
-    948 |     
-    949 |     const RADIAN = Math.PI / 180;
-  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                      ^^
-    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:950:42
-TS7031: Binding element 'cy' implicitly has an 'any' type.
-    948 |     
-    949 |     const RADIAN = Math.PI / 180;
-  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                          ^^
-    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:950:46
-TS7031: Binding element 'midAngle' implicitly has an 'any' type.
-    948 |     
-    949 |     const RADIAN = Math.PI / 180;
-  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                              ^^^^^^^^
-    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:950:56
-TS7031: Binding element 'innerRadius' implicitly has an 'any' type.
-    948 |     
-    949 |     const RADIAN = Math.PI / 180;
-  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                                        ^^^^^^^^^^^
-    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:950:69
-TS7031: Binding element 'outerRadius' implicitly has an 'any' type.
-    948 |     
-    949 |     const RADIAN = Math.PI / 180;
-  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                                                     ^^^^^^^^^^^
-    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:950:82
-TS7031: Binding element 'percent' implicitly has an 'any' type.
-    948 |     
-    949 |     const RADIAN = Math.PI / 180;
-  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                                                                  ^^^^^^^
-    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:950:91
-TS7031: Binding element 'index' implicitly has an 'any' type.
-    948 |     
-    949 |     const RADIAN = Math.PI / 180;
-  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                                                                           ^^^^^
-    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:950:98
-TS7031: Binding element 'name' implicitly has an 'any' type.
-    948 |     
-    949 |     const RADIAN = Math.PI / 180;
-  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                                                                                  ^^^^
-    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:950:104
-TS7031: Binding element 'value' implicitly has an 'any' type.
-    948 |     
-    949 |     const RADIAN = Math.PI / 180;
-  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                                                                                        ^^^^^
-    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:985:54
-TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
-  Type 'string' is not assignable to type 'number'.
-    983 |               </Pie>
-    984 |               <Tooltip 
-  > 985 |                 formatter={(value) => formatCurrency(value)}
-        |                                                      ^^^^^
-    986 |                 contentStyle={{ 
-    987 |                   backgroundColor: theme.tooltipBackground,
-    988 |                   borderRadius: '12px',
-
-WARNING in src/FinancialDashboard.tsx:1019:54
-TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
-  Type 'string' is not assignable to type 'number'.
-    1017 |               </Pie>
-    1018 |               <Tooltip 
-  > 1019 |                 formatter={(value) => formatCurrency(value)}
-         |                                                      ^^^^^
-    1020 |                 contentStyle={{ 
-    1021 |                   backgroundColor: theme.tooltipBackground,
-    1022 |                   borderRadius: '12px',
-
-WARNING in src/FinancialDashboard.tsx:1199:52
-TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
-  Type 'string' is not assignable to type 'number'.
-    1197 |             />
-    1198 |             <Tooltip 
-  > 1199 |               formatter={(value) => formatCurrency(value)}
-         |                                                    ^^^^^
-    1200 |               contentStyle={{ 
-    1201 |                 backgroundColor: theme.tooltipBackground,
-    1202 |                 borderRadius: '12px',
-
-WARNING in src/FinancialDashboard.tsx:1284:50
-TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
-  Type 'string' is not assignable to type 'number'.
-    1282 |           />
-    1283 |           <Tooltip 
-  > 1284 |             formatter={(value) => formatCurrency(value)}
-         |                                                  ^^^^^
-    1285 |             contentStyle={{ 
-    1286 |               backgroundColor: theme.tooltipBackground,
-    1287 |               borderRadius: '12px',
-
-WARNING in src/FinancialDashboard.tsx:1551:32
-TS7006: Parameter 'newValue' implicitly has an 'any' type.
-    1549 |                   <EditableCell
-    1550 |                     value={value}
-  > 1551 |                     onChange={(newValue) => {
-         |                                ^^^^^^^^
-    1552 |                       const newData = [...newClients75];
-    1553 |                       newData[index] = newValue;
-    1554 |                       setNewClients75(newData);
-
-WARNING in src/FinancialDashboard.tsx:1570:32
-TS7006: Parameter 'newValue' implicitly has an 'any' type.
-    1568 |                   <EditableCell
-    1569 |                     value={value}
-  > 1570 |                     onChange={(newValue) => {
-         |                                ^^^^^^^^
-    1571 |                       const newData = [...newClients150];
-    1572 |                       newData[index] = newValue;
-    1573 |                       setNewClients150(newData);
-
-WARNING in src/FinancialDashboard.tsx:1589:32
-TS7006: Parameter 'newValue' implicitly has an 'any' type.
-    1587 |                   <EditableCell
-    1588 |                     value={value}
-  > 1589 |                     onChange={(newValue) => {
-         |                                ^^^^^^^^
-    1590 |                       const newData = [...newClients250];
-    1591 |                       newData[index] = newValue;
-    1592 |                       setNewClients250(newData);
-
-WARNING in src/FinancialDashboard.tsx:1608:32
-TS7006: Parameter 'newValue' implicitly has an 'any' type.
-    1606 |                   <EditableCell
-    1607 |                     value={value}
-  > 1608 |                     onChange={(newValue) => {
-         |                                ^^^^^^^^
-    1609 |                       const newData = [...newClients500];
-    1610 |                       newData[index] = newValue;
-    1611 |                       setNewClients500(newData);
-
-WARNING in src/FinancialDashboard.tsx:1627:32
-TS7006: Parameter 'newValue' implicitly has an 'any' type.
-    1625 |                   <EditableCell
-    1626 |                     value={value}
-  > 1627 |                     onChange={(newValue) => {
-         |                                ^^^^^^^^
-    1628 |                       const newData = [...newClients1000];
-    1629 |                       newData[index] = newValue;
-    1630 |                       setNewClients1000(newData);
-
-WARNING in src/FinancialDashboard.tsx:1664:32
-TS7006: Parameter 'newValue' implicitly has an 'any' type.
-    1662 |                   <EditableCell 
-    1663 |                     value={value} 
-  > 1664 |                     onChange={(newValue) => {
-         |                                ^^^^^^^^
-    1665 |                       const newArray = [...fotOptimistic];
-    1666 |                       newArray[index] = newValue;
-    1667 |                       setFotOptimistic(newArray);
-
-WARNING in src/FinancialDashboard.tsx:1680:32
-TS7006: Parameter 'newValue' implicitly has an 'any' type.
-    1678 |                   <EditableCell 
-    1679 |                     value={value} 
-  > 1680 |                     onChange={(newValue) => {
-         |                                ^^^^^^^^
-    1681 |                       const newArray = [...fotPessimistic];
-    1682 |                       newArray[index] = newValue;
-    1683 |                       setFotPessimistic(newArray);
-
-WARNING in src/FinancialDashboard.tsx:2234:14
-TS2304: Cannot find name 'AutomationROIChart'.
-    2232 |             <CumulativeChart />
-    2233 |             <KPIRadarChart />
-  > 2234 |             <AutomationROIChart />
-         |              ^^^^^^^^^^^^^^^^^^
-    2235 |           </>
-    2236 |         )}
-    2237 |         
-
-WARNING in src/FinancialDashboard.tsx:2313:60
-TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
-  Type 'string' is not assignable to type 'number'.
-    2311 |                     </Pie>
-    2312 |                     <Tooltip 
-  > 2313 |                       formatter={(value) => formatCurrency(value)}
-         |                                                            ^^^^^
-    2314 |                       contentStyle={{ 
-    2315 |                         backgroundColor: theme.tooltipBackground,
-    2316 |                         borderRadius: '12px',
-
-Compiled with warnings.
-
-[eslint] 
-src/FinancialDashboard.tsx
-  Line 2:10:   'LineChart' is defined but never used                                                                                       @typescript-eslint/no-unused-vars
-  Line 3:40:   'Scatter' is defined but never used                                                                                         @typescript-eslint/no-unused-vars
-  Line 112:6:  React Hook useEffect has a missing dependency: 'calculateFinancialModel'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
-  Line 322:6:  React Hook useCallback has an unnecessary dependency: 'apiCost'. Either exclude it or remove the dependency array           react-hooks/exhaustive-deps
-
-[eslint] 
-src/FinancialDashboard.tsx
-  Line 2234:14:  'AutomationROIChart' is not defined  react/jsx-no-undef
-
-Search for the keywords to learn more about each warning.
-To ignore, add // eslint-disable-next-line to the line before.
-
-WARNING in [eslint] 
-src/FinancialDashboard.tsx
-  Line 2:10:   'LineChart' is defined but never used                                                                                       @typescript-eslint/no-unused-vars
-  Line 3:40:   'Scatter' is defined but never used                                                                                         @typescript-eslint/no-unused-vars
-  Line 112:6:  React Hook useEffect has a missing dependency: 'calculateFinancialModel'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
-  Line 322:6:  React Hook useCallback has an unnecessary dependency: 'apiCost'. Either exclude it or remove the dependency array           react-hooks/exhaustive-deps
-
-WARNING in [eslint] 
-src/FinancialDashboard.tsx
-  Line 2234:14:  'AutomationROIChart' is not defined  react/jsx-no-undef
-
-webpack compiled with 2 warnings
-WARNING in src/FinancialDashboard.tsx:878:52
-TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
-  Type 'string' is not assignable to type 'number'.
-    876 |             />
-    877 |             <Tooltip 
-  > 878 |               formatter={(value) => formatCurrency(value)}
-        |                                                    ^^^^^
-    879 |               contentStyle={{ 
-    880 |                 backgroundColor: theme.tooltipBackground,
-    881 |                 borderRadius: '12px',
-
-WARNING in src/FinancialDashboard.tsx:950:38
-TS7031: Binding element 'cx' implicitly has an 'any' type.
-    948 |     
-    949 |     const RADIAN = Math.PI / 180;
-  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                      ^^
-    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:950:42
-TS7031: Binding element 'cy' implicitly has an 'any' type.
-    948 |     
-    949 |     const RADIAN = Math.PI / 180;
-  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                          ^^
-    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:950:46
-TS7031: Binding element 'midAngle' implicitly has an 'any' type.
-    948 |     
-    949 |     const RADIAN = Math.PI / 180;
-  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                              ^^^^^^^^
-    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:950:56
-TS7031: Binding element 'innerRadius' implicitly has an 'any' type.
-    948 |     
-    949 |     const RADIAN = Math.PI / 180;
-  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                                        ^^^^^^^^^^^
-    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:950:69
-TS7031: Binding element 'outerRadius' implicitly has an 'any' type.
-    948 |     
-    949 |     const RADIAN = Math.PI / 180;
-  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                                                     ^^^^^^^^^^^
-    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:950:82
-TS7031: Binding element 'percent' implicitly has an 'any' type.
-    948 |     
-    949 |     const RADIAN = Math.PI / 180;
-  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                                                                  ^^^^^^^
-    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:950:91
-TS7031: Binding element 'index' implicitly has an 'any' type.
-    948 |     
-    949 |     const RADIAN = Math.PI / 180;
-  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                                                                           ^^^^^
-    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:950:98
-TS7031: Binding element 'name' implicitly has an 'any' type.
-    948 |     
-    949 |     const RADIAN = Math.PI / 180;
-  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                                                                                  ^^^^
-    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:950:104
-TS7031: Binding element 'value' implicitly has an 'any' type.
-    948 |     
-    949 |     const RADIAN = Math.PI / 180;
-  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                                                                                        ^^^^^
-    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:985:54
-TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
-  Type 'string' is not assignable to type 'number'.
-    983 |               </Pie>
-    984 |               <Tooltip 
-  > 985 |                 formatter={(value) => formatCurrency(value)}
-        |                                                      ^^^^^
-    986 |                 contentStyle={{ 
-    987 |                   backgroundColor: theme.tooltipBackground,
-    988 |                   borderRadius: '12px',
-
-WARNING in src/FinancialDashboard.tsx:1019:54
-TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
-  Type 'string' is not assignable to type 'number'.
-    1017 |               </Pie>
-    1018 |               <Tooltip 
-  > 1019 |                 formatter={(value) => formatCurrency(value)}
-         |                                                      ^^^^^
-    1020 |                 contentStyle={{ 
-    1021 |                   backgroundColor: theme.tooltipBackground,
-    1022 |                   borderRadius: '12px',
-
-WARNING in src/FinancialDashboard.tsx:1199:52
-TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
-  Type 'string' is not assignable to type 'number'.
-    1197 |             />
-    1198 |             <Tooltip 
-  > 1199 |               formatter={(value) => formatCurrency(value)}
-         |                                                    ^^^^^
-    1200 |               contentStyle={{ 
-    1201 |                 backgroundColor: theme.tooltipBackground,
-    1202 |                 borderRadius: '12px',
-
-WARNING in src/FinancialDashboard.tsx:1284:50
-TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
-  Type 'string' is not assignable to type 'number'.
-    1282 |           />
-    1283 |           <Tooltip 
-  > 1284 |             formatter={(value) => formatCurrency(value)}
-         |                                                  ^^^^^
-    1285 |             contentStyle={{ 
-    1286 |               backgroundColor: theme.tooltipBackground,
-    1287 |               borderRadius: '12px',
-
-WARNING in src/FinancialDashboard.tsx:1551:32
-TS7006: Parameter 'newValue' implicitly has an 'any' type.
-    1549 |                   <EditableCell
-    1550 |                     value={value}
-  > 1551 |                     onChange={(newValue) => {
-         |                                ^^^^^^^^
-    1552 |                       const newData = [...newClients75];
-    1553 |                       newData[index] = newValue;
-    1554 |                       setNewClients75(newData);
-
-WARNING in src/FinancialDashboard.tsx:1570:32
-TS7006: Parameter 'newValue' implicitly has an 'any' type.
-    1568 |                   <EditableCell
-    1569 |                     value={value}
-  > 1570 |                     onChange={(newValue) => {
-         |                                ^^^^^^^^
-    1571 |                       const newData = [...newClients150];
-    1572 |                       newData[index] = newValue;
-    1573 |                       setNewClients150(newData);
-
-WARNING in src/FinancialDashboard.tsx:1589:32
-TS7006: Parameter 'newValue' implicitly has an 'any' type.
-    1587 |                   <EditableCell
-    1588 |                     value={value}
-  > 1589 |                     onChange={(newValue) => {
-         |                                ^^^^^^^^
-    1590 |                       const newData = [...newClients250];
-    1591 |                       newData[index] = newValue;
-    1592 |                       setNewClients250(newData);
-
-WARNING in src/FinancialDashboard.tsx:1608:32
-TS7006: Parameter 'newValue' implicitly has an 'any' type.
-    1606 |                   <EditableCell
-    1607 |                     value={value}
-  > 1608 |                     onChange={(newValue) => {
-         |                                ^^^^^^^^
-    1609 |                       const newData = [...newClients500];
-    1610 |                       newData[index] = newValue;
-    1611 |                       setNewClients500(newData);
-
-WARNING in src/FinancialDashboard.tsx:1627:32
-TS7006: Parameter 'newValue' implicitly has an 'any' type.
-    1625 |                   <EditableCell
-    1626 |                     value={value}
-  > 1627 |                     onChange={(newValue) => {
-         |                                ^^^^^^^^
-    1628 |                       const newData = [...newClients1000];
-    1629 |                       newData[index] = newValue;
-    1630 |                       setNewClients1000(newData);
-
-WARNING in src/FinancialDashboard.tsx:1664:32
-TS7006: Parameter 'newValue' implicitly has an 'any' type.
-    1662 |                   <EditableCell 
-    1663 |                     value={value} 
-  > 1664 |                     onChange={(newValue) => {
-         |                                ^^^^^^^^
-    1665 |                       const newArray = [...fotOptimistic];
-    1666 |                       newArray[index] = newValue;
-    1667 |                       setFotOptimistic(newArray);
-
-WARNING in src/FinancialDashboard.tsx:1680:32
-TS7006: Parameter 'newValue' implicitly has an 'any' type.
-    1678 |                   <EditableCell 
-    1679 |                     value={value} 
-  > 1680 |                     onChange={(newValue) => {
-         |                                ^^^^^^^^
-    1681 |                       const newArray = [...fotPessimistic];
-    1682 |                       newArray[index] = newValue;
-    1683 |                       setFotPessimistic(newArray);
-
-WARNING in src/FinancialDashboard.tsx:2234:14
-TS2304: Cannot find name 'AutomationROIChart'.
-    2232 |             <CumulativeChart />
-    2233 |             <KPIRadarChart />
-  > 2234 |             <AutomationROIChart />
-         |              ^^^^^^^^^^^^^^^^^^
-    2235 |           </>
-    2236 |         )}
-    2237 |         
-
-WARNING in src/FinancialDashboard.tsx:2313:60
-TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
-  Type 'string' is not assignable to type 'number'.
-    2311 |                     </Pie>
-    2312 |                     <Tooltip 
-  > 2313 |                       formatter={(value) => formatCurrency(value)}
-         |                                                            ^^^^^
-    2314 |                       contentStyle={{ 
-    2315 |                         backgroundColor: theme.tooltipBackground,
-    2316 |                         borderRadius: '12px',
-
-Compiling...
-Compiled with warnings.
-
-[eslint] 
-src/FinancialDashboard.tsx
-  Line 2:10:   'LineChart' is defined but never used                                                                                       @typescript-eslint/no-unused-vars
-  Line 3:40:   'Scatter' is defined but never used                                                                                         @typescript-eslint/no-unused-vars
-  Line 112:6:  React Hook useEffect has a missing dependency: 'calculateFinancialModel'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
-  Line 322:6:  React Hook useCallback has an unnecessary dependency: 'apiCost'. Either exclude it or remove the dependency array           react-hooks/exhaustive-deps
-
-Search for the keywords to learn more about each warning.
-To ignore, add // eslint-disable-next-line to the line before.
-
-WARNING in [eslint] 
-src/FinancialDashboard.tsx
-  Line 2:10:   'LineChart' is defined but never used                                                                                       @typescript-eslint/no-unused-vars
-  Line 3:40:   'Scatter' is defined but never used                                                                                         @typescript-eslint/no-unused-vars
-  Line 112:6:  React Hook useEffect has a missing dependency: 'calculateFinancialModel'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
-  Line 322:6:  React Hook useCallback has an unnecessary dependency: 'apiCost'. Either exclude it or remove the dependency array           react-hooks/exhaustive-deps
-
-webpack compiled with 1 warning
-Compiling...
-WARNING in src/FinancialDashboard.tsx:878:52
-TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
-  Type 'string' is not assignable to type 'number'.
-    876 |             />
-    877 |             <Tooltip 
-  > 878 |               formatter={(value) => formatCurrency(value)}
-        |                                                    ^^^^^
-    879 |               contentStyle={{ 
-    880 |                 backgroundColor: theme.tooltipBackground,
-    881 |                 borderRadius: '12px',
-
-WARNING in src/FinancialDashboard.tsx:950:38
-TS7031: Binding element 'cx' implicitly has an 'any' type.
-    948 |     
-    949 |     const RADIAN = Math.PI / 180;
-  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                      ^^
-    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:950:42
-TS7031: Binding element 'cy' implicitly has an 'any' type.
-    948 |     
-    949 |     const RADIAN = Math.PI / 180;
-  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                          ^^
-    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:950:46
-TS7031: Binding element 'midAngle' implicitly has an 'any' type.
-    948 |     
-    949 |     const RADIAN = Math.PI / 180;
-  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                              ^^^^^^^^
-    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:950:56
-TS7031: Binding element 'innerRadius' implicitly has an 'any' type.
-    948 |     
-    949 |     const RADIAN = Math.PI / 180;
-  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                                        ^^^^^^^^^^^
-    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:950:69
-TS7031: Binding element 'outerRadius' implicitly has an 'any' type.
-    948 |     
-    949 |     const RADIAN = Math.PI / 180;
-  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                                                     ^^^^^^^^^^^
-    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:950:82
-TS7031: Binding element 'percent' implicitly has an 'any' type.
-    948 |     
-    949 |     const RADIAN = Math.PI / 180;
-  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                                                                  ^^^^^^^
-    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:950:91
-TS7031: Binding element 'index' implicitly has an 'any' type.
-    948 |     
-    949 |     const RADIAN = Math.PI / 180;
-  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                                                                           ^^^^^
-    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:950:98
-TS7031: Binding element 'name' implicitly has an 'any' type.
-    948 |     
-    949 |     const RADIAN = Math.PI / 180;
-  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                                                                                  ^^^^
-    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:950:104
-TS7031: Binding element 'value' implicitly has an 'any' type.
-    948 |     
-    949 |     const RADIAN = Math.PI / 180;
-  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                                                                                        ^^^^^
-    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:985:54
-TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
-  Type 'string' is not assignable to type 'number'.
-    983 |               </Pie>
-    984 |               <Tooltip 
-  > 985 |                 formatter={(value) => formatCurrency(value)}
-        |                                                      ^^^^^
-    986 |                 contentStyle={{ 
-    987 |                   backgroundColor: theme.tooltipBackground,
-    988 |                   borderRadius: '12px',
-
-WARNING in src/FinancialDashboard.tsx:1019:54
-TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
-  Type 'string' is not assignable to type 'number'.
-    1017 |               </Pie>
-    1018 |               <Tooltip 
-  > 1019 |                 formatter={(value) => formatCurrency(value)}
-         |                                                      ^^^^^
-    1020 |                 contentStyle={{ 
-    1021 |                   backgroundColor: theme.tooltipBackground,
-    1022 |                   borderRadius: '12px',
-
-WARNING in src/FinancialDashboard.tsx:1199:52
-TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
-  Type 'string' is not assignable to type 'number'.
-    1197 |             />
-    1198 |             <Tooltip 
-  > 1199 |               formatter={(value) => formatCurrency(value)}
-         |                                                    ^^^^^
-    1200 |               contentStyle={{ 
-    1201 |                 backgroundColor: theme.tooltipBackground,
-    1202 |                 borderRadius: '12px',
-
-WARNING in src/FinancialDashboard.tsx:1284:50
-TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
-  Type 'string' is not assignable to type 'number'.
-    1282 |           />
-    1283 |           <Tooltip 
-  > 1284 |             formatter={(value) => formatCurrency(value)}
-         |                                                  ^^^^^
-    1285 |             contentStyle={{ 
-    1286 |               backgroundColor: theme.tooltipBackground,
-    1287 |               borderRadius: '12px',
-
-WARNING in src/FinancialDashboard.tsx:1551:32
-TS7006: Parameter 'newValue' implicitly has an 'any' type.
-    1549 |                   <EditableCell
-    1550 |                     value={value}
-  > 1551 |                     onChange={(newValue) => {
-         |                                ^^^^^^^^
-    1552 |                       const newData = [...newClients75];
-    1553 |                       newData[index] = newValue;
-    1554 |                       setNewClients75(newData);
-
-WARNING in src/FinancialDashboard.tsx:1570:32
-TS7006: Parameter 'newValue' implicitly has an 'any' type.
-    1568 |                   <EditableCell
-    1569 |                     value={value}
-  > 1570 |                     onChange={(newValue) => {
-         |                                ^^^^^^^^
-    1571 |                       const newData = [...newClients150];
-    1572 |                       newData[index] = newValue;
-    1573 |                       setNewClients150(newData);
-
-WARNING in src/FinancialDashboard.tsx:1589:32
-TS7006: Parameter 'newValue' implicitly has an 'any' type.
-    1587 |                   <EditableCell
-    1588 |                     value={value}
-  > 1589 |                     onChange={(newValue) => {
-         |                                ^^^^^^^^
-    1590 |                       const newData = [...newClients250];
-    1591 |                       newData[index] = newValue;
-    1592 |                       setNewClients250(newData);
-
-WARNING in src/FinancialDashboard.tsx:1608:32
-TS7006: Parameter 'newValue' implicitly has an 'any' type.
-    1606 |                   <EditableCell
-    1607 |                     value={value}
-  > 1608 |                     onChange={(newValue) => {
-         |                                ^^^^^^^^
-    1609 |                       const newData = [...newClients500];
-    1610 |                       newData[index] = newValue;
-    1611 |                       setNewClients500(newData);
-
-WARNING in src/FinancialDashboard.tsx:1627:32
-TS7006: Parameter 'newValue' implicitly has an 'any' type.
-    1625 |                   <EditableCell
-    1626 |                     value={value}
-  > 1627 |                     onChange={(newValue) => {
-         |                                ^^^^^^^^
-    1628 |                       const newData = [...newClients1000];
-    1629 |                       newData[index] = newValue;
-    1630 |                       setNewClients1000(newData);
-
-WARNING in src/FinancialDashboard.tsx:1664:32
-TS7006: Parameter 'newValue' implicitly has an 'any' type.
-    1662 |                   <EditableCell 
-    1663 |                     value={value} 
-  > 1664 |                     onChange={(newValue) => {
-         |                                ^^^^^^^^
-    1665 |                       const newArray = [...fotOptimistic];
-    1666 |                       newArray[index] = newValue;
-    1667 |                       setFotOptimistic(newArray);
-
-WARNING in src/FinancialDashboard.tsx:1680:32
-TS7006: Parameter 'newValue' implicitly has an 'any' type.
-    1678 |                   <EditableCell 
-    1679 |                     value={value} 
-  > 1680 |                     onChange={(newValue) => {
-         |                                ^^^^^^^^
-    1681 |                       const newArray = [...fotPessimistic];
-    1682 |                       newArray[index] = newValue;
-    1683 |                       setFotPessimistic(newArray);
-
-WARNING in src/FinancialDashboard.tsx:2312:60
-TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
-  Type 'string' is not assignable to type 'number'.
-    2310 |                     </Pie>
-    2311 |                     <Tooltip 
-  > 2312 |                       formatter={(value) => formatCurrency(value)}
-         |                                                            ^^^^^
-    2313 |                       contentStyle={{ 
-    2314 |                         backgroundColor: theme.tooltipBackground,
-    2315 |                         borderRadius: '12px',
-
-Compiled with warnings.
-
-[eslint] 
-src/FinancialDashboard.tsx
-  Line 2:10:   'LineChart' is defined but never used                                                                                       @typescript-eslint/no-unused-vars
-  Line 3:40:   'Scatter' is defined but never used                                                                                         @typescript-eslint/no-unused-vars
-  Line 112:6:  React Hook useEffect has a missing dependency: 'calculateFinancialModel'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
-  Line 322:6:  React Hook useCallback has an unnecessary dependency: 'apiCost'. Either exclude it or remove the dependency array           react-hooks/exhaustive-deps
-
-Search for the keywords to learn more about each warning.
-To ignore, add // eslint-disable-next-line to the line before.
-
-WARNING in [eslint] 
-src/FinancialDashboard.tsx
-  Line 2:10:   'LineChart' is defined but never used                                                                                       @typescript-eslint/no-unused-vars
-  Line 3:40:   'Scatter' is defined but never used                                                                                         @typescript-eslint/no-unused-vars
-  Line 112:6:  React Hook useEffect has a missing dependency: 'calculateFinancialModel'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
-  Line 322:6:  React Hook useCallback has an unnecessary dependency: 'apiCost'. Either exclude it or remove the dependency array           react-hooks/exhaustive-deps
-
-webpack compiled with 1 warning
-WARNING in src/FinancialDashboard.tsx:878:52
-TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
-  Type 'string' is not assignable to type 'number'.
-    876 |             />
-    877 |             <Tooltip 
-  > 878 |               formatter={(value) => formatCurrency(value)}
-        |                                                    ^^^^^
-    879 |               contentStyle={{ 
-    880 |                 backgroundColor: theme.tooltipBackground,
-    881 |                 borderRadius: '12px',
-
-WARNING in src/FinancialDashboard.tsx:950:38
-TS7031: Binding element 'cx' implicitly has an 'any' type.
-    948 |     
-    949 |     const RADIAN = Math.PI / 180;
-  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                      ^^
-    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:950:42
-TS7031: Binding element 'cy' implicitly has an 'any' type.
-    948 |     
-    949 |     const RADIAN = Math.PI / 180;
-  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                          ^^
-    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:950:46
-TS7031: Binding element 'midAngle' implicitly has an 'any' type.
-    948 |     
-    949 |     const RADIAN = Math.PI / 180;
-  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                              ^^^^^^^^
-    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:950:56
-TS7031: Binding element 'innerRadius' implicitly has an 'any' type.
-    948 |     
-    949 |     const RADIAN = Math.PI / 180;
-  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                                        ^^^^^^^^^^^
-    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:950:69
-TS7031: Binding element 'outerRadius' implicitly has an 'any' type.
-    948 |     
-    949 |     const RADIAN = Math.PI / 180;
-  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                                                     ^^^^^^^^^^^
-    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:950:82
-TS7031: Binding element 'percent' implicitly has an 'any' type.
-    948 |     
-    949 |     const RADIAN = Math.PI / 180;
-  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                                                                  ^^^^^^^
-    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:950:91
-TS7031: Binding element 'index' implicitly has an 'any' type.
-    948 |     
-    949 |     const RADIAN = Math.PI / 180;
-  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                                                                           ^^^^^
-    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:950:98
-TS7031: Binding element 'name' implicitly has an 'any' type.
-    948 |     
-    949 |     const RADIAN = Math.PI / 180;
-  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                                                                                  ^^^^
-    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:950:104
-TS7031: Binding element 'value' implicitly has an 'any' type.
-    948 |     
-    949 |     const RADIAN = Math.PI / 180;
-  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                                                                                        ^^^^^
-    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:985:54
-TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
-  Type 'string' is not assignable to type 'number'.
-    983 |               </Pie>
-    984 |               <Tooltip 
-  > 985 |                 formatter={(value) => formatCurrency(value)}
-        |                                                      ^^^^^
-    986 |                 contentStyle={{ 
-    987 |                   backgroundColor: theme.tooltipBackground,
-    988 |                   borderRadius: '12px',
-
-WARNING in src/FinancialDashboard.tsx:1019:54
-TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
-  Type 'string' is not assignable to type 'number'.
-    1017 |               </Pie>
-    1018 |               <Tooltip 
-  > 1019 |                 formatter={(value) => formatCurrency(value)}
-         |                                                      ^^^^^
-    1020 |                 contentStyle={{ 
-    1021 |                   backgroundColor: theme.tooltipBackground,
-    1022 |                   borderRadius: '12px',
-
-WARNING in src/FinancialDashboard.tsx:1199:52
-TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
-  Type 'string' is not assignable to type 'number'.
-    1197 |             />
-    1198 |             <Tooltip 
-  > 1199 |               formatter={(value) => formatCurrency(value)}
-         |                                                    ^^^^^
-    1200 |               contentStyle={{ 
-    1201 |                 backgroundColor: theme.tooltipBackground,
-    1202 |                 borderRadius: '12px',
-
-WARNING in src/FinancialDashboard.tsx:1284:50
-TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
-  Type 'string' is not assignable to type 'number'.
-    1282 |           />
-    1283 |           <Tooltip 
-  > 1284 |             formatter={(value) => formatCurrency(value)}
-         |                                                  ^^^^^
-    1285 |             contentStyle={{ 
-    1286 |               backgroundColor: theme.tooltipBackground,
-    1287 |               borderRadius: '12px',
-
-WARNING in src/FinancialDashboard.tsx:1551:32
-TS7006: Parameter 'newValue' implicitly has an 'any' type.
-    1549 |                   <EditableCell
-    1550 |                     value={value}
-  > 1551 |                     onChange={(newValue) => {
-         |                                ^^^^^^^^
-    1552 |                       const newData = [...newClients75];
-    1553 |                       newData[index] = newValue;
-    1554 |                       setNewClients75(newData);
-
-WARNING in src/FinancialDashboard.tsx:1570:32
-TS7006: Parameter 'newValue' implicitly has an 'any' type.
-    1568 |                   <EditableCell
-    1569 |                     value={value}
-  > 1570 |                     onChange={(newValue) => {
-         |                                ^^^^^^^^
-    1571 |                       const newData = [...newClients150];
-    1572 |                       newData[index] = newValue;
-    1573 |                       setNewClients150(newData);
-
-WARNING in src/FinancialDashboard.tsx:1589:32
-TS7006: Parameter 'newValue' implicitly has an 'any' type.
-    1587 |                   <EditableCell
-    1588 |                     value={value}
-  > 1589 |                     onChange={(newValue) => {
-         |                                ^^^^^^^^
-    1590 |                       const newData = [...newClients250];
-    1591 |                       newData[index] = newValue;
-    1592 |                       setNewClients250(newData);
-
-WARNING in src/FinancialDashboard.tsx:1608:32
-TS7006: Parameter 'newValue' implicitly has an 'any' type.
-    1606 |                   <EditableCell
-    1607 |                     value={value}
-  > 1608 |                     onChange={(newValue) => {
-         |                                ^^^^^^^^
-    1609 |                       const newData = [...newClients500];
-    1610 |                       newData[index] = newValue;
-    1611 |                       setNewClients500(newData);
-
-WARNING in src/FinancialDashboard.tsx:1627:32
-TS7006: Parameter 'newValue' implicitly has an 'any' type.
-    1625 |                   <EditableCell
-    1626 |                     value={value}
-  > 1627 |                     onChange={(newValue) => {
-         |                                ^^^^^^^^
-    1628 |                       const newData = [...newClients1000];
-    1629 |                       newData[index] = newValue;
-    1630 |                       setNewClients1000(newData);
-
-WARNING in src/FinancialDashboard.tsx:1664:32
-TS7006: Parameter 'newValue' implicitly has an 'any' type.
-    1662 |                   <EditableCell 
-    1663 |                     value={value} 
-  > 1664 |                     onChange={(newValue) => {
-         |                                ^^^^^^^^
-    1665 |                       const newArray = [...fotOptimistic];
-    1666 |                       newArray[index] = newValue;
-    1667 |                       setFotOptimistic(newArray);
-
-WARNING in src/FinancialDashboard.tsx:1680:32
-TS7006: Parameter 'newValue' implicitly has an 'any' type.
-    1678 |                   <EditableCell 
-    1679 |                     value={value} 
-  > 1680 |                     onChange={(newValue) => {
-         |                                ^^^^^^^^
-    1681 |                       const newArray = [...fotPessimistic];
-    1682 |                       newArray[index] = newValue;
-    1683 |                       setFotPessimistic(newArray);
-
-WARNING in src/FinancialDashboard.tsx:2312:60
-TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
-  Type 'string' is not assignable to type 'number'.
-    2310 |                     </Pie>
-    2311 |                     <Tooltip 
-  > 2312 |                       formatter={(value) => formatCurrency(value)}
-         |                                                            ^^^^^
-    2313 |                       contentStyle={{ 
-    2314 |                         backgroundColor: theme.tooltipBackground,
-    2315 |                         borderRadius: '12px',
-
-Failed to compile.
-
-Module build failed: Error: ENOENT: no such file or directory, open '/Users/vitalijtravin/Desktop/чатбот- фин модель/financial-dashboard/node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js'
-WARNING in [eslint] 
-src/FinancialDashboard.tsx
-  Line 2:10:   'LineChart' is defined but never used                                                                                       @typescript-eslint/no-unused-vars
-  Line 3:40:   'Scatter' is defined but never used                                                                                         @typescript-eslint/no-unused-vars
-  Line 112:6:  React Hook useEffect has a missing dependency: 'calculateFinancialModel'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
-  Line 322:6:  React Hook useCallback has an unnecessary dependency: 'apiCost'. Either exclude it or remove the dependency array           react-hooks/exhaustive-deps
-
-ERROR in ./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js
-Module build failed: Error: ENOENT: no such file or directory, open '/Users/vitalijtravin/Desktop/чатбот- фин модель/financial-dashboard/node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js'
-
-ERROR in ./node_modules/@babel/runtime/helpers/esm/extends.js
-Module build failed: Error: ENOENT: no such file or directory, open '/Users/vitalijtravin/Desktop/чатбот- фин модель/financial-dashboard/node_modules/@babel/runtime/helpers/esm/extends.js'
-
-ERROR in ./node_modules/@babel/runtime/helpers/esm/inheritsLoose.js
-Module build failed: Error: ENOENT: no such file or directory, open '/Users/vitalijtravin/Desktop/чатбот- фин модель/financial-dashboard/node_modules/@babel/runtime/helpers/esm/inheritsLoose.js'
-
-ERROR in ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
-Module build failed: Error: ENOENT: no such file or directory, open '/Users/vitalijtravin/Desktop/чатбот- фин модель/financial-dashboard/node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js'
-
-webpack compiled with 4 errors and 1 warning
-WARNING in src/FinancialDashboard.tsx:878:52
-TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
-  Type 'string' is not assignable to type 'number'.
-    876 |             />
-    877 |             <Tooltip 
-  > 878 |               formatter={(value) => formatCurrency(value)}
-        |                                                    ^^^^^
-    879 |               contentStyle={{ 
-    880 |                 backgroundColor: theme.tooltipBackground,
-    881 |                 borderRadius: '12px',
-
-WARNING in src/FinancialDashboard.tsx:950:38
-TS7031: Binding element 'cx' implicitly has an 'any' type.
-    948 |     
-    949 |     const RADIAN = Math.PI / 180;
-  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                      ^^
-    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:950:42
-TS7031: Binding element 'cy' implicitly has an 'any' type.
-    948 |     
-    949 |     const RADIAN = Math.PI / 180;
-  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                          ^^
-    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:950:46
-TS7031: Binding element 'midAngle' implicitly has an 'any' type.
-    948 |     
-    949 |     const RADIAN = Math.PI / 180;
-  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                              ^^^^^^^^
-    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:950:56
-TS7031: Binding element 'innerRadius' implicitly has an 'any' type.
-    948 |     
-    949 |     const RADIAN = Math.PI / 180;
-  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                                        ^^^^^^^^^^^
-    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:950:69
-TS7031: Binding element 'outerRadius' implicitly has an 'any' type.
-    948 |     
-    949 |     const RADIAN = Math.PI / 180;
-  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                                                     ^^^^^^^^^^^
-    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:950:82
-TS7031: Binding element 'percent' implicitly has an 'any' type.
-    948 |     
-    949 |     const RADIAN = Math.PI / 180;
-  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                                                                  ^^^^^^^
-    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:950:91
-TS7031: Binding element 'index' implicitly has an 'any' type.
-    948 |     
-    949 |     const RADIAN = Math.PI / 180;
-  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                                                                           ^^^^^
-    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:950:98
-TS7031: Binding element 'name' implicitly has an 'any' type.
-    948 |     
-    949 |     const RADIAN = Math.PI / 180;
-  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                                                                                  ^^^^
-    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:950:104
-TS7031: Binding element 'value' implicitly has an 'any' type.
-    948 |     
-    949 |     const RADIAN = Math.PI / 180;
-  > 950 |     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, name, value }) => {
-        |                                                                                                        ^^^^^
-    951 |       const radius = innerRadius + (outerRadius - innerRadius) * 1.1;
-    952 |       const x = cx + radius * Math.cos(-midAngle * RADIAN);
-    953 |       const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-WARNING in src/FinancialDashboard.tsx:985:54
-TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
-  Type 'string' is not assignable to type 'number'.
-    983 |               </Pie>
-    984 |               <Tooltip 
-  > 985 |                 formatter={(value) => formatCurrency(value)}
-        |                                                      ^^^^^
-    986 |                 contentStyle={{ 
-    987 |                   backgroundColor: theme.tooltipBackground,
-    988 |                   borderRadius: '12px',
-
-WARNING in src/FinancialDashboard.tsx:1019:54
-TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
-  Type 'string' is not assignable to type 'number'.
-    1017 |               </Pie>
-    1018 |               <Tooltip 
-  > 1019 |                 formatter={(value) => formatCurrency(value)}
-         |                                                      ^^^^^
-    1020 |                 contentStyle={{ 
-    1021 |                   backgroundColor: theme.tooltipBackground,
-    1022 |                   borderRadius: '12px',
-
-WARNING in src/FinancialDashboard.tsx:1199:52
-TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
-  Type 'string' is not assignable to type 'number'.
-    1197 |             />
-    1198 |             <Tooltip 
-  > 1199 |               formatter={(value) => formatCurrency(value)}
-         |                                                    ^^^^^
-    1200 |               contentStyle={{ 
-    1201 |                 backgroundColor: theme.tooltipBackground,
-    1202 |                 borderRadius: '12px',
-
-WARNING in src/FinancialDashboard.tsx:1284:50
-TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
-  Type 'string' is not assignable to type 'number'.
-    1282 |           />
-    1283 |           <Tooltip 
-  > 1284 |             formatter={(value) => formatCurrency(value)}
-         |                                                  ^^^^^
-    1285 |             contentStyle={{ 
-    1286 |               backgroundColor: theme.tooltipBackground,
-    1287 |               borderRadius: '12px',
-
-WARNING in src/FinancialDashboard.tsx:1551:32
-TS7006: Parameter 'newValue' implicitly has an 'any' type.
-    1549 |                   <EditableCell
-    1550 |                     value={value}
-  > 1551 |                     onChange={(newValue) => {
-         |                                ^^^^^^^^
-    1552 |                       const newData = [...newClients75];
-    1553 |                       newData[index] = newValue;
-    1554 |                       setNewClients75(newData);
-
-WARNING in src/FinancialDashboard.tsx:1570:32
-TS7006: Parameter 'newValue' implicitly has an 'any' type.
-    1568 |                   <EditableCell
-    1569 |                     value={value}
-  > 1570 |                     onChange={(newValue) => {
-         |                                ^^^^^^^^
-    1571 |                       const newData = [...newClients150];
-    1572 |                       newData[index] = newValue;
-    1573 |                       setNewClients150(newData);
-
-WARNING in src/FinancialDashboard.tsx:1589:32
-TS7006: Parameter 'newValue' implicitly has an 'any' type.
-    1587 |                   <EditableCell
-    1588 |                     value={value}
-  > 1589 |                     onChange={(newValue) => {
-         |                                ^^^^^^^^
-    1590 |                       const newData = [...newClients250];
-    1591 |                       newData[index] = newValue;
-    1592 |                       setNewClients250(newData);
-
-WARNING in src/FinancialDashboard.tsx:1608:32
-TS7006: Parameter 'newValue' implicitly has an 'any' type.
-    1606 |                   <EditableCell
-    1607 |                     value={value}
-  > 1608 |                     onChange={(newValue) => {
-         |                                ^^^^^^^^
-    1609 |                       const newData = [...newClients500];
-    1610 |                       newData[index] = newValue;
-    1611 |                       setNewClients500(newData);
-
-WARNING in src/FinancialDashboard.tsx:1627:32
-TS7006: Parameter 'newValue' implicitly has an 'any' type.
-    1625 |                   <EditableCell
-    1626 |                     value={value}
-  > 1627 |                     onChange={(newValue) => {
-         |                                ^^^^^^^^
-    1628 |                       const newData = [...newClients1000];
-    1629 |                       newData[index] = newValue;
-    1630 |                       setNewClients1000(newData);
-
-WARNING in src/FinancialDashboard.tsx:1664:32
-TS7006: Parameter 'newValue' implicitly has an 'any' type.
-    1662 |                   <EditableCell 
-    1663 |                     value={value} 
-  > 1664 |                     onChange={(newValue) => {
-         |                                ^^^^^^^^
-    1665 |                       const newArray = [...fotOptimistic];
-    1666 |                       newArray[index] = newValue;
-    1667 |                       setFotOptimistic(newArray);
-
-WARNING in src/FinancialDashboard.tsx:1680:32
-TS7006: Parameter 'newValue' implicitly has an 'any' type.
-    1678 |                   <EditableCell 
-    1679 |                     value={value} 
-  > 1680 |                     onChange={(newValue) => {
-         |                                ^^^^^^^^
-    1681 |                       const newArray = [...fotPessimistic];
-    1682 |                       newArray[index] = newValue;
-    1683 |                       setFotPessimistic(newArray);
-
-WARNING in src/FinancialDashboard.tsx:2312:60
-TS2345: Argument of type 'ValueType' is not assignable to parameter of type 'number'.
-  Type 'string' is not assignable to type 'number'.
-    2310 |                     </Pie>
-    2311 |                     <Tooltip 
-  > 2312 |                       formatter={(value) => formatCurrency(value)}
-         |                                                            ^^^^^
-    2313 |                       contentStyle={{ 
-    2314 |                         backgroundColor: theme.tooltipBackground,
-    2315 |                         borderRadius: '12px',
+Compiled successfully!
+
+You can now view financial-dashboard in the browser.
+
+  Local:            http://localhost:3000
+  On Your Network:  http://192.168.1.9:3000
+
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+
+webpack compiled successfully
+Files successfully emitted, waiting for typecheck results...
+Issues checking in progress...
+WARNING in src/__tests__/calculations.test.ts:72:20
+TS2304: Cannot find name 'testHook'.
+    70 |
+    71 |   test('Налог рассчитывается с выручки, а не с прибыли', () => {
+  > 72 |     const result = testHook(useFinancialModel, mockParams, mockClients, mockUpsell);
+       |                    ^^^^^^^^
+    73 |     result.current.calculateFinancialModel();
+    74 |     
+    75 |     const firstMonth = result.current.monthlyData[0];
+
+WARNING in src/__tests__/calculations.test.ts:143:74
+TS2339: Property 'partner' does not exist on type 'number | { direct: number; partner: number; }'.
+  Property 'partner' does not exist on type 'number'.
+    141 |     
+    142 |     // Комиссии должны быть больше 0 если есть партнерские клиенты
+  > 143 |     if (firstMonth.totalNewClients > 0 && mockParams.channelDistribution.partner > 0) {
+        |                                                                          ^^^^^^^
+    144 |       expect(firstMonth.partnerCommissions).toBeGreaterThan(0);
+    145 |     }
+    146 |   });
+
+WARNING in src/__tests__/calculations.test.ts:161:56
+TS2339: Property 'direct' does not exist on type 'number | { direct: number; partner: number; }'.
+  Property 'direct' does not exist on type 'number'.
+    159 |     
+    160 |     const firstMonth = result.current.monthlyData[0];
+  > 161 |     const directRatio = mockParams.channelDistribution.direct / 100;
+        |                                                        ^^^^^^
+    162 |     
+    163 |     // Расходы на продажи = выручка * процент * долю канала
+    164 |     const expectedSalesCosts = firstMonth.totalRevenue * (mockParams.directSalesPercentage / 100) * directRatio;
+
+WARNING in src/__tests__/comprehensive-model.test.ts:102:54
+TS2339: Property 'summary' does not exist on type '{ monthlyData: MonthlyData[]; totalData: TotalData; calculateFinancialModel: () => void; }'.
+    100 |
+    101 |       // При 50% использовании клиенты должны покупать реже
+  > 102 |       const yearlyRevenue50 = lowUsageResult.current.summary?.totalRevenue || 0;
+        |                                                      ^^^^^^^
+    103 |       
+    104 |       // 100% usage - покупка каждый месяц
+    105 |       const highUsageParams = { ...baseParams, messageUsageRate: 100 };
+
+WARNING in src/__tests__/comprehensive-model.test.ts:114:56
+TS2339: Property 'summary' does not exist on type '{ monthlyData: MonthlyData[]; totalData: TotalData; calculateFinancialModel: () => void; }'.
+    112 |       });
+    113 |
+  > 114 |       const yearlyRevenue100 = highUsageResult.current.summary?.totalRevenue || 0;
+        |                                                        ^^^^^^^
+    115 |       
+    116 |       // При 100% использовании выручка должна быть примерно в 2 раза выше
+    117 |       expect(yearlyRevenue100).toBeGreaterThan(yearlyRevenue50 * 1.8);
+
+WARNING in src/__tests__/comprehensive-model.test.ts:145:38
+TS2339: Property 'summary' does not exist on type '{ monthlyData: MonthlyData[]; totalData: TotalData; calculateFinancialModel: () => void; }'.
+    143 |       });
+    144 |
+  > 145 |       const summary = result.current.summary;
+        |                                      ^^^^^^^
+    146 |       const maxLTV = summary.averageArpu * 72;
+    147 |       
+    148 |       expect(summary.averageLtv).toBeLessThanOrEqual(maxLTV);
+
+WARNING in src/__tests__/comprehensive-model.test.ts:158:38
+TS2339: Property 'summary' does not exist on type '{ monthlyData: MonthlyData[]; totalData: TotalData; calculateFinancialModel: () => void; }'.
+    156 |       });
+    157 |
+  > 158 |       const summary = result.current.summary;
+        |                                      ^^^^^^^
+    159 |       
+    160 |       // CAC должен включать все расходы на привлечение
+    161 |       expect(summary.averageCac).toBeGreaterThan(0);
+
+WARNING in src/__tests__/comprehensive-model.test.ts:186:38
+TS2339: Property 'summary' does not exist on type '{ monthlyData: MonthlyData[]; totalData: TotalData; calculateFinancialModel: () => void; }'.
+    184 |       });
+    185 |
+  > 186 |       const summary = result.current.summary;
+        |                                      ^^^^^^^
+    187 |       const expectedTax = summary.totalRevenue * 0.06; // 6% optimistic
+    188 |       
+    189 |       expect(summary.totalTax).toBeCloseTo(expectedTax, 2);
+
+WARNING in src/__tests__/comprehensive-model.test.ts:286:38
+TS2339: Property 'summary' does not exist on type '{ monthlyData: MonthlyData[]; totalData: TotalData; calculateFinancialModel: () => void; }'.
+    284 |       });
+    285 |
+  > 286 |       const summary = result.current.summary;
+        |                                      ^^^^^^^
+    287 |       
+    288 |       // Проверяем, что есть доходы от upsell
+    289 |       expect(summary.totalUpsellRevenue).toBeGreaterThan(0);
+
+WARNING in src/__tests__/comprehensive-model.test.ts:301:38
+TS2339: Property 'summary' does not exist on type '{ monthlyData: MonthlyData[]; totalData: TotalData; calculateFinancialModel: () => void; }'.
+    299 |       });
+    300 |
+  > 301 |       const summary = result.current.summary;
+        |                                      ^^^^^^^
+    302 |       
+    303 |       // ФОТ должен быть разделен примерно 60/40
+    304 |       const totalFOT = summary.totalFot;
+
+WARNING in src/__tests__/comprehensive-model.test.ts:321:38
+TS2339: Property 'summary' does not exist on type '{ monthlyData: MonthlyData[]; totalData: TotalData; calculateFinancialModel: () => void; }'.
+    319 |       });
+    320 |
+  > 321 |       const summary = result.current.summary;
+        |                                      ^^^^^^^
+    322 |       const monthlyTotals = result.current.monthlyData.reduce((acc, month) => ({
+    323 |         revenue: acc.revenue + month.totalRevenue,
+    324 |         expenses: acc.expenses + month.totalExpenses,
+
+WARNING in src/__tests__/final-test-suite.test.ts:107:32
+TS2339: Property 'summary' does not exist on type '{ monthlyData: MonthlyData[]; totalData: TotalData; calculateFinancialModel: () => void; }'.
+    105 |
+    106 |       // При 100% использовании выручка должна быть выше
+  > 107 |       expect(result100.current.summary.totalSubscriptionRevenue).toBeGreaterThan(
+        |                                ^^^^^^^
+    108 |         result50.current.summary.totalSubscriptionRevenue
+    109 |       );
+    110 |     });
+
+WARNING in src/__tests__/final-test-suite.test.ts:108:26
+TS2339: Property 'summary' does not exist on type '{ monthlyData: MonthlyData[]; totalData: TotalData; calculateFinancialModel: () => void; }'.
+    106 |       // При 100% использовании выручка должна быть выше
+    107 |       expect(result100.current.summary.totalSubscriptionRevenue).toBeGreaterThan(
+  > 108 |         result50.current.summary.totalSubscriptionRevenue
+        |                          ^^^^^^^
+    109 |       );
+    110 |     });
+    111 |   });
+
+WARNING in src/__tests__/final-test-suite.test.ts:165:38
+TS2339: Property 'summary' does not exist on type '{ monthlyData: MonthlyData[]; totalData: TotalData; calculateFinancialModel: () => void; }'.
+    163 |       });
+    164 |
+  > 165 |       const summary = result.current.summary;
+        |                                      ^^^^^^^
+    166 |       const expectedTax = summary.totalRevenue * 0.06; // 6% оптимистично
+    167 |       
+    168 |       expect(summary.totalTax).toBeCloseTo(expectedTax, 2);
+
+WARNING in src/__tests__/final-test-suite.test.ts:182:38
+TS2339: Property 'summary' does not exist on type '{ monthlyData: MonthlyData[]; totalData: TotalData; calculateFinancialModel: () => void; }'.
+    180 |       });
+    181 |
+  > 182 |       const summary = result.current.summary;
+        |                                      ^^^^^^^
+    183 |       
+    184 |       // CAC должен быть больше 0 при наличии новых клиентов
+    185 |       expect(summary.averageCac).toBeGreaterThan(0);
+
+WARNING in src/__tests__/final-test-suite.test.ts:255:38
+TS2339: Property 'summary' does not exist on type '{ monthlyData: MonthlyData[]; totalData: TotalData; calculateFinancialModel: () => void; }'.
+    253 |       });
+    254 |
+  > 255 |       const summary = result.current.summary;
+        |                                      ^^^^^^^
+    256 |       
+    257 |       // Должны быть доходы от upsell при наличии клиентов
+    258 |       expect(summary.totalUpsellRevenue).toBeGreaterThan(0);
+
+WARNING in src/__tests__/final-test-suite.test.ts:274:38
+TS2339: Property 'summary' does not exist on type '{ monthlyData: MonthlyData[]; totalData: TotalData; calculateFinancialModel: () => void; }'.
+    272 |       });
+    273 |
+  > 274 |       const summary = result.current.summary;
+        |                                      ^^^^^^^
+    275 |       const totalFot = summary.totalFot;
+    276 |       
+    277 |       // Проверяем пропорции примерно 60/40
+
+WARNING in src/__tests__/final-test-suite.test.ts:296:38
+TS2339: Property 'summary' does not exist on type '{ monthlyData: MonthlyData[]; totalData: TotalData; calculateFinancialModel: () => void; }'.
+    294 |       });
+    295 |
+  > 296 |       const summary = result.current.summary;
+        |                                      ^^^^^^^
+    297 |       const expectedApiCosts = summary.totalRevenue * 0.3; // 30%
+    298 |       
+    299 |       expect(summary.totalApiCosts).toBeCloseTo(expectedApiCosts, 2);
+
+WARNING in src/__tests__/final-test-suite.test.ts:315:38
+TS2339: Property 'summary' does not exist on type '{ monthlyData: MonthlyData[]; totalData: TotalData; calculateFinancialModel: () => void; }'.
+    313 |       });
+    314 |
+  > 315 |       const summary = result.current.summary;
+        |                                      ^^^^^^^
+    316 |       const expectedNetProfit = summary.totalRevenue - summary.totalExpenses - summary.totalTax;
+    317 |       
+    318 |       expect(summary.totalNetProfit).toBeCloseTo(expectedNetProfit, 2);
+
+WARNING in src/__tests__/final-test-suite.test.ts:332:38
+TS2339: Property 'summary' does not exist on type '{ monthlyData: MonthlyData[]; totalData: TotalData; calculateFinancialModel: () => void; }'.
+    330 |       });
+    331 |
+  > 332 |       const summary = result.current.summary;
+        |                                      ^^^^^^^
+    333 |       
+    334 |       // ROI должен быть числом
+    335 |       expect(typeof summary.roi).toBe('number');
+
+WARNING in src/__tests__/message-system-detailed.test.ts:29:9
+TS2740: Type '{ newClients75: number[]; newClients150: number[]; newClients250: number[]; newClients500: number[]; newClients1000: number[]; subscriptionPrice75: number; subscriptionPrice150: number; subscriptionPrice250: number; ... 7 more ...; integrationPrice: number; }' is missing the following properties from type 'ClientsData': newClients75Direct, newClients150Direct, newClients250Direct, newClients500Direct, and 6 more.
+    27 |   };
+    28 |
+  > 29 |   const defaultClients: ClientsData = {
+       |         ^^^^^^^^^^^^^^
+    30 |     newClients75: [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], // 1 клиент тарифа $75 в первый месяц
+    31 |     newClients150: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    32 |     newClients250: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+
+WARNING in src/__tests__/message-system-detailed.test.ts:81:9
+TS2554: Expected 1 arguments, but got 2.
+    79 |       expect(month.subscriptionRevenue75).toBe(
+    80 |         month.activeClients75 * 75,
+  > 81 |         `Месяц ${i + 1}: Выручка должна = активные клиенты * цена подписки`
+       |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    82 |       );
+    83 |     }
+    84 |   });
+
+WARNING in src/__tests__/message-usage-analysis.test.ts:29:5
+TS2322: Type '{ messageUsageRate: number; carryOverPercentage: number; additionalMessagePrice: number; integrationPrice: number; churnRate: number; apiCostPercentage: number; channelDistribution: { ...; }; ... 12 more ...; messageCarryoverLimit: number; }' is not assignable to type 'FinancialModelParams'.
+  Object literal may only specify known properties, and 'messageCarryoverLimit' does not exist in type 'FinancialModelParams'.
+    27 |     taxMode: 'optimistic',
+    28 |     customTaxRate: 15,
+  > 29 |     messageCarryoverLimit: 3
+       |     ^^^^^^^^^^^^^^^^^^^^^^^^
+    30 |   };
+    31 |
+    32 |   const testClients: ClientsData = {
+
+WARNING in src/__tests__/message-usage-analysis.test.ts:32:9
+TS2740: Type '{ newClients75: number[]; newClients150: number[]; newClients250: number[]; newClients500: number[]; newClients1000: number[]; subscriptionPrice75: number; subscriptionPrice150: number; subscriptionPrice250: number; ... 6 more ...; messages1000: number; }' is missing the following properties from type 'ClientsData': newClients75Direct, newClients150Direct, newClients250Direct, newClients500Direct, and 7 more.
+    30 |   };
+    31 |
+  > 32 |   const testClients: ClientsData = {
+       |         ^^^^^^^^^^^
+    33 |     newClients75: [10, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],
+    34 |     newClients150: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    35 |     newClients250: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+
+WARNING in src/__tests__/message-usage-profit-impact.test.ts:29:9
+TS2740: Type '{ newClients75: number[]; newClients150: number[]; newClients250: number[]; newClients500: number[]; newClients1000: number[]; subscriptionPrice75: number; subscriptionPrice150: number; subscriptionPrice250: number; ... 7 more ...; integrationPrice: number; }' is missing the following properties from type 'ClientsData': newClients75Direct, newClients150Direct, newClients250Direct, newClients500Direct, and 6 more.
+    27 |   };
+    28 |
+  > 29 |   const activeClients: ClientsData = {
+       |         ^^^^^^^^^^^^^
+    30 |     newClients75: [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],
+    31 |     newClients150: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10],
+    32 |     newClients250: [8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8],
+
+WARNING in src/__tests__/package-purchase-logic.test.ts:29:9
+TS2740: Type '{ newClients75: number[]; newClients150: number[]; newClients250: number[]; newClients500: number[]; newClients1000: number[]; subscriptionPrice75: number; subscriptionPrice150: number; subscriptionPrice250: number; ... 7 more ...; integrationPrice: number; }' is missing the following properties from type 'ClientsData': newClients75Direct, newClients150Direct, newClients250Direct, newClients500Direct, and 6 more.
+    27 |   };
+    28 |
+  > 29 |   const oneClient: ClientsData = {
+       |         ^^^^^^^^^
+    30 |     newClients75: [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    31 |     newClients150: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    32 |     newClients250: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+
+WARNING in src/__tests__/package-purchase-logic.test.ts:119:9
+TS7034: Variable 'purchaseMonths' implicitly has type 'any[]' in some locations where its type cannot be determined.
+    117 |     
+    118 |     console.log('\n📊 Тест: 20% использование - редкие покупки');
+  > 119 |     let purchaseMonths = [];
+        |         ^^^^^^^^^^^^^^
+    120 |     monthlyData.forEach((month, i) => {
+    121 |       if (month.subscriptionRevenue75 > 0) {
+    122 |         purchaseMonths.push(i + 1);
+
+WARNING in src/__tests__/package-purchase-logic.test.ts:127:39
+TS7005: Variable 'purchaseMonths' implicitly has an 'any[]' type.
+    125 |     });
+    126 |     
+  > 127 |     console.log(`Покупки в месяцах: ${purchaseMonths.join(', ')}`);
+        |                                       ^^^^^^^^^^^^^^
+    128 |     
+    129 |     // При 20% использовании покупок должно быть очень мало
+    130 |     expect(totalPurchases).toBeLessThanOrEqual(3);
+
+WARNING in src/__tests__/simple-calculations.test.ts:3:1
+TS1208: 'simple-calculations.test.ts' cannot be compiled under '--isolatedModules' because it is considered a global script file. Add an import, export, or an empty 'export {}' statement to make it a module.
+    1 | // Простые тесты для проверки основных формул без использования хуков
+    2 |
+  > 3 | describe('Проверка основных формул', () => {
+      | ^^^^^^^^
+    4 |   test('Налог рассчитывается от выручки', () => {
+    5 |     const revenue = 10000;
+    6 |     const expenses = 7000;
+
+WARNING in src/components/common/GrowthCurveEditor.tsx:185:13
+TS2322: Type '{ content: string; position: "right"; }' is not assignable to type 'IntrinsicAttributes & InfoTooltipProps'.
+  Property 'content' does not exist on type 'IntrinsicAttributes & InfoTooltipProps'.
+    183 |           {title}
+    184 |           <InfoTooltip
+  > 185 |             content="Нарисуйте кривую роста мышью или выберите готовый паттерн. На мобильном устройстве используйте палец."
+        |             ^^^^^^^
+    186 |             position="right"
+    187 |           />
+    188 |         </h3>
+
+WARNING in src/components/common/SmartGrowthSliders.tsx:107:13
+TS2322: Type '{ content: string; position: "right"; }' is not assignable to type 'IntrinsicAttributes & InfoTooltipProps'.
+  Property 'content' does not exist on type 'IntrinsicAttributes & InfoTooltipProps'.
+    105 |           {title}
+    106 |           <InfoTooltip
+  > 107 |             content="Настройте рост по кварталам с помощью слайдеров. Значения автоматически распределятся по месяцам."
+        |             ^^^^^^^
+    108 |             position="right"
+    109 |           />
+    110 |         </h3>
+
+WARNING in src/components/common/VisualPatternInput.tsx:102:13
+TS2322: Type '{ content: string; position: "right"; }' is not assignable to type 'IntrinsicAttributes & InfoTooltipProps'.
+  Property 'content' does not exist on type 'IntrinsicAttributes & InfoTooltipProps'.
+    100 |           {title}
+    101 |           <InfoTooltip
+  > 102 |             content="Выберите визуальный паттерн роста и настройте его интенсивность"
+        |             ^^^^^^^
+    103 |             position="right"
+    104 |           />
+    105 |         </h3>
+
+WARNING in src/components/FinancialDashboard.tsx:57:12
+TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ model: number; product: number; acquisition: number; operations: number; growth: number; results: number; }'.
+  No index signature with a parameter of type 'string' was found on type '{ model: number; product: number; acquisition: number; operations: number; growth: number; results: number; }'.
+    55 |       results: 100
+    56 |     };
+  > 57 |     return progress[tabId] || 0;
+       |            ^^^^^^^^^^^^^^^
+    58 |   };
+    59 |   
+    60 |   // Мини-превью для живого отображения изменений
+
+WARNING in src/components/panels/AcquisitionChannelsEditor.tsx:27:11
+TS2322: Type '{ content: string; position: "right"; }' is not assignable to type 'IntrinsicAttributes & InfoTooltipProps'.
+  Property 'content' does not exist on type 'IntrinsicAttributes & InfoTooltipProps'.
+    25 |         Каналы привлечения клиентов
+    26 |         <InfoTooltip
+  > 27 |           content="Настройте параметры для двух основных каналов привлечения: прямые продажи и партнёрская программа"
+       |           ^^^^^^^
+    28 |           position="right"
+    29 |         />
+    30 |       </h2>
+
+WARNING in src/components/panels/AcquisitionChannelsEditor.tsx:38:15
+TS2322: Type '{ content: string; position: "right"; }' is not assignable to type 'IntrinsicAttributes & InfoTooltipProps'.
+  Property 'content' does not exist on type 'IntrinsicAttributes & InfoTooltipProps'.
+    36 |             Прямые продажи
+    37 |             <InfoTooltip
+  > 38 |               content="Самостоятельное привлечение клиентов через собственный отдел продаж и маркетинг"
+       |               ^^^^^^^
+    39 |               position="right"
+    40 |             />
+    41 |           </h3>
+
+WARNING in src/components/panels/AcquisitionChannelsEditor.tsx:84:17
+TS2322: Type '{ value: number; onChange: (cost: number) => void; min: number; formatCurrency: true; }' is not assignable to type 'IntrinsicAttributes & EditableCellProps'.
+  Property 'formatCurrency' does not exist on type 'IntrinsicAttributes & EditableCellProps'.
+    82 |                 onChange={setDirectLeadCost}
+    83 |                 min={0}
+  > 84 |                 formatCurrency
+       |                 ^^^^^^^^^^^^^^
+    85 |               />
+    86 |               <p className="text-xs text-gray-500 mt-1">
+    87 |                 Средняя стоимость привлечения одного лида
+
+WARNING in src/components/panels/AcquisitionChannelsEditor.tsx:104:15
+TS2322: Type '{ content: string; position: "right"; }' is not assignable to type 'IntrinsicAttributes & InfoTooltipProps'.
+  Property 'content' does not exist on type 'IntrinsicAttributes & InfoTooltipProps'.
+    102 |             Партнёрская программа
+    103 |             <InfoTooltip
+  > 104 |               content="Привлечение клиентов через партнёров, которые получают комиссию с продаж"
+        |               ^^^^^^^
+    105 |               position="right"
+    106 |             />
+    107 |           </h3>
+
+WARNING in src/components/panels/AcquisitionChannelsEditor.tsx:134:17
+TS2322: Type '{ value: number; onChange: (cost: number) => void; min: number; formatCurrency: true; }' is not assignable to type 'IntrinsicAttributes & EditableCellProps'.
+  Property 'formatCurrency' does not exist on type 'IntrinsicAttributes & EditableCellProps'.
+    132 |                 onChange={setPartnerLeadCost}
+    133 |                 min={0}
+  > 134 |                 formatCurrency
+        |                 ^^^^^^^^^^^^^^
+    135 |               />
+    136 |               <p className="text-xs text-gray-500 mt-1">
+    137 |                 Затраты на обработку и поддержку партнёрского лида
+
+WARNING in src/components/panels/AcquisitionPanel.tsx:95:49
+TS2362: The left-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type.
+    93 |                       <li>• Retention Rate: {(100 - churnRate).toFixed(1)}%</li>
+    94 |                       <li>• Среднее время жизни клиента: {(1 / (churnRate / 100)).toFixed(1)} мес.</li>
+  > 95 |                       <li>• Годовое удержание: {Math.pow(1 - churnRate/100, 12).toFixed(1) * 100}%</li>
+       |                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    96 |                     </ul>
+    97 |                   </div>
+    98 |                 </div>
+
+WARNING in src/components/panels/ChannelDistributionSettings.tsx:16:11
+TS2322: Type '{ content: string; position: "right"; }' is not assignable to type 'IntrinsicAttributes & InfoTooltipProps'.
+  Property 'content' does not exist on type 'IntrinsicAttributes & InfoTooltipProps'.
+    14 |         Распределение по каналам привлечения
+    15 |         <InfoTooltip
+  > 16 |           content="Укажите, какой процент новых клиентов приходит через каждый канал"
+       |           ^^^^^^^
+    17 |           position="right"
+    18 |         />
+    19 |       </h2>
+
+WARNING in src/components/panels/ClientsChannelEditor.tsx:11:5
+TS2339: Property 'newClients75Direct' does not exist on type 'FinancialContextType'.
+     9 |   const {
+    10 |     // Прямые продажи
+  > 11 |     newClients75Direct, setNewClients75Direct,
+       |     ^^^^^^^^^^^^^^^^^^
+    12 |     newClients150Direct, setNewClients150Direct,
+    13 |     newClients250Direct, setNewClients250Direct,
+    14 |     newClients500Direct, setNewClients500Direct,
+
+WARNING in src/components/panels/ClientsChannelEditor.tsx:11:25
+TS2339: Property 'setNewClients75Direct' does not exist on type 'FinancialContextType'.
+     9 |   const {
+    10 |     // Прямые продажи
+  > 11 |     newClients75Direct, setNewClients75Direct,
+       |                         ^^^^^^^^^^^^^^^^^^^^^
+    12 |     newClients150Direct, setNewClients150Direct,
+    13 |     newClients250Direct, setNewClients250Direct,
+    14 |     newClients500Direct, setNewClients500Direct,
+
+WARNING in src/components/panels/ClientsChannelEditor.tsx:12:5
+TS2339: Property 'newClients150Direct' does not exist on type 'FinancialContextType'.
+    10 |     // Прямые продажи
+    11 |     newClients75Direct, setNewClients75Direct,
+  > 12 |     newClients150Direct, setNewClients150Direct,
+       |     ^^^^^^^^^^^^^^^^^^^
+    13 |     newClients250Direct, setNewClients250Direct,
+    14 |     newClients500Direct, setNewClients500Direct,
+    15 |     newClients1000Direct, setNewClients1000Direct,
+
+WARNING in src/components/panels/ClientsChannelEditor.tsx:12:26
+TS2339: Property 'setNewClients150Direct' does not exist on type 'FinancialContextType'.
+    10 |     // Прямые продажи
+    11 |     newClients75Direct, setNewClients75Direct,
+  > 12 |     newClients150Direct, setNewClients150Direct,
+       |                          ^^^^^^^^^^^^^^^^^^^^^^
+    13 |     newClients250Direct, setNewClients250Direct,
+    14 |     newClients500Direct, setNewClients500Direct,
+    15 |     newClients1000Direct, setNewClients1000Direct,
+
+WARNING in src/components/panels/ClientsChannelEditor.tsx:13:5
+TS2339: Property 'newClients250Direct' does not exist on type 'FinancialContextType'.
+    11 |     newClients75Direct, setNewClients75Direct,
+    12 |     newClients150Direct, setNewClients150Direct,
+  > 13 |     newClients250Direct, setNewClients250Direct,
+       |     ^^^^^^^^^^^^^^^^^^^
+    14 |     newClients500Direct, setNewClients500Direct,
+    15 |     newClients1000Direct, setNewClients1000Direct,
+    16 |     // Партнёры
+
+WARNING in src/components/panels/ClientsChannelEditor.tsx:13:26
+TS2339: Property 'setNewClients250Direct' does not exist on type 'FinancialContextType'.
+    11 |     newClients75Direct, setNewClients75Direct,
+    12 |     newClients150Direct, setNewClients150Direct,
+  > 13 |     newClients250Direct, setNewClients250Direct,
+       |                          ^^^^^^^^^^^^^^^^^^^^^^
+    14 |     newClients500Direct, setNewClients500Direct,
+    15 |     newClients1000Direct, setNewClients1000Direct,
+    16 |     // Партнёры
+
+WARNING in src/components/panels/ClientsChannelEditor.tsx:14:5
+TS2339: Property 'newClients500Direct' does not exist on type 'FinancialContextType'.
+    12 |     newClients150Direct, setNewClients150Direct,
+    13 |     newClients250Direct, setNewClients250Direct,
+  > 14 |     newClients500Direct, setNewClients500Direct,
+       |     ^^^^^^^^^^^^^^^^^^^
+    15 |     newClients1000Direct, setNewClients1000Direct,
+    16 |     // Партнёры
+    17 |     newClients75Partner, setNewClients75Partner,
+
+WARNING in src/components/panels/ClientsChannelEditor.tsx:14:26
+TS2339: Property 'setNewClients500Direct' does not exist on type 'FinancialContextType'.
+    12 |     newClients150Direct, setNewClients150Direct,
+    13 |     newClients250Direct, setNewClients250Direct,
+  > 14 |     newClients500Direct, setNewClients500Direct,
+       |                          ^^^^^^^^^^^^^^^^^^^^^^
+    15 |     newClients1000Direct, setNewClients1000Direct,
+    16 |     // Партнёры
+    17 |     newClients75Partner, setNewClients75Partner,
+
+WARNING in src/components/panels/ClientsChannelEditor.tsx:15:5
+TS2339: Property 'newClients1000Direct' does not exist on type 'FinancialContextType'.
+    13 |     newClients250Direct, setNewClients250Direct,
+    14 |     newClients500Direct, setNewClients500Direct,
+  > 15 |     newClients1000Direct, setNewClients1000Direct,
+       |     ^^^^^^^^^^^^^^^^^^^^
+    16 |     // Партнёры
+    17 |     newClients75Partner, setNewClients75Partner,
+    18 |     newClients150Partner, setNewClients150Partner,
+
+WARNING in src/components/panels/ClientsChannelEditor.tsx:15:27
+TS2339: Property 'setNewClients1000Direct' does not exist on type 'FinancialContextType'.
+    13 |     newClients250Direct, setNewClients250Direct,
+    14 |     newClients500Direct, setNewClients500Direct,
+  > 15 |     newClients1000Direct, setNewClients1000Direct,
+       |                           ^^^^^^^^^^^^^^^^^^^^^^^
+    16 |     // Партнёры
+    17 |     newClients75Partner, setNewClients75Partner,
+    18 |     newClients150Partner, setNewClients150Partner,
+
+WARNING in src/components/panels/ClientsChannelEditor.tsx:17:5
+TS2339: Property 'newClients75Partner' does not exist on type 'FinancialContextType'.
+    15 |     newClients1000Direct, setNewClients1000Direct,
+    16 |     // Партнёры
+  > 17 |     newClients75Partner, setNewClients75Partner,
+       |     ^^^^^^^^^^^^^^^^^^^
+    18 |     newClients150Partner, setNewClients150Partner,
+    19 |     newClients250Partner, setNewClients250Partner,
+    20 |     newClients500Partner, setNewClients500Partner,
+
+WARNING in src/components/panels/ClientsChannelEditor.tsx:17:26
+TS2339: Property 'setNewClients75Partner' does not exist on type 'FinancialContextType'.
+    15 |     newClients1000Direct, setNewClients1000Direct,
+    16 |     // Партнёры
+  > 17 |     newClients75Partner, setNewClients75Partner,
+       |                          ^^^^^^^^^^^^^^^^^^^^^^
+    18 |     newClients150Partner, setNewClients150Partner,
+    19 |     newClients250Partner, setNewClients250Partner,
+    20 |     newClients500Partner, setNewClients500Partner,
+
+WARNING in src/components/panels/ClientsChannelEditor.tsx:18:5
+TS2339: Property 'newClients150Partner' does not exist on type 'FinancialContextType'.
+    16 |     // Партнёры
+    17 |     newClients75Partner, setNewClients75Partner,
+  > 18 |     newClients150Partner, setNewClients150Partner,
+       |     ^^^^^^^^^^^^^^^^^^^^
+    19 |     newClients250Partner, setNewClients250Partner,
+    20 |     newClients500Partner, setNewClients500Partner,
+    21 |     newClients1000Partner, setNewClients1000Partner,
+
+WARNING in src/components/panels/ClientsChannelEditor.tsx:18:27
+TS2339: Property 'setNewClients150Partner' does not exist on type 'FinancialContextType'.
+    16 |     // Партнёры
+    17 |     newClients75Partner, setNewClients75Partner,
+  > 18 |     newClients150Partner, setNewClients150Partner,
+       |                           ^^^^^^^^^^^^^^^^^^^^^^^
+    19 |     newClients250Partner, setNewClients250Partner,
+    20 |     newClients500Partner, setNewClients500Partner,
+    21 |     newClients1000Partner, setNewClients1000Partner,
+
+WARNING in src/components/panels/ClientsChannelEditor.tsx:19:5
+TS2339: Property 'newClients250Partner' does not exist on type 'FinancialContextType'.
+    17 |     newClients75Partner, setNewClients75Partner,
+    18 |     newClients150Partner, setNewClients150Partner,
+  > 19 |     newClients250Partner, setNewClients250Partner,
+       |     ^^^^^^^^^^^^^^^^^^^^
+    20 |     newClients500Partner, setNewClients500Partner,
+    21 |     newClients1000Partner, setNewClients1000Partner,
+    22 |   } = useFinancialContext();
+
+WARNING in src/components/panels/ClientsChannelEditor.tsx:19:27
+TS2339: Property 'setNewClients250Partner' does not exist on type 'FinancialContextType'.
+    17 |     newClients75Partner, setNewClients75Partner,
+    18 |     newClients150Partner, setNewClients150Partner,
+  > 19 |     newClients250Partner, setNewClients250Partner,
+       |                           ^^^^^^^^^^^^^^^^^^^^^^^
+    20 |     newClients500Partner, setNewClients500Partner,
+    21 |     newClients1000Partner, setNewClients1000Partner,
+    22 |   } = useFinancialContext();
+
+WARNING in src/components/panels/ClientsChannelEditor.tsx:20:5
+TS2339: Property 'newClients500Partner' does not exist on type 'FinancialContextType'.
+    18 |     newClients150Partner, setNewClients150Partner,
+    19 |     newClients250Partner, setNewClients250Partner,
+  > 20 |     newClients500Partner, setNewClients500Partner,
+       |     ^^^^^^^^^^^^^^^^^^^^
+    21 |     newClients1000Partner, setNewClients1000Partner,
+    22 |   } = useFinancialContext();
+    23 |
+
+WARNING in src/components/panels/ClientsChannelEditor.tsx:20:27
+TS2339: Property 'setNewClients500Partner' does not exist on type 'FinancialContextType'.
+    18 |     newClients150Partner, setNewClients150Partner,
+    19 |     newClients250Partner, setNewClients250Partner,
+  > 20 |     newClients500Partner, setNewClients500Partner,
+       |                           ^^^^^^^^^^^^^^^^^^^^^^^
+    21 |     newClients1000Partner, setNewClients1000Partner,
+    22 |   } = useFinancialContext();
+    23 |
+
+WARNING in src/components/panels/ClientsChannelEditor.tsx:21:5
+TS2339: Property 'newClients1000Partner' does not exist on type 'FinancialContextType'.
+    19 |     newClients250Partner, setNewClients250Partner,
+    20 |     newClients500Partner, setNewClients500Partner,
+  > 21 |     newClients1000Partner, setNewClients1000Partner,
+       |     ^^^^^^^^^^^^^^^^^^^^^
+    22 |   } = useFinancialContext();
+    23 |
+    24 |   const [selectedTariff, setSelectedTariff] = useState<number>(150);
+
+WARNING in src/components/panels/ClientsChannelEditor.tsx:21:28
+TS2339: Property 'setNewClients1000Partner' does not exist on type 'FinancialContextType'.
+    19 |     newClients250Partner, setNewClients250Partner,
+    20 |     newClients500Partner, setNewClients500Partner,
+  > 21 |     newClients1000Partner, setNewClients1000Partner,
+       |                            ^^^^^^^^^^^^^^^^^^^^^^^^
+    22 |   } = useFinancialContext();
+    23 |
+    24 |   const [selectedTariff, setSelectedTariff] = useState<number>(150);
+
+WARNING in src/components/panels/ClientsChannelEditor.tsx:78:13
+TS2322: Type '{ content: string; position: "right"; }' is not assignable to type 'IntrinsicAttributes & InfoTooltipProps'.
+  Property 'content' does not exist on type 'IntrinsicAttributes & InfoTooltipProps'.
+    76 |           Распределение клиентов по каналам
+    77 |           <InfoTooltip
+  > 78 |             content="Укажите, сколько клиентов приходит через прямые продажи и через партнёров для каждого тарифа"
+       |             ^^^^^^^
+    79 |             position="right"
+    80 |           />
+    81 |         </h2>
+
+WARNING in src/components/panels/ClientsChannelEditor.tsx:110:15
+TS2322: Type '{ content: string; position: "right"; }' is not assignable to type 'IntrinsicAttributes & InfoTooltipProps'.
+  Property 'content' does not exist on type 'IntrinsicAttributes & InfoTooltipProps'.
+    108 |             Прямые продажи
+    109 |             <InfoTooltip
+  > 110 |               content="Клиенты, привлечённые через собственный отдел продаж"
+        |               ^^^^^^^
+    111 |               position="right"
+    112 |             />
+    113 |           </h3>
+
+WARNING in src/components/panels/ClientsChannelEditor.tsx:133:48
+TS7006: Parameter 'sum' implicitly has an 'any' type.
+    131 |           </div>
+    132 |           <div className="mt-3 text-sm text-blue-700">
+  > 133 |             Итого: {currentData.direct.reduce((sum, val) => sum + val, 0)} клиентов
+        |                                                ^^^
+    134 |           </div>
+    135 |         </div>
+    136 |
+
+WARNING in src/components/panels/ClientsChannelEditor.tsx:133:53
+TS7006: Parameter 'val' implicitly has an 'any' type.
+    131 |           </div>
+    132 |           <div className="mt-3 text-sm text-blue-700">
+  > 133 |             Итого: {currentData.direct.reduce((sum, val) => sum + val, 0)} клиентов
+        |                                                     ^^^
+    134 |           </div>
+    135 |         </div>
+    136 |
+
+WARNING in src/components/panels/ClientsChannelEditor.tsx:142:15
+TS2322: Type '{ content: string; position: "right"; }' is not assignable to type 'IntrinsicAttributes & InfoTooltipProps'.
+  Property 'content' does not exist on type 'IntrinsicAttributes & InfoTooltipProps'.
+    140 |             Партнёрская программа
+    141 |             <InfoTooltip
+  > 142 |               content="Клиенты, привлечённые через партнёров"
+        |               ^^^^^^^
+    143 |               position="right"
+    144 |             />
+    145 |           </h3>
+
+WARNING in src/components/panels/ClientsChannelEditor.tsx:165:49
+TS7006: Parameter 'sum' implicitly has an 'any' type.
+    163 |           </div>
+    164 |           <div className="mt-3 text-sm text-green-700">
+  > 165 |             Итого: {currentData.partner.reduce((sum, val) => sum + val, 0)} клиентов
+        |                                                 ^^^
+    166 |           </div>
+    167 |         </div>
+    168 |       </div>
+
+WARNING in src/components/panels/ClientsChannelEditor.tsx:165:54
+TS7006: Parameter 'val' implicitly has an 'any' type.
+    163 |           </div>
+    164 |           <div className="mt-3 text-sm text-green-700">
+  > 165 |             Итого: {currentData.partner.reduce((sum, val) => sum + val, 0)} клиентов
+        |                                                      ^^^
+    166 |           </div>
+    167 |         </div>
+    168 |       </div>
+
+WARNING in src/components/panels/ClientsChannelEditor.tsx:179:43
+TS7006: Parameter 'sum' implicitly has an 'any' type.
+    177 |             <span className="text-gray-600">Всего клиентов:</span>
+    178 |             <p className="text-lg font-bold text-gray-800">
+  > 179 |               {currentData.direct.reduce((sum, val) => sum + val, 0) + 
+        |                                           ^^^
+    180 |                currentData.partner.reduce((sum, val) => sum + val, 0)}
+    181 |             </p>
+    182 |           </div>
+
+WARNING in src/components/panels/ClientsChannelEditor.tsx:179:48
+TS7006: Parameter 'val' implicitly has an 'any' type.
+    177 |             <span className="text-gray-600">Всего клиентов:</span>
+    178 |             <p className="text-lg font-bold text-gray-800">
+  > 179 |               {currentData.direct.reduce((sum, val) => sum + val, 0) + 
+        |                                                ^^^
+    180 |                currentData.partner.reduce((sum, val) => sum + val, 0)}
+    181 |             </p>
+    182 |           </div>
+
+WARNING in src/components/panels/ClientsChannelEditor.tsx:180:44
+TS7006: Parameter 'sum' implicitly has an 'any' type.
+    178 |             <p className="text-lg font-bold text-gray-800">
+    179 |               {currentData.direct.reduce((sum, val) => sum + val, 0) + 
+  > 180 |                currentData.partner.reduce((sum, val) => sum + val, 0)}
+        |                                            ^^^
+    181 |             </p>
+    182 |           </div>
+    183 |           <div>
+
+WARNING in src/components/panels/ClientsChannelEditor.tsx:180:49
+TS7006: Parameter 'val' implicitly has an 'any' type.
+    178 |             <p className="text-lg font-bold text-gray-800">
+    179 |               {currentData.direct.reduce((sum, val) => sum + val, 0) + 
+  > 180 |                currentData.partner.reduce((sum, val) => sum + val, 0)}
+        |                                                 ^^^
+    181 |             </p>
+    182 |           </div>
+    183 |           <div>
+
+WARNING in src/components/panels/ClientsChannelEditor.tsx:186:55
+TS7006: Parameter 'sum' implicitly has an 'any' type.
+    184 |             <span className="text-gray-600">Прямые продажи:</span>
+    185 |             <p className="text-lg font-bold text-blue-600">
+  > 186 |               {Math.round((currentData.direct.reduce((sum, val) => sum + val, 0) / 
+        |                                                       ^^^
+    187 |                 (currentData.direct.reduce((sum, val) => sum + val, 0) + 
+    188 |                  currentData.partner.reduce((sum, val) => sum + val, 0)) || 0) * 100)}%
+    189 |             </p>
+
+WARNING in src/components/panels/ClientsChannelEditor.tsx:186:60
+TS7006: Parameter 'val' implicitly has an 'any' type.
+    184 |             <span className="text-gray-600">Прямые продажи:</span>
+    185 |             <p className="text-lg font-bold text-blue-600">
+  > 186 |               {Math.round((currentData.direct.reduce((sum, val) => sum + val, 0) / 
+        |                                                            ^^^
+    187 |                 (currentData.direct.reduce((sum, val) => sum + val, 0) + 
+    188 |                  currentData.partner.reduce((sum, val) => sum + val, 0)) || 0) * 100)}%
+    189 |             </p>
+
+WARNING in src/components/panels/ClientsChannelEditor.tsx:187:45
+TS7006: Parameter 'sum' implicitly has an 'any' type.
+    185 |             <p className="text-lg font-bold text-blue-600">
+    186 |               {Math.round((currentData.direct.reduce((sum, val) => sum + val, 0) / 
+  > 187 |                 (currentData.direct.reduce((sum, val) => sum + val, 0) + 
+        |                                             ^^^
+    188 |                  currentData.partner.reduce((sum, val) => sum + val, 0)) || 0) * 100)}%
+    189 |             </p>
+    190 |           </div>
+
+WARNING in src/components/panels/ClientsChannelEditor.tsx:187:50
+TS7006: Parameter 'val' implicitly has an 'any' type.
+    185 |             <p className="text-lg font-bold text-blue-600">
+    186 |               {Math.round((currentData.direct.reduce((sum, val) => sum + val, 0) / 
+  > 187 |                 (currentData.direct.reduce((sum, val) => sum + val, 0) + 
+        |                                                  ^^^
+    188 |                  currentData.partner.reduce((sum, val) => sum + val, 0)) || 0) * 100)}%
+    189 |             </p>
+    190 |           </div>
+
+WARNING in src/components/panels/ClientsChannelEditor.tsx:188:46
+TS7006: Parameter 'sum' implicitly has an 'any' type.
+    186 |               {Math.round((currentData.direct.reduce((sum, val) => sum + val, 0) / 
+    187 |                 (currentData.direct.reduce((sum, val) => sum + val, 0) + 
+  > 188 |                  currentData.partner.reduce((sum, val) => sum + val, 0)) || 0) * 100)}%
+        |                                              ^^^
+    189 |             </p>
+    190 |           </div>
+    191 |           <div>
+
+WARNING in src/components/panels/ClientsChannelEditor.tsx:188:51
+TS7006: Parameter 'val' implicitly has an 'any' type.
+    186 |               {Math.round((currentData.direct.reduce((sum, val) => sum + val, 0) / 
+    187 |                 (currentData.direct.reduce((sum, val) => sum + val, 0) + 
+  > 188 |                  currentData.partner.reduce((sum, val) => sum + val, 0)) || 0) * 100)}%
+        |                                                   ^^^
+    189 |             </p>
+    190 |           </div>
+    191 |           <div>
+
+WARNING in src/components/panels/ClientsChannelEditor.tsx:194:56
+TS7006: Parameter 'sum' implicitly has an 'any' type.
+    192 |             <span className="text-gray-600">Партнёры:</span>
+    193 |             <p className="text-lg font-bold text-green-600">
+  > 194 |               {Math.round((currentData.partner.reduce((sum, val) => sum + val, 0) / 
+        |                                                        ^^^
+    195 |                 (currentData.direct.reduce((sum, val) => sum + val, 0) + 
+    196 |                  currentData.partner.reduce((sum, val) => sum + val, 0)) || 0) * 100)}%
+    197 |             </p>
+
+WARNING in src/components/panels/ClientsChannelEditor.tsx:194:61
+TS7006: Parameter 'val' implicitly has an 'any' type.
+    192 |             <span className="text-gray-600">Партнёры:</span>
+    193 |             <p className="text-lg font-bold text-green-600">
+  > 194 |               {Math.round((currentData.partner.reduce((sum, val) => sum + val, 0) / 
+        |                                                             ^^^
+    195 |                 (currentData.direct.reduce((sum, val) => sum + val, 0) + 
+    196 |                  currentData.partner.reduce((sum, val) => sum + val, 0)) || 0) * 100)}%
+    197 |             </p>
+
+WARNING in src/components/panels/ClientsChannelEditor.tsx:195:45
+TS7006: Parameter 'sum' implicitly has an 'any' type.
+    193 |             <p className="text-lg font-bold text-green-600">
+    194 |               {Math.round((currentData.partner.reduce((sum, val) => sum + val, 0) / 
+  > 195 |                 (currentData.direct.reduce((sum, val) => sum + val, 0) + 
+        |                                             ^^^
+    196 |                  currentData.partner.reduce((sum, val) => sum + val, 0)) || 0) * 100)}%
+    197 |             </p>
+    198 |           </div>
+
+WARNING in src/components/panels/ClientsChannelEditor.tsx:195:50
+TS7006: Parameter 'val' implicitly has an 'any' type.
+    193 |             <p className="text-lg font-bold text-green-600">
+    194 |               {Math.round((currentData.partner.reduce((sum, val) => sum + val, 0) / 
+  > 195 |                 (currentData.direct.reduce((sum, val) => sum + val, 0) + 
+        |                                                  ^^^
+    196 |                  currentData.partner.reduce((sum, val) => sum + val, 0)) || 0) * 100)}%
+    197 |             </p>
+    198 |           </div>
+
+WARNING in src/components/panels/ClientsChannelEditor.tsx:196:46
+TS7006: Parameter 'sum' implicitly has an 'any' type.
+    194 |               {Math.round((currentData.partner.reduce((sum, val) => sum + val, 0) / 
+    195 |                 (currentData.direct.reduce((sum, val) => sum + val, 0) + 
+  > 196 |                  currentData.partner.reduce((sum, val) => sum + val, 0)) || 0) * 100)}%
+        |                                              ^^^
+    197 |             </p>
+    198 |           </div>
+    199 |         </div>
+
+WARNING in src/components/panels/ClientsChannelEditor.tsx:196:51
+TS7006: Parameter 'val' implicitly has an 'any' type.
+    194 |               {Math.round((currentData.partner.reduce((sum, val) => sum + val, 0) / 
+    195 |                 (currentData.direct.reduce((sum, val) => sum + val, 0) + 
+  > 196 |                  currentData.partner.reduce((sum, val) => sum + val, 0)) || 0) * 100)}%
+        |                                                   ^^^
+    197 |             </p>
+    198 |           </div>
+    199 |         </div>
+
+WARNING in src/components/panels/FOTDistributionSettings.tsx:18:11
+TS2322: Type '{ content: string; position: "right"; }' is not assignable to type 'IntrinsicAttributes & InfoTooltipProps'.
+  Property 'content' does not exist on type 'IntrinsicAttributes & InfoTooltipProps'.
+    16 |         Распределение ФОТ
+    17 |         <InfoTooltip
+  > 18 |           content="Укажите, как распределяется фонд оплаты труда между отделами"
+       |           ^^^^^^^
+    19 |           position="right"
+    20 |         />
+    21 |       </h2>
+
+WARNING in src/components/panels/FOTEditorDecomposed.tsx:12:5
+TS2339: Property 'fotDevelopmentOptimistic' does not exist on type 'FinancialContextType'.
+    10 |     fotMode,
+    11 |     setFotMode,
+  > 12 |     fotDevelopmentOptimistic,
+       |     ^^^^^^^^^^^^^^^^^^^^^^^^
+    13 |     setFotDevelopmentOptimistic,
+    14 |     fotDevelopmentPessimistic,
+    15 |     setFotDevelopmentPessimistic,
+
+WARNING in src/components/panels/FOTEditorDecomposed.tsx:13:5
+TS2339: Property 'setFotDevelopmentOptimistic' does not exist on type 'FinancialContextType'.
+    11 |     setFotMode,
+    12 |     fotDevelopmentOptimistic,
+  > 13 |     setFotDevelopmentOptimistic,
+       |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    14 |     fotDevelopmentPessimistic,
+    15 |     setFotDevelopmentPessimistic,
+    16 |     fotSalesOptimistic,
+
+WARNING in src/components/panels/FOTEditorDecomposed.tsx:14:5
+TS2339: Property 'fotDevelopmentPessimistic' does not exist on type 'FinancialContextType'.
+    12 |     fotDevelopmentOptimistic,
+    13 |     setFotDevelopmentOptimistic,
+  > 14 |     fotDevelopmentPessimistic,
+       |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+    15 |     setFotDevelopmentPessimistic,
+    16 |     fotSalesOptimistic,
+    17 |     setFotSalesOptimistic,
+
+WARNING in src/components/panels/FOTEditorDecomposed.tsx:15:5
+TS2339: Property 'setFotDevelopmentPessimistic' does not exist on type 'FinancialContextType'.
+    13 |     setFotDevelopmentOptimistic,
+    14 |     fotDevelopmentPessimistic,
+  > 15 |     setFotDevelopmentPessimistic,
+       |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    16 |     fotSalesOptimistic,
+    17 |     setFotSalesOptimistic,
+    18 |     fotSalesPessimistic,
+
+WARNING in src/components/panels/FOTEditorDecomposed.tsx:16:5
+TS2339: Property 'fotSalesOptimistic' does not exist on type 'FinancialContextType'.
+    14 |     fotDevelopmentPessimistic,
+    15 |     setFotDevelopmentPessimistic,
+  > 16 |     fotSalesOptimistic,
+       |     ^^^^^^^^^^^^^^^^^^
+    17 |     setFotSalesOptimistic,
+    18 |     fotSalesPessimistic,
+    19 |     setFotSalesPessimistic,
+
+WARNING in src/components/panels/FOTEditorDecomposed.tsx:17:5
+TS2339: Property 'setFotSalesOptimistic' does not exist on type 'FinancialContextType'.
+    15 |     setFotDevelopmentPessimistic,
+    16 |     fotSalesOptimistic,
+  > 17 |     setFotSalesOptimistic,
+       |     ^^^^^^^^^^^^^^^^^^^^^
+    18 |     fotSalesPessimistic,
+    19 |     setFotSalesPessimistic,
+    20 |   } = useFinancialContext();
+
+WARNING in src/components/panels/FOTEditorDecomposed.tsx:18:5
+TS2339: Property 'fotSalesPessimistic' does not exist on type 'FinancialContextType'.
+    16 |     fotSalesOptimistic,
+    17 |     setFotSalesOptimistic,
+  > 18 |     fotSalesPessimistic,
+       |     ^^^^^^^^^^^^^^^^^^^
+    19 |     setFotSalesPessimistic,
+    20 |   } = useFinancialContext();
+    21 |
+
+WARNING in src/components/panels/FOTEditorDecomposed.tsx:19:5
+TS2339: Property 'setFotSalesPessimistic' does not exist on type 'FinancialContextType'.
+    17 |     setFotSalesOptimistic,
+    18 |     fotSalesPessimistic,
+  > 19 |     setFotSalesPessimistic,
+       |     ^^^^^^^^^^^^^^^^^^^^^^
+    20 |   } = useFinancialContext();
+    21 |
+    22 |   const months = [
+
+WARNING in src/components/panels/FOTEditorDecomposed.tsx:49:13
+TS2322: Type '{ content: string; position: "right"; }' is not assignable to type 'IntrinsicAttributes & InfoTooltipProps'.
+  Property 'content' does not exist on type 'IntrinsicAttributes & InfoTooltipProps'.
+    47 |           Декомпозированный ФОТ
+    48 |           <InfoTooltip
+  > 49 |             content="Фонд оплаты труда разделён на две категории: разработка (техническая команда) и продажи (отдел продаж, маркетинг)"
+       |             ^^^^^^^
+    50 |             position="right"
+    51 |           />
+    52 |         </h2>
+
+WARNING in src/components/panels/FOTEditorDecomposed.tsx:82:13
+TS2322: Type '{ content: string; position: "right"; }' is not assignable to type 'IntrinsicAttributes & InfoTooltipProps'.
+  Property 'content' does not exist on type 'IntrinsicAttributes & InfoTooltipProps'.
+    80 |           ФОТ Разработки
+    81 |           <InfoTooltip
+  > 82 |             content="Расходы на техническую команду: разработчики, DevOps, тестировщики"
+       |             ^^^^^^^
+    83 |             position="right"
+    84 |           />
+    85 |         </h3>
+
+WARNING in src/components/panels/FOTEditorDecomposed.tsx:87:11
+TS2322: Type '{ values: any; onChange: any; placeholder: string; className: string; }' is not assignable to type 'IntrinsicAttributes & BulkInputProps'.
+  Property 'values' does not exist on type 'IntrinsicAttributes & BulkInputProps'.
+    85 |         </h3>
+    86 |         <BulkInput
+  > 87 |           values={currentDevelopmentFot}
+       |           ^^^^^^
+    88 |           onChange={setCurrentDevelopmentFot}
+    89 |           placeholder="Введите 12 значений через пробел"
+    90 |           className="mb-4"
+
+WARNING in src/components/panels/FOTEditorDecomposed.tsx:100:17
+TS2322: Type '{ value: any; onChange: (value: number) => void; min: number; formatCurrency: true; }' is not assignable to type 'IntrinsicAttributes & EditableCellProps'.
+  Property 'formatCurrency' does not exist on type 'IntrinsicAttributes & EditableCellProps'.
+     98 |                 onChange={(value) => updateFotArray(currentDevelopmentFot, setCurrentDevelopmentFot, index, value)}
+     99 |                 min={0}
+  > 100 |                 formatCurrency
+        |                 ^^^^^^^^^^^^^^
+    101 |               />
+    102 |             </div>
+    103 |           ))}
+
+WARNING in src/components/panels/FOTEditorDecomposed.tsx:106:57
+TS7006: Parameter 'sum' implicitly has an 'any' type.
+    104 |         </div>
+    105 |         <div className="mt-4 text-sm text-gray-600">
+  > 106 |           Итого за год: ${currentDevelopmentFot.reduce((sum, val) => sum + val, 0).toLocaleString('ru-RU')}
+        |                                                         ^^^
+    107 |         </div>
+    108 |       </div>
+    109 |
+
+WARNING in src/components/panels/FOTEditorDecomposed.tsx:106:62
+TS7006: Parameter 'val' implicitly has an 'any' type.
+    104 |         </div>
+    105 |         <div className="mt-4 text-sm text-gray-600">
+  > 106 |           Итого за год: ${currentDevelopmentFot.reduce((sum, val) => sum + val, 0).toLocaleString('ru-RU')}
+        |                                                              ^^^
+    107 |         </div>
+    108 |       </div>
+    109 |
+
+WARNING in src/components/panels/FOTEditorDecomposed.tsx:115:13
+TS2322: Type '{ content: string; position: "right"; }' is not assignable to type 'IntrinsicAttributes & InfoTooltipProps'.
+  Property 'content' does not exist on type 'IntrinsicAttributes & InfoTooltipProps'.
+    113 |           ФОТ Продаж
+    114 |           <InfoTooltip
+  > 115 |             content="Расходы на отдел продаж: менеджеры по продажам, маркетологи, поддержка клиентов"
+        |             ^^^^^^^
+    116 |             position="right"
+    117 |           />
+    118 |         </h3>
+
+WARNING in src/components/panels/FOTEditorDecomposed.tsx:120:11
+TS2322: Type '{ values: any; onChange: any; placeholder: string; className: string; }' is not assignable to type 'IntrinsicAttributes & BulkInputProps'.
+  Property 'values' does not exist on type 'IntrinsicAttributes & BulkInputProps'.
+    118 |         </h3>
+    119 |         <BulkInput
+  > 120 |           values={currentSalesFot}
+        |           ^^^^^^
+    121 |           onChange={setCurrentSalesFot}
+    122 |           placeholder="Введите 12 значений через пробел"
+    123 |           className="mb-4"
+
+WARNING in src/components/panels/FOTEditorDecomposed.tsx:133:17
+TS2322: Type '{ value: any; onChange: (value: number) => void; min: number; formatCurrency: true; }' is not assignable to type 'IntrinsicAttributes & EditableCellProps'.
+  Property 'formatCurrency' does not exist on type 'IntrinsicAttributes & EditableCellProps'.
+    131 |                 onChange={(value) => updateFotArray(currentSalesFot, setCurrentSalesFot, index, value)}
+    132 |                 min={0}
+  > 133 |                 formatCurrency
+        |                 ^^^^^^^^^^^^^^
+    134 |               />
+    135 |             </div>
+    136 |           ))}
+
+WARNING in src/components/panels/FOTEditorDecomposed.tsx:139:51
+TS7006: Parameter 'sum' implicitly has an 'any' type.
+    137 |         </div>
+    138 |         <div className="mt-4 text-sm text-gray-600">
+  > 139 |           Итого за год: ${currentSalesFot.reduce((sum, val) => sum + val, 0).toLocaleString('ru-RU')}
+        |                                                   ^^^
+    140 |         </div>
+    141 |       </div>
+    142 |
+
+WARNING in src/components/panels/FOTEditorDecomposed.tsx:139:56
+TS7006: Parameter 'val' implicitly has an 'any' type.
+    137 |         </div>
+    138 |         <div className="mt-4 text-sm text-gray-600">
+  > 139 |           Итого за год: ${currentSalesFot.reduce((sum, val) => sum + val, 0).toLocaleString('ru-RU')}
+        |                                                        ^^^
+    140 |         </div>
+    141 |       </div>
+    142 |
+
+WARNING in src/components/panels/FOTEditorDecomposed.tsx:148:46
+TS7006: Parameter 'sum' implicitly has an 'any' type.
+    146 |           <span className="text-sm font-medium text-gray-700">Общий ФОТ:</span>
+    147 |           <span className="text-lg font-bold text-indigo-600">
+  > 148 |             ${(currentDevelopmentFot.reduce((sum, val) => sum + val, 0) + 
+        |                                              ^^^
+    149 |                currentSalesFot.reduce((sum, val) => sum + val, 0)).toLocaleString('ru-RU')}
+    150 |           </span>
+    151 |         </div>
+
+WARNING in src/components/panels/FOTEditorDecomposed.tsx:148:51
+TS7006: Parameter 'val' implicitly has an 'any' type.
+    146 |           <span className="text-sm font-medium text-gray-700">Общий ФОТ:</span>
+    147 |           <span className="text-lg font-bold text-indigo-600">
+  > 148 |             ${(currentDevelopmentFot.reduce((sum, val) => sum + val, 0) + 
+        |                                                   ^^^
+    149 |                currentSalesFot.reduce((sum, val) => sum + val, 0)).toLocaleString('ru-RU')}
+    150 |           </span>
+    151 |         </div>
+
+WARNING in src/components/panels/FOTEditorDecomposed.tsx:149:40
+TS7006: Parameter 'sum' implicitly has an 'any' type.
+    147 |           <span className="text-lg font-bold text-indigo-600">
+    148 |             ${(currentDevelopmentFot.reduce((sum, val) => sum + val, 0) + 
+  > 149 |                currentSalesFot.reduce((sum, val) => sum + val, 0)).toLocaleString('ru-RU')}
+        |                                        ^^^
+    150 |           </span>
+    151 |         </div>
+    152 |         <div className="mt-2 text-xs text-gray-500">
+
+WARNING in src/components/panels/FOTEditorDecomposed.tsx:149:45
+TS7006: Parameter 'val' implicitly has an 'any' type.
+    147 |           <span className="text-lg font-bold text-indigo-600">
+    148 |             ${(currentDevelopmentFot.reduce((sum, val) => sum + val, 0) + 
+  > 149 |                currentSalesFot.reduce((sum, val) => sum + val, 0)).toLocaleString('ru-RU')}
+        |                                             ^^^
+    150 |           </span>
+    151 |         </div>
+    152 |         <div className="mt-2 text-xs text-gray-500">
+
+WARNING in src/components/panels/FOTEditorDecomposed.tsx:153:66
+TS7006: Parameter 'sum' implicitly has an 'any' type.
+    151 |         </div>
+    152 |         <div className="mt-2 text-xs text-gray-500">
+  > 153 |           Разработка: {Math.round((currentDevelopmentFot.reduce((sum, val) => sum + val, 0) / 
+        |                                                                  ^^^
+    154 |             (currentDevelopmentFot.reduce((sum, val) => sum + val, 0) + 
+    155 |              currentSalesFot.reduce((sum, val) => sum + val, 0))) * 100)}% | 
+    156 |           Продажи: {Math.round((currentSalesFot.reduce((sum, val) => sum + val, 0) / 
+
+WARNING in src/components/panels/FOTEditorDecomposed.tsx:153:71
+TS7006: Parameter 'val' implicitly has an 'any' type.
+    151 |         </div>
+    152 |         <div className="mt-2 text-xs text-gray-500">
+  > 153 |           Разработка: {Math.round((currentDevelopmentFot.reduce((sum, val) => sum + val, 0) / 
+        |                                                                       ^^^
+    154 |             (currentDevelopmentFot.reduce((sum, val) => sum + val, 0) + 
+    155 |              currentSalesFot.reduce((sum, val) => sum + val, 0))) * 100)}% | 
+    156 |           Продажи: {Math.round((currentSalesFot.reduce((sum, val) => sum + val, 0) / 
+
+WARNING in src/components/panels/FOTEditorDecomposed.tsx:154:44
+TS7006: Parameter 'sum' implicitly has an 'any' type.
+    152 |         <div className="mt-2 text-xs text-gray-500">
+    153 |           Разработка: {Math.round((currentDevelopmentFot.reduce((sum, val) => sum + val, 0) / 
+  > 154 |             (currentDevelopmentFot.reduce((sum, val) => sum + val, 0) + 
+        |                                            ^^^
+    155 |              currentSalesFot.reduce((sum, val) => sum + val, 0))) * 100)}% | 
+    156 |           Продажи: {Math.round((currentSalesFot.reduce((sum, val) => sum + val, 0) / 
+    157 |             (currentDevelopmentFot.reduce((sum, val) => sum + val, 0) + 
+
+WARNING in src/components/panels/FOTEditorDecomposed.tsx:154:49
+TS7006: Parameter 'val' implicitly has an 'any' type.
+    152 |         <div className="mt-2 text-xs text-gray-500">
+    153 |           Разработка: {Math.round((currentDevelopmentFot.reduce((sum, val) => sum + val, 0) / 
+  > 154 |             (currentDevelopmentFot.reduce((sum, val) => sum + val, 0) + 
+        |                                                 ^^^
+    155 |              currentSalesFot.reduce((sum, val) => sum + val, 0))) * 100)}% | 
+    156 |           Продажи: {Math.round((currentSalesFot.reduce((sum, val) => sum + val, 0) / 
+    157 |             (currentDevelopmentFot.reduce((sum, val) => sum + val, 0) + 
+
+WARNING in src/components/panels/FOTEditorDecomposed.tsx:155:38
+TS7006: Parameter 'sum' implicitly has an 'any' type.
+    153 |           Разработка: {Math.round((currentDevelopmentFot.reduce((sum, val) => sum + val, 0) / 
+    154 |             (currentDevelopmentFot.reduce((sum, val) => sum + val, 0) + 
+  > 155 |              currentSalesFot.reduce((sum, val) => sum + val, 0))) * 100)}% | 
+        |                                      ^^^
+    156 |           Продажи: {Math.round((currentSalesFot.reduce((sum, val) => sum + val, 0) / 
+    157 |             (currentDevelopmentFot.reduce((sum, val) => sum + val, 0) + 
+    158 |              currentSalesFot.reduce((sum, val) => sum + val, 0))) * 100)}%
+
+WARNING in src/components/panels/FOTEditorDecomposed.tsx:155:43
+TS7006: Parameter 'val' implicitly has an 'any' type.
+    153 |           Разработка: {Math.round((currentDevelopmentFot.reduce((sum, val) => sum + val, 0) / 
+    154 |             (currentDevelopmentFot.reduce((sum, val) => sum + val, 0) + 
+  > 155 |              currentSalesFot.reduce((sum, val) => sum + val, 0))) * 100)}% | 
+        |                                           ^^^
+    156 |           Продажи: {Math.round((currentSalesFot.reduce((sum, val) => sum + val, 0) / 
+    157 |             (currentDevelopmentFot.reduce((sum, val) => sum + val, 0) + 
+    158 |              currentSalesFot.reduce((sum, val) => sum + val, 0))) * 100)}%
+
+WARNING in src/components/panels/FOTEditorDecomposed.tsx:156:57
+TS7006: Parameter 'sum' implicitly has an 'any' type.
+    154 |             (currentDevelopmentFot.reduce((sum, val) => sum + val, 0) + 
+    155 |              currentSalesFot.reduce((sum, val) => sum + val, 0))) * 100)}% | 
+  > 156 |           Продажи: {Math.round((currentSalesFot.reduce((sum, val) => sum + val, 0) / 
+        |                                                         ^^^
+    157 |             (currentDevelopmentFot.reduce((sum, val) => sum + val, 0) + 
+    158 |              currentSalesFot.reduce((sum, val) => sum + val, 0))) * 100)}%
+    159 |         </div>
+
+WARNING in src/components/panels/FOTEditorDecomposed.tsx:156:62
+TS7006: Parameter 'val' implicitly has an 'any' type.
+    154 |             (currentDevelopmentFot.reduce((sum, val) => sum + val, 0) + 
+    155 |              currentSalesFot.reduce((sum, val) => sum + val, 0))) * 100)}% | 
+  > 156 |           Продажи: {Math.round((currentSalesFot.reduce((sum, val) => sum + val, 0) / 
+        |                                                              ^^^
+    157 |             (currentDevelopmentFot.reduce((sum, val) => sum + val, 0) + 
+    158 |              currentSalesFot.reduce((sum, val) => sum + val, 0))) * 100)}%
+    159 |         </div>
+
+WARNING in src/components/panels/FOTEditorDecomposed.tsx:157:44
+TS7006: Parameter 'sum' implicitly has an 'any' type.
+    155 |              currentSalesFot.reduce((sum, val) => sum + val, 0))) * 100)}% | 
+    156 |           Продажи: {Math.round((currentSalesFot.reduce((sum, val) => sum + val, 0) / 
+  > 157 |             (currentDevelopmentFot.reduce((sum, val) => sum + val, 0) + 
+        |                                            ^^^
+    158 |              currentSalesFot.reduce((sum, val) => sum + val, 0))) * 100)}%
+    159 |         </div>
+    160 |       </div>
+
+WARNING in src/components/panels/FOTEditorDecomposed.tsx:157:49
+TS7006: Parameter 'val' implicitly has an 'any' type.
+    155 |              currentSalesFot.reduce((sum, val) => sum + val, 0))) * 100)}% | 
+    156 |           Продажи: {Math.round((currentSalesFot.reduce((sum, val) => sum + val, 0) / 
+  > 157 |             (currentDevelopmentFot.reduce((sum, val) => sum + val, 0) + 
+        |                                                 ^^^
+    158 |              currentSalesFot.reduce((sum, val) => sum + val, 0))) * 100)}%
+    159 |         </div>
+    160 |       </div>
+
+WARNING in src/components/panels/FOTEditorDecomposed.tsx:158:38
+TS7006: Parameter 'sum' implicitly has an 'any' type.
+    156 |           Продажи: {Math.round((currentSalesFot.reduce((sum, val) => sum + val, 0) / 
+    157 |             (currentDevelopmentFot.reduce((sum, val) => sum + val, 0) + 
+  > 158 |              currentSalesFot.reduce((sum, val) => sum + val, 0))) * 100)}%
+        |                                      ^^^
+    159 |         </div>
+    160 |       </div>
+    161 |     </div>
+
+WARNING in src/components/panels/FOTEditorDecomposed.tsx:158:43
+TS7006: Parameter 'val' implicitly has an 'any' type.
+    156 |           Продажи: {Math.round((currentSalesFot.reduce((sum, val) => sum + val, 0) / 
+    157 |             (currentDevelopmentFot.reduce((sum, val) => sum + val, 0) + 
+  > 158 |              currentSalesFot.reduce((sum, val) => sum + val, 0))) * 100)}%
+        |                                           ^^^
+    159 |         </div>
+    160 |       </div>
+    161 |     </div>
+
+WARNING in src/components/panels/MessageSystemDiagnostic.tsx:110:88
+TS2345: Argument of type 'number' is not assignable to parameter of type 'string'.
+    108 |           <div className="flex justify-between items-center font-semibold border-t pt-2">
+    109 |             <span>Чистая выручка:</span>
+  > 110 |             <span className={`font-mono ${parseFloat(analysis.netRevenue) < parseFloat(analysis.subscriptionRevenue) * 0.7 ? 'text-red-600' : 'text-green-600'}`}>
+        |                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    111 |               ${analysis.netRevenue}
+    112 |             </span>
+    113 |           </div>
+
+WARNING in src/components/panels/MessageUsageStats.tsx:67:20
+TS7053: Element implicitly has an 'any' type because expression of type '`usedMessages${string}`' can't be used to index type 'MonthlyData'.
+    65 |   ].map(tariff => {
+    66 |     const stats = monthlyData.reduce((acc, month) => {
+  > 67 |       const used = month[`usedMessages${tariff.key}`] || 0;
+       |                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    68 |       const available = month[`availableMessages${tariff.key}`] || 0;
+    69 |       const additional = month[`additionalMessages${tariff.key}`] || 0;
+    70 |       const activeClients = month[`activeClients${tariff.key}`] || 0;
+
+WARNING in src/components/panels/MessageUsageStats.tsx:68:25
+TS7053: Element implicitly has an 'any' type because expression of type '`availableMessages${string}`' can't be used to index type 'MonthlyData'.
+    66 |     const stats = monthlyData.reduce((acc, month) => {
+    67 |       const used = month[`usedMessages${tariff.key}`] || 0;
+  > 68 |       const available = month[`availableMessages${tariff.key}`] || 0;
+       |                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    69 |       const additional = month[`additionalMessages${tariff.key}`] || 0;
+    70 |       const activeClients = month[`activeClients${tariff.key}`] || 0;
+    71 |       
+
+WARNING in src/components/panels/MessageUsageStats.tsx:69:26
+TS7053: Element implicitly has an 'any' type because expression of type '`additionalMessages${string}`' can't be used to index type 'MonthlyData'.
+    67 |       const used = month[`usedMessages${tariff.key}`] || 0;
+    68 |       const available = month[`availableMessages${tariff.key}`] || 0;
+  > 69 |       const additional = month[`additionalMessages${tariff.key}`] || 0;
+       |                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    70 |       const activeClients = month[`activeClients${tariff.key}`] || 0;
+    71 |       
+    72 |       return {
+
+WARNING in src/components/panels/MessageUsageStats.tsx:70:29
+TS7053: Element implicitly has an 'any' type because expression of type '`activeClients${string}`' can't be used to index type 'MonthlyData'.
+    68 |       const available = month[`availableMessages${tariff.key}`] || 0;
+    69 |       const additional = month[`additionalMessages${tariff.key}`] || 0;
+  > 70 |       const activeClients = month[`activeClients${tariff.key}`] || 0;
+       |                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    71 |       
+    72 |       return {
+    73 |         totalUsed: acc.totalUsed + used,
+
+WARNING in src/components/panels/ModernClientsEditor.tsx:82:13
+TS2322: Type '{ content: string; position: "right"; }' is not assignable to type 'IntrinsicAttributes & InfoTooltipProps'.
+  Property 'content' does not exist on type 'IntrinsicAttributes & InfoTooltipProps'.
+    80 |           Современный редактор клиентов
+    81 |           <InfoTooltip
+  > 82 |             content="Используйте инновационные методы ввода данных для быстрой и удобной настройки"
+       |             ^^^^^^^
+    83 |             position="right"
+    84 |           />
+    85 |         </h2>
+
+WARNING in src/components/panels/ModernFOTEditor.tsx:132:13
+TS2322: Type '{ content: string; position: "right"; }' is not assignable to type 'IntrinsicAttributes & InfoTooltipProps'.
+  Property 'content' does not exist on type 'IntrinsicAttributes & InfoTooltipProps'.
+    130 |           Современный редактор ФОТ
+    131 |           <InfoTooltip
+  > 132 |             content="Используйте инновационные методы для планирования фонда оплаты труда"
+        |             ^^^^^^^
+    133 |             position="right"
+    134 |           />
+    135 |         </h2>
+
+WARNING in src/components/panels/ModernUpsellEditor.tsx:141:13
+TS2322: Type '{ content: string; position: "right"; }' is not assignable to type 'IntrinsicAttributes & InfoTooltipProps'.
+  Property 'content' does not exist on type 'IntrinsicAttributes & InfoTooltipProps'.
+    139 |           Современный редактор Upsell
+    140 |           <InfoTooltip
+  > 141 |             content="Настройте стратегию дополнительных продаж с помощью визуальных инструментов"
+        |             ^^^^^^^
+    142 |             position="right"
+    143 |           />
+    144 |         </h2>
+
+WARNING in src/components/panels/ModernUpsellEditor.tsx:336:25
+TS2322: Type '{ value: number; onChange: (price: number) => void; min: number; max: number; formatCurrency: true; }' is not assignable to type 'IntrinsicAttributes & EditableCellProps'.
+  Property 'formatCurrency' does not exist on type 'IntrinsicAttributes & EditableCellProps'.
+    334 |                         min={0}
+    335 |                         max={1000}
+  > 336 |                         formatCurrency
+        |                         ^^^^^^^^^^^^^^
+    337 |                       />
+    338 |                     </div>
+    339 |                   </div>
+
+WARNING in src/components/panels/ModernUpsellEditor.tsx:409:25
+TS2322: Type '{ value: number; onChange: (price: number) => void; min: number; max: number; formatCurrency: true; }' is not assignable to type 'IntrinsicAttributes & EditableCellProps'.
+  Property 'formatCurrency' does not exist on type 'IntrinsicAttributes & EditableCellProps'.
+    407 |                         min={0}
+    408 |                         max={1000}
+  > 409 |                         formatCurrency
+        |                         ^^^^^^^^^^^^^^
+    410 |                       />
+    411 |                     </td>
+    412 |                     <td className="text-right font-medium" style={{ color: product.color }}>
+
+WARNING in src/contexts/FinancialContext.tsx:395:9
+TS2740: Type '{ newClients75: number[]; newClients150: number[]; newClients250: number[]; newClients500: number[]; newClients1000: number[]; subscriptionPrice75: number; subscriptionPrice150: number; subscriptionPrice250: number; ... 6 more ...; messages1000: number; }' is missing the following properties from type 'ClientsData': newClients75Direct, newClients150Direct, newClients250Direct, newClients500Direct, and 7 more.
+    393 |   };
+    394 |   
+  > 395 |   const clientsData: ClientsData = {
+        |         ^^^^^^^^^^^
+    396 |     newClients75,
+    397 |     newClients150,
+    398 |     newClients250,
+
+WARNING in src/hooks/useFinancialModel.backup.ts:139:95
+TS2551: Property 'additionalBotsRate' does not exist on type 'UpsellSettings'. Did you mean 'additionalBotsPrice'?
+    137 |       const additionalMessagesRevenueMonth = totalAdditionalMessagesMonth * params.additionalMessagePrice;
+    138 |       
+  > 139 |       const additionalBotsClientsMonth = Math.round(totalActiveClientsMonth * (upsellSettings.additionalBotsRate / 100));
+        |                                                                                               ^^^^^^^^^^^^^^^^^^
+    140 |       const additionalBotsRevenueMonth = additionalBotsClientsMonth * upsellSettings.additionalBotsPrice;
+    141 |       const newFeaturesClientsMonth = Math.round(totalActiveClientsMonth * (upsellSettings.newFeaturesRate / 100));
+    142 |       const newFeaturesRevenueMonth = newFeaturesClientsMonth * upsellSettings.newFeaturesPrice;
+
+WARNING in src/hooks/useFinancialModel.backup.ts:141:92
+TS2551: Property 'newFeaturesRate' does not exist on type 'UpsellSettings'. Did you mean 'newFeaturesPrice'?
+    139 |       const additionalBotsClientsMonth = Math.round(totalActiveClientsMonth * (upsellSettings.additionalBotsRate / 100));
+    140 |       const additionalBotsRevenueMonth = additionalBotsClientsMonth * upsellSettings.additionalBotsPrice;
+  > 141 |       const newFeaturesClientsMonth = Math.round(totalActiveClientsMonth * (upsellSettings.newFeaturesRate / 100));
+        |                                                                                            ^^^^^^^^^^^^^^^
+    142 |       const newFeaturesRevenueMonth = newFeaturesClientsMonth * upsellSettings.newFeaturesPrice;
+    143 |       const messageExpansionClientsMonth = Math.round(totalActiveClientsMonth * (upsellSettings.messageExpansionRate / 100));
+    144 |       const messageExpansionRevenueMonth = messageExpansionClientsMonth * upsellSettings.messageExpansionPrice;
+
+WARNING in src/hooks/useFinancialModel.backup.ts:143:97
+TS2339: Property 'messageExpansionRate' does not exist on type 'UpsellSettings'.
+    141 |       const newFeaturesClientsMonth = Math.round(totalActiveClientsMonth * (upsellSettings.newFeaturesRate / 100));
+    142 |       const newFeaturesRevenueMonth = newFeaturesClientsMonth * upsellSettings.newFeaturesPrice;
+  > 143 |       const messageExpansionClientsMonth = Math.round(totalActiveClientsMonth * (upsellSettings.messageExpansionRate / 100));
+        |                                                                                                 ^^^^^^^^^^^^^^^^^^^^
+    144 |       const messageExpansionRevenueMonth = messageExpansionClientsMonth * upsellSettings.messageExpansionPrice;
+    145 |       const additionalIntegrationsClientsMonth = Math.round(totalActiveClientsMonth * (upsellSettings.additionalIntegrationsRate / 100));
+    146 |       const additionalIntegrationsRevenueMonth = additionalIntegrationsClientsMonth * upsellSettings.additionalIntegrationsPrice;
+
+WARNING in src/hooks/useFinancialModel.backup.ts:144:90
+TS2551: Property 'messageExpansionPrice' does not exist on type 'UpsellSettings'. Did you mean 'messagePacksPrice'?
+    142 |       const newFeaturesRevenueMonth = newFeaturesClientsMonth * upsellSettings.newFeaturesPrice;
+    143 |       const messageExpansionClientsMonth = Math.round(totalActiveClientsMonth * (upsellSettings.messageExpansionRate / 100));
+  > 144 |       const messageExpansionRevenueMonth = messageExpansionClientsMonth * upsellSettings.messageExpansionPrice;
+        |                                                                                          ^^^^^^^^^^^^^^^^^^^^^
+    145 |       const additionalIntegrationsClientsMonth = Math.round(totalActiveClientsMonth * (upsellSettings.additionalIntegrationsRate / 100));
+    146 |       const additionalIntegrationsRevenueMonth = additionalIntegrationsClientsMonth * upsellSettings.additionalIntegrationsPrice;
+    147 |       const upsellRevenueMonth = additionalBotsRevenueMonth + newFeaturesRevenueMonth + messageExpansionRevenueMonth + additionalIntegrationsRevenueMonth;
+
+WARNING in src/hooks/useFinancialModel.backup.ts:145:103
+TS2339: Property 'additionalIntegrationsRate' does not exist on type 'UpsellSettings'.
+    143 |       const messageExpansionClientsMonth = Math.round(totalActiveClientsMonth * (upsellSettings.messageExpansionRate / 100));
+    144 |       const messageExpansionRevenueMonth = messageExpansionClientsMonth * upsellSettings.messageExpansionPrice;
+  > 145 |       const additionalIntegrationsClientsMonth = Math.round(totalActiveClientsMonth * (upsellSettings.additionalIntegrationsRate / 100));
+        |                                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    146 |       const additionalIntegrationsRevenueMonth = additionalIntegrationsClientsMonth * upsellSettings.additionalIntegrationsPrice;
+    147 |       const upsellRevenueMonth = additionalBotsRevenueMonth + newFeaturesRevenueMonth + messageExpansionRevenueMonth + additionalIntegrationsRevenueMonth;
+    148 |       
+
+WARNING in src/hooks/useFinancialModel.backup.ts:146:102
+TS2339: Property 'additionalIntegrationsPrice' does not exist on type 'UpsellSettings'.
+    144 |       const messageExpansionRevenueMonth = messageExpansionClientsMonth * upsellSettings.messageExpansionPrice;
+    145 |       const additionalIntegrationsClientsMonth = Math.round(totalActiveClientsMonth * (upsellSettings.additionalIntegrationsRate / 100));
+  > 146 |       const additionalIntegrationsRevenueMonth = additionalIntegrationsClientsMonth * upsellSettings.additionalIntegrationsPrice;
+        |                                                                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    147 |       const upsellRevenueMonth = additionalBotsRevenueMonth + newFeaturesRevenueMonth + messageExpansionRevenueMonth + additionalIntegrationsRevenueMonth;
+    148 |       
+    149 |       totalAdditionalBotsRevenueAgg += additionalBotsRevenueMonth;
+
+WARNING in src/hooks/useFinancialModel.backup.ts:159:61
+TS2339: Property 'direct' does not exist on type 'number | { direct: number; partner: number; }'.
+  Property 'direct' does not exist on type 'number'.
+    157 |
+    158 |       // CAC с учетом распределения каналов
+  > 159 |       const directChannelRatio = params.channelDistribution.direct / 100;
+        |                                                             ^^^^^^
+    160 |       const partnerChannelRatio = params.channelDistribution.partner / 100;
+    161 |       
+    162 |       // Партнёрский канал
+
+WARNING in src/hooks/useFinancialModel.backup.ts:160:62
+TS2339: Property 'partner' does not exist on type 'number | { direct: number; partner: number; }'.
+  Property 'partner' does not exist on type 'number'.
+    158 |       // CAC с учетом распределения каналов
+    159 |       const directChannelRatio = params.channelDistribution.direct / 100;
+  > 160 |       const partnerChannelRatio = params.channelDistribution.partner / 100;
+        |                                                              ^^^^^^^
+    161 |       
+    162 |       // Партнёрский канал
+    163 |       const partnerClientsMonth = Math.round(totalNewClientsMonth * partnerChannelRatio);
+
+WARNING in src/hooks/useFinancialModel.backup.ts:280:17
+TS2345: Argument of type '{ month: number; newClients75: number; newClients150: number; newClients250: number; newClients500: number; newClients1000: number; newClients75Direct: number; newClients75Partner: number; ... 83 more ...; cumulativeProfit: number; }' is not assignable to parameter of type 'MonthlyData'.
+  Type '{ month: number; newClients75: number; newClients150: number; newClients250: number; newClients500: number; newClients1000: number; newClients75Direct: number; newClients75Partner: number; ... 83 more ...; cumulativeProfit: number; }' is missing the following properties from type 'MonthlyData': additionalMessages75Revenue, additionalMessages150Revenue, additionalMessages250Revenue, additionalMessages500Revenue, and 8 more.
+    278 |       
+    279 |       
+  > 280 |       data.push(monthData);
+        |                 ^^^^^^^^^
+    281 |       
+    282 |       totalIntegrationRevenue += integrationRevenueMonth;
+    283 |       totalSubscriptionRevenue += subscriptionRevenueMonth;
+
+WARNING in src/hooks/useFinancialModel.backup.ts:322:11
+TS2740: Type '{ totalNewClients: number; totalRevenue: number; totalExpenses: number; totalNetProfit: number; totalGrossProfit: number; avgMonthlyRevenue: number; avgMonthlyProfit: number; profitMargin: number; ... 30 more ...; totalAdditionalIntegrationsRevenue: number; }' is missing the following properties from type 'TotalData': totalActiveClients, totalNewClients75, totalNewClients150, totalNewClients250, and 4 more.
+    320 |     const lastMonthNrr = data.length > 0 ? data[data.length - 1].nrr : 0;
+    321 |
+  > 322 |     const totalDataCalc: TotalData = {
+        |           ^^^^^^^^^^^^^
+    323 |       totalNewClients: totalNewClientsAgg,
+    324 |       totalRevenue: finalTotalRevenue,
+    325 |       totalExpenses: finalTotalExpenses,
+
+WARNING in src/hooks/useFinancialModel.ts:47:51
+TS2339: Property 'messageCarryoverLimit' does not exist on type 'FinancialModelParams'.
+    45 |     
+    46 |     // Константа для максимального накопления сообщений
+  > 47 |     const MESSAGE_CARRYOVER_MONTHS_LIMIT = params.messageCarryoverLimit || 3;
+       |                                                   ^^^^^^^^^^^^^^^^^^^^^
+    48 |     
+    49 |     const data: MonthlyData[] = [];
+    50 |     
+
+WARNING in src/hooks/useFinancialModel.ts:321:44
+TS2339: Property 'fotDevelopmentRatio' does not exist on type 'FinancialModelParams'.
+    319 |       }
+    320 |       // ИСПРАВЛЕНО: Константы вместо хардкода ФОТ
+  > 321 |       const FOT_DEVELOPMENT_RATIO = params.fotDevelopmentRatio || 0.6;
+        |                                            ^^^^^^^^^^^^^^^^^^^
+    322 |       const FOT_SALES_RATIO = params.fotSalesRatio || 0.4;
+    323 |       const fotDevelopmentRatio = FOT_DEVELOPMENT_RATIO;
+    324 |       const fotSalesRatio = FOT_SALES_RATIO;
+
+WARNING in src/hooks/useFinancialModel.ts:322:38
+TS2339: Property 'fotSalesRatio' does not exist on type 'FinancialModelParams'.
+    320 |       // ИСПРАВЛЕНО: Константы вместо хардкода ФОТ
+    321 |       const FOT_DEVELOPMENT_RATIO = params.fotDevelopmentRatio || 0.6;
+  > 322 |       const FOT_SALES_RATIO = params.fotSalesRatio || 0.4;
+        |                                      ^^^^^^^^^^^^^
+    323 |       const fotDevelopmentRatio = FOT_DEVELOPMENT_RATIO;
+    324 |       const fotSalesRatio = FOT_SALES_RATIO;
+    325 |       
+
+WARNING in src/hooks/useFinancialModelFixed.ts:36:32
+TS2362: The left-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type.
+    34 |     const messageCarryoverHistory1000: number[] = [];
+    35 |
+  > 36 |     const directChannelRatio = params.channelDistribution / 100;
+       |                                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    37 |     const partnerChannelRatio = 1 - directChannelRatio;
+    38 |
+    39 |     for (let month = 0; month < 12; month++) {
+
+WARNING in src/hooks/useFinancialModelFixed.ts:253:13
+TS2740: Type '{ month: number; newClients75: number; newClients150: number; newClients250: number; newClients500: number; newClients1000: number; newClients75Direct: number; newClients75Partner: number; ... 57 more ...; nrr: number; }' is missing the following properties from type 'MonthlyData': arpu, directSalesCosts, directMarketingCosts, directLeadGenerationCosts, and 34 more.
+    251 |       previousMonthMRR = subscriptionRevenueMonth;
+    252 |       
+  > 253 |       const monthData: MonthlyData = {
+        |             ^^^^^^^^^
+    254 |         month: month + 1,
+    255 |         newClients75: newClientsForMonth75,
+    256 |         newClients150: newClientsForMonth150,
+
+WARNING in src/hooks/useFinancialModelFixed.ts:347:11
+TS2740: Type '{ totalRevenue: number; totalSubscription: number; totalIntegration: number; totalAdditionalMessages: number; totalUpsellRevenue: number; totalExpenses: number; totalApiCosts: number; ... 22 more ...; avgNrr: number; }' is missing the following properties from type 'TotalData': ltvCacRatio, finalActiveClients, totalChurnedClients, churnRate, and 13 more.
+    345 |     const roiCalc = finalTotalExpenses > 0 ? (totalNetProfitCalc / finalTotalExpenses) * 100 : 0;
+    346 |
+  > 347 |     const totalDataCalc: TotalData = {
+        |           ^^^^^^^^^^^^^
+    348 |       totalRevenue: finalTotalRevenue,
+    349 |       totalSubscription: monthlyDataArray.reduce((sum, m) => sum + m.subscriptionRevenue, 0),
+    350 |       totalIntegration: monthlyDataArray.reduce((sum, m) => sum + m.integrationRevenue, 0),
+
+WARNING in src/hooks/useFinancialModelImproved.ts:121:32
+TS2362: The left-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type.
+    119 |     let breakevenMonthCalc: number | undefined;
+    120 |     
+  > 121 |     const directChannelRatio = params.channelDistribution / 100;
+        |                                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    122 |     const partnerChannelRatio = 1 - directChannelRatio;
+    123 |     
+    124 |     // Настраиваемые коэффициенты ФОТ
+
+WARNING in src/hooks/useFinancialModelImproved.ts:305:13
+TS2741: Property 'totalUpsellRevenue' is missing in type '{ month: number; newClients75: number; newClients150: number; newClients250: number; newClients500: number; newClients1000: number; newClients75Direct: number; newClients75Partner: number; ... 94 more ...; additionalIntegrationsRevenue: number; }' but required in type 'MonthlyData'.
+    303 |       
+    304 |       // Формирование данных месяца
+  > 305 |       const monthData: MonthlyData = {
+        |             ^^^^^^^^^
+    306 |         month: month + 1,
+    307 |         // Новые клиенты
+    308 |         newClients75: newClients[75],
 

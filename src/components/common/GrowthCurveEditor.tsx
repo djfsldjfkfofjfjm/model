@@ -338,8 +338,19 @@ const GrowthCurveEditor: React.FC<GrowthCurveEditorProps> = ({
           value={values.reduce((sum, v) => sum + v, 0)}
           onChange={(e) => {
             const total = parseInt(e.target.value) || 0;
-            const avg = total / 12;
-            onChange(Array(12).fill(Math.round(avg)));
+            if (total > 0) {
+              // Исправление: правильное распределение с учетом округления
+              const baseValue = Math.floor(total / 12);
+              const remainder = total - (baseValue * 12);
+              const newValues = Array(12).fill(baseValue);
+              // Распределяем остаток по первым месяцам
+              for (let i = 0; i < remainder; i++) {
+                newValues[i] = baseValue + 1;
+              }
+              onChange(newValues);
+            } else {
+              onChange(Array(12).fill(0));
+            }
           }}
           className="w-24 px-2 py-1 border rounded text-sm"
           min={0}
@@ -347,8 +358,15 @@ const GrowthCurveEditor: React.FC<GrowthCurveEditorProps> = ({
         <button
           onClick={() => {
             const total = values.reduce((sum, v) => sum + v, 0);
-            const avg = total / 12;
-            onChange(Array(12).fill(Math.round(avg)));
+            if (total > 0) {
+              const baseValue = Math.floor(total / 12);
+              const remainder = total - (baseValue * 12);
+              const newValues = Array(12).fill(baseValue);
+              for (let i = 0; i < remainder; i++) {
+                newValues[i] = baseValue + 1;
+              }
+              onChange(newValues);
+            }
           }}
           className="text-xs text-indigo-600 hover:text-indigo-800"
         >

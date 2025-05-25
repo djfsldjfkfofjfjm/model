@@ -106,6 +106,16 @@ export interface MonthlyData {
   subscriptionRevenue1000: number;
   /** Доход от дополнительных сообщений */
   additionalMessagesRevenue: number;
+  /** Доход от дополнительных сообщений тарифа $75 */
+  additionalMessages75Revenue: number;
+  /** Доход от дополнительных сообщений тарифа $150 */
+  additionalMessages150Revenue: number;
+  /** Доход от дополнительных сообщений тарифа $250 */
+  additionalMessages250Revenue: number;
+  /** Доход от дополнительных сообщений тарифа $500 */
+  additionalMessages500Revenue: number;
+  /** Доход от дополнительных сообщений тарифа $1000 */
+  additionalMessages1000Revenue: number;
   /** Общий доход */
   totalRevenue: number;
   /** Средний доход на клиента */
@@ -146,6 +156,10 @@ export interface MonthlyData {
   fotDevelopmentCosts: number;
   /** Расходы на ФОТ продаж */
   fotSalesCosts: number;
+  /** Расходы на ФОТ разработки (для совместимости) */
+  fotDevelopment: number;
+  /** Расходы на ФОТ продаж (для совместимости) */
+  fotSales: number;
   /** Общие расходы */
   totalExpenses: number;
   
@@ -198,6 +212,18 @@ export interface MonthlyData {
   unusedMessages500: number;
   /** Неиспользованные сообщения тарифа $1000 */
   unusedMessages1000: number;
+  
+  // Данные по Upsell
+  /** Общий доход от Upsell */
+  upsellRevenue: number;
+  /** Доход от дополнительных ботов */
+  upsellAdditionalBots: number;
+  /** Доход от новых функций */
+  upsellNewFeatures: number;
+  /** Доход от пакетов сообщений */
+  upsellMessagePacks: number;
+  /** Доход от дополнительных интеграций */
+  upsellIntegrations: number;
   /** Общее количество дополнительных сообщений */
   totalAdditionalMessages: number;
   /** Общее количество сообщений в пакетах (опционально, если не рассчитывается) */
@@ -236,15 +262,24 @@ export interface MonthlyData {
   additionalIntegrationsClients: number;
   /** Доход от дополнительных интеграций */
   additionalIntegrationsRevenue: number;
-  /** Общий доход от Upsell */
-  upsellRevenue: number;
+  /** Общий доход от Upsell (для TotalData, не MonthlyData) */
+  totalUpsellRevenue: number;
 }
 
 /**
  * Итоговые данные финансовой модели
  */
 export interface TotalData {
+  // Основные метрики  
+  totalActiveClients: number;
   totalNewClients: number;
+  
+  // Детализация по тарифам
+  totalNewClients75: number;
+  totalNewClients150: number;
+  totalNewClients250: number;
+  totalNewClients500: number;
+  totalNewClients1000: number;
   totalRevenue: number;
   totalExpenses: number;
   totalNetProfit: number;
@@ -268,12 +303,14 @@ export interface TotalData {
   implementationMargin: number;
   breakevenMonth?: number; // Может не быть точки безубыточности в периоде
   nrr: number; // NRR последнего месяца или средний
+  avgNrr: number; // Средний NRR за период
   expansionRevenue: number;
   churnedRevenue: number;
   
   // Детализация доходов
   totalIntegration: number;
   totalSubscription: number;
+  totalAdditionalMessages: number; // Для совместимости
   totalAdditionalMessagesRevenue: number;
   totalUpsellRevenue: number;
   
@@ -322,7 +359,7 @@ export interface FinancialModelParams {
   fotOptimistic: number[]; // Added for editable FOT
   fotPessimistic: number[]; // Added for editable FOT
   // Параметры каналов
-  channelDistribution: { direct: number; partner: number };
+  channelDistribution: number | { direct: number; partner: number }; // Процент direct канала или объект с распределением
   directSalesPercentage: number;
   directMarketingPercentage: number;
   directLeadCost: number;
@@ -378,18 +415,19 @@ export interface ClientsData {
   messages250: number;
   messages500: number;
   messages1000: number;
+  integrationPrice: number;
 }
 
 /**
  * Настройки Upsell
  */
 export interface UpsellSettings {
-  additionalBotsRate: number;
+  additionalBotsPercentage: number;
   additionalBotsPrice: number;
-  newFeaturesRate: number;
+  newFeaturesPercentage: number;
   newFeaturesPrice: number;
-  messageExpansionRate: number;
-  messageExpansionPrice: number;
-  additionalIntegrationsRate: number;
-  additionalIntegrationsPrice: number;
+  messagePacksPercentage: number;
+  messagePacksPrice: number;
+  integrationsPercentage: number;
+  integrationsPrice: number;
 }

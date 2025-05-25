@@ -1,18 +1,7 @@
+import { renderHook, act } from '@testing-library/react';
 import { useFinancialModel } from '../hooks/useFinancialModel';
 import { FinancialModelParams, ClientsData, UpsellSettings } from '../types/FinancialTypes';
 
-// Мок для тестирования хука без рендеринга
-const testHook = (hook: Function, ...args: any[]) => {
-  let result: any;
-  const TestComponent = () => {
-    result = hook(...args);
-    return null;
-  };
-  
-  // Симулируем вызов хука
-  TestComponent();
-  return { current: result };
-};
 
 describe('Financial Model Calculations', () => {
   const mockParams: FinancialModelParams = {
@@ -31,7 +20,7 @@ describe('Financial Model Calculations', () => {
     additionalMessagePrice: 0.05,
     fotOptimistic: Array(12).fill(10000),
     fotPessimistic: Array(12).fill(15000),
-    channelDistribution: { direct: 60, partner: 40 },
+    channelDistribution: 60, // 60% direct, 40% partner
     directSalesPercentage: 10,
     directMarketingPercentage: 5,
     directLeadCost: 30,
@@ -54,17 +43,29 @@ describe('Financial Model Calculations', () => {
     messages250: 250,
     messages500: 500,
     messages1000: 1000,
+    // Добавляем недостающие поля
+    newClients75Direct: [1, 2, 2, 3, 4, 4, 5, 5, 6, 7, 7, 8],
+    newClients150Direct: [1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4],
+    newClients250Direct: [1, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3],
+    newClients500Direct: [0, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2],
+    newClients1000Direct: [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2],
+    newClients75Partner: [1, 1, 2, 2, 2, 3, 3, 4, 4, 4, 5, 5],
+    newClients150Partner: [0, 1, 1, 1, 1, 2, 1, 2, 2, 2, 2, 3],
+    newClients250Partner: [0, 0, 1, 1, 1, 1, 1, 1, 2, 1, 1, 2],
+    newClients500Partner: [0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1],
+    newClients1000Partner: [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1],
+    integrationPrice: 500
   };
 
   const mockUpsell: UpsellSettings = {
-    additionalBotsRate: 2,
+    additionalBotsPercentage: 2,
     additionalBotsPrice: 100,
-    newFeaturesRate: 1.5,
+    newFeaturesPercentage: 1.5,
     newFeaturesPrice: 75,
-    messageExpansionRate: 3,
-    messageExpansionPrice: 50,
-    additionalIntegrationsRate: 0.8,
-    additionalIntegrationsPrice: 150,
+    messagePacksPercentage: 3,
+    messagePacksPrice: 50,
+    integrationsPercentage: 0.8,
+    integrationsPrice: 150,
   };
 
   test('Налог рассчитывается с выручки, а не с прибыли', () => {
