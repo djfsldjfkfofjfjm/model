@@ -163,7 +163,7 @@ describe('Финальный набор тестов финансовой мод
       });
 
       const summary = result.current.summary;
-      const expectedTax = summary.totalRevenue * 0.06; // 6% оптимистично
+      const expectedTax = summary.totalRevenue * 0.09; // 9% оптимистично
       
       expect(summary.totalTax).toBeCloseTo(expectedTax, 2);
     });

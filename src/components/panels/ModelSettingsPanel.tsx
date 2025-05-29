@@ -46,7 +46,7 @@ const ModelSettingsPanel: React.FC = () => {
                 />
                 <div>
                   <div className="font-medium">Оптимистичный (ПВТ)</div>
-                  <div className="text-sm text-gray-500">6% от прибыли</div>
+                  <div className="text-sm text-gray-500">9% от выручки</div>
                 </div>
               </label>
 
@@ -61,7 +61,7 @@ const ModelSettingsPanel: React.FC = () => {
                 />
                 <div>
                   <div className="font-medium">Пессимистичный</div>
-                  <div className="text-sm text-gray-500">35% от выручки минус расходы</div>
+                  <div className="text-sm text-gray-500">35% от выручки</div>
                 </div>
               </label>
 

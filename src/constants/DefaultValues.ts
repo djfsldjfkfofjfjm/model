@@ -4,7 +4,7 @@ import { TaxMode, FOTMode } from '../types/FinancialTypes';
  * Базовые параметры модели
  */
 export const DEFAULT_BASE_PARAMS = {
-  taxMode: 'optimistic' as TaxMode, // optimistic = 6% (ПВТ), pessimistic = 35%
+  taxMode: 'optimistic' as TaxMode, // optimistic = 9% (ПВТ), pessimistic = 35%
   fotMode: 'optimistic' as FOTMode, // optimistic = базовые расходы, pessimistic = повышенные расходы
   apiCost: 30, // % от выручки подписки
   churnRate: 2, // % оттока клиентов в месяц
@@ -15,7 +15,7 @@ export const DEFAULT_BASE_PARAMS = {
  * Налоговые ставки
  */
 export const DEFAULT_TAX_RATES = {
-  optimistic: 6, // ПВТ
+  optimistic: 9, // ПВТ
   pessimistic: 35, // ООО общая
 };
 
