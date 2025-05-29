@@ -54,13 +54,14 @@ export const useFinancialModelImproved = (
     const availableMessages = baseMessages + previousUnused;
     
     // Используемые сообщения
-    const usedMessages = Math.round(availableMessages * params.messageUsageRate);
+    const usageRate = params.messageUsageRate / 100;
+    const usedMessages = Math.round(availableMessages * usageRate);
     
     // Неиспользованные в текущем месяце
     let currentUnused = Math.max(0, availableMessages - usedMessages);
     
     // Учитываем потерю сообщений от ушедших клиентов
-    const lostMessagesFromChurn = churnedClients * messagesPerClient * (1 - params.messageUsageRate);
+    const lostMessagesFromChurn = churnedClients * messagesPerClient * (1 - usageRate);
     currentUnused = Math.max(0, currentUnused - lostMessagesFromChurn);
     
     // Применяем процент переноса с ограничением
