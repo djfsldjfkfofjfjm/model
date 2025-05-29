@@ -355,11 +355,9 @@ export const useFinancialModel = (
 
       let nrrMonth = 0;
       if (month > 0 && previousMonthMRR > 0) {
-        // ИСПРАВЛЕНО: Правильная формула NRR
-        const currentMRR = subscriptionRevenueMonth;
         const expansionRevenue = upsellRevenueMonth + additionalMessagesRevenueMonth;
-        // Правильная формула: (Текущий MRR + Expansion) / Начальный MRR
-        nrrMonth = ((currentMRR + expansionRevenue) / previousMonthMRR) * 100;
+        const churnedRevenue = churnedRevenueMonthly;
+        nrrMonth = ((previousMonthMRR - churnedRevenue + expansionRevenue) / previousMonthMRR) * 100;
       }
       previousMonthMRR = subscriptionRevenueMonth;
       
@@ -381,6 +379,7 @@ export const useFinancialModel = (
         totalActiveClients: totalActiveClientsMonth, totalNewClients: totalNewClientsMonth,
         churnClients75: churnNum75, churnClients150: churnNum150, churnClients250: churnNum250, churnClients500: churnNum500, churnClients1000: churnNum1000,
         churnedClients: monthlyChurnedClients, // Added
+        churnedRevenue: churnedRevenueMonthly,
         integrationRevenue: integrationRevenueMonth,
         subscriptionRevenue: subscriptionRevenueMonth,
         subscriptionRevenue75: subscriptionRevenueMonth75, subscriptionRevenue150: subscriptionRevenueMonth150, subscriptionRevenue250: subscriptionRevenueMonth250, subscriptionRevenue500: subscriptionRevenueMonth500, subscriptionRevenue1000: subscriptionRevenueMonth1000,

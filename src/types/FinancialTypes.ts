@@ -74,6 +74,8 @@ export interface MonthlyData {
   churnClients500: number;
   /** Потерянные клиенты тарифа $1000 */
   churnClients1000: number;
+  /** Потерянная выручка от оттока */
+  churnedRevenue: number;
   /** Активные клиенты тарифа $75 */
   activeClients75: number;
   /** Активные клиенты тарифа $150 */
