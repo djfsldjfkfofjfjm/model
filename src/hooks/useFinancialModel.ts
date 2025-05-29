@@ -175,14 +175,18 @@ export const useFinancialModel = (
       const additionalMessagesMonth75 = Math.max(0, usedMessagesMonth75 - availableMessagesMonth75);
       // ИСПРАВЛЕНО: Ограничение накопления сообщений
       const maxCarryover75 = activeClients75 * clients.messages75 * MESSAGE_CARRYOVER_MONTHS_LIMIT;
-      const newUnused75 = Math.max(0, availableMessagesMonth75 - usedMessagesMonth75) * (params.carryOverPercentage / 100);
+      // Сообщения, которые теряются с ушедшими клиентами
+      const lost75 = churnNum75 * clients.messages75 * (1 - params.messageUsageRate / 100);
+      const newUnused75 = Math.max(0, availableMessagesMonth75 - usedMessagesMonth75 - lost75) * (params.carryOverPercentage / 100);
       unusedMessages75 = Math.min(newUnused75, maxCarryover75);
 
       const availableMessagesMonth150 = unusedMessages150 + (buyingClients150 * clients.messages150);
       const usedMessagesMonth150 = activeClients150 * clients.messages150 * (params.messageUsageRate / 100);
       const additionalMessagesMonth150 = Math.max(0, usedMessagesMonth150 - availableMessagesMonth150);
       const maxCarryover150 = activeClients150 * clients.messages150 * MESSAGE_CARRYOVER_MONTHS_LIMIT;
-      const newUnused150 = Math.max(0, availableMessagesMonth150 - usedMessagesMonth150) * (params.carryOverPercentage / 100);
+      // Сообщения, которые теряются с ушедшими клиентами
+      const lost150 = churnNum150 * clients.messages150 * (1 - params.messageUsageRate / 100);
+      const newUnused150 = Math.max(0, availableMessagesMonth150 - usedMessagesMonth150 - lost150) * (params.carryOverPercentage / 100);
       unusedMessages150 = Math.min(newUnused150, maxCarryover150);
       
       // ... (repeat for 250, 500, 1000)
@@ -190,21 +194,27 @@ export const useFinancialModel = (
       const usedMessagesMonth250 = activeClients250 * clients.messages250 * (params.messageUsageRate / 100);
       const additionalMessagesMonth250 = Math.max(0, usedMessagesMonth250 - availableMessagesMonth250);
       const maxCarryover250 = activeClients250 * clients.messages250 * MESSAGE_CARRYOVER_MONTHS_LIMIT;
-      const newUnused250 = Math.max(0, availableMessagesMonth250 - usedMessagesMonth250) * (params.carryOverPercentage / 100);
+      // Сообщения, которые теряются с ушедшими клиентами
+      const lost250 = churnNum250 * clients.messages250 * (1 - params.messageUsageRate / 100);
+      const newUnused250 = Math.max(0, availableMessagesMonth250 - usedMessagesMonth250 - lost250) * (params.carryOverPercentage / 100);
       unusedMessages250 = Math.min(newUnused250, maxCarryover250);
 
       const availableMessagesMonth500 = unusedMessages500 + (buyingClients500 * clients.messages500);
       const usedMessagesMonth500 = activeClients500 * clients.messages500 * (params.messageUsageRate / 100);
       const additionalMessagesMonth500 = Math.max(0, usedMessagesMonth500 - availableMessagesMonth500);
       const maxCarryover500 = activeClients500 * clients.messages500 * MESSAGE_CARRYOVER_MONTHS_LIMIT;
-      const newUnused500 = Math.max(0, availableMessagesMonth500 - usedMessagesMonth500) * (params.carryOverPercentage / 100);
+      // Сообщения, которые теряются с ушедшими клиентами
+      const lost500 = churnNum500 * clients.messages500 * (1 - params.messageUsageRate / 100);
+      const newUnused500 = Math.max(0, availableMessagesMonth500 - usedMessagesMonth500 - lost500) * (params.carryOverPercentage / 100);
       unusedMessages500 = Math.min(newUnused500, maxCarryover500);
 
       const availableMessagesMonth1000 = unusedMessages1000 + (buyingClients1000 * clients.messages1000);
       const usedMessagesMonth1000 = activeClients1000 * clients.messages1000 * (params.messageUsageRate / 100);
       const additionalMessagesMonth1000 = Math.max(0, usedMessagesMonth1000 - availableMessagesMonth1000);
       const maxCarryover1000 = activeClients1000 * clients.messages1000 * MESSAGE_CARRYOVER_MONTHS_LIMIT;
-      const newUnused1000 = Math.max(0, availableMessagesMonth1000 - usedMessagesMonth1000) * (params.carryOverPercentage / 100);
+      // Сообщения, которые теряются с ушедшими клиентами
+      const lost1000 = churnNum1000 * clients.messages1000 * (1 - params.messageUsageRate / 100);
+      const newUnused1000 = Math.max(0, availableMessagesMonth1000 - usedMessagesMonth1000 - lost1000) * (params.carryOverPercentage / 100);
       unusedMessages1000 = Math.min(newUnused1000, maxCarryover1000);
 
       const totalAdditionalMessagesMonth = additionalMessagesMonth75 + additionalMessagesMonth150 + additionalMessagesMonth250 + additionalMessagesMonth500 + additionalMessagesMonth1000;
