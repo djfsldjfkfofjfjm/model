@@ -72,11 +72,16 @@ export const useFinancialModelImproved = (
     if (carryoverHistory.length > CONFIG.MAX_MESSAGE_CARRYOVER_MONTHS) {
       carryoverHistory.shift();
     }
-    
+
     // Максимальное накопление = пакет * количество месяцев накопления
     const maxCarryover = activeClients * messagesPerClient * CONFIG.MAX_MESSAGE_CARRYOVER_MONTHS;
     const totalCarryover = carryoverHistory.reduce((sum, val) => sum + val, 0);
-    carryover = Math.min(carryover, maxCarryover - previousUnused);
+    if (totalCarryover > maxCarryover) {
+      const excess = totalCarryover - maxCarryover;
+      carryover = Math.max(0, carryover - excess);
+      // Обновляем историю переносов после корректировки
+      carryoverHistory[carryoverHistory.length - 1] = carryover;
+    }
     
     // Дополнительные сообщения
     const additionalMessages = Math.max(0, usedMessages - availableMessages);
