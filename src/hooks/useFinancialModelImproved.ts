@@ -234,11 +234,13 @@ export const useFinancialModelImproved = (
       // Расходы
       const apiCosts = (totalSubscriptionRevenue + totalAdditionalMessagesRevenue) * (params.apiCostPercentage / 100);
       
-      // Implementation costs с учетом лимита
-      const implementationCosts = Math.min(
-        totalNewClients * (params.implementationPercentage / 100) * clients.integrationPrice,
+      // Стоимость внедрения на одного клиента
+      const perClient = Math.min(
+        (clients.integrationPrice * params.implementationPercentage) / 100,
         params.maxImplementationCost
       );
+      // Общие расходы на внедрение
+      const implementationCosts = totalNewClients * perClient;
       
       // CAC по каналам
       const directNewClients = Object.values(distribution).reduce((sum, d) => sum + d.direct, 0);
