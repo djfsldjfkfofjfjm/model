@@ -184,7 +184,7 @@ describe('Comprehensive Financial Model Tests', () => {
       });
 
       const summary = result.current.summary;
-      const expectedTax = summary.totalRevenue * 0.06; // 6% optimistic
+      const expectedTax = summary.totalRevenue * 0.09; // 9% optimistic
       
       expect(summary.totalTax).toBeCloseTo(expectedTax, 2);
     });

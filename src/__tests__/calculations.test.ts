@@ -76,7 +76,7 @@ describe('Financial Model Calculations', () => {
     expect(firstMonth).toBeDefined();
     
     // Проверяем, что налог рассчитан от выручки
-    const expectedTax = firstMonth.totalRevenue > 0 ? firstMonth.totalRevenue * 0.06 : 0; // 6% optimistic
+    const expectedTax = firstMonth.totalRevenue > 0 ? firstMonth.totalRevenue * 0.09 : 0; // 9% optimistic
     expect(firstMonth.tax).toBeCloseTo(expectedTax, 2);
   });
 

@@ -4,15 +4,15 @@ describe('Проверка основных формул', () => {
   test('Налог рассчитывается от выручки', () => {
     const revenue = 10000;
     const expenses = 7000;
-    const taxRate = 6; // 6% optimistic
+    const taxRate = 9; // 9% optimistic
     
     // Налог ВСЕГДА от выручки, не от прибыли!
     const tax = revenue > 0 ? revenue * (taxRate / 100) : 0;
-    expect(tax).toBe(600); // 10000 * 0.06 = 600
+    expect(tax).toBe(900); // 10000 * 0.09 = 900
     
     const grossProfit = revenue - expenses; // 3000
-    const netProfit = grossProfit - tax; // 3000 - 600 = 2400
-    expect(netProfit).toBe(2400);
+    const netProfit = grossProfit - tax; // 3000 - 900 = 2100
+    expect(netProfit).toBe(2100);
   });
 
   test('LTV формула с учетом churn', () => {
