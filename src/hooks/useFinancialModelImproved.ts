@@ -119,8 +119,13 @@ export const useFinancialModelImproved = (
     let previousMonthMRR = 0;
     let breakevenMonthCalc: number | undefined;
     
-    const directChannelRatio = params.channelDistribution / 100;
-    const partnerChannelRatio = 1 - directChannelRatio;
+    // Поддержка как числового значения, так и объекта распределения
+    const directChannelRatio = typeof params.channelDistribution === 'number'
+      ? params.channelDistribution / 100
+      : (params.channelDistribution?.direct || 60) / 100;
+    const partnerChannelRatio = typeof params.channelDistribution === 'number'
+      ? (100 - params.channelDistribution) / 100
+      : (params.channelDistribution?.partner || 40) / 100;
     
     // Настраиваемые коэффициенты ФОТ
     const fotDevelopmentRatio = params.fotDevelopmentOptimistic ? 
