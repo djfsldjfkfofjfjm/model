@@ -350,8 +350,8 @@ export const useFinancialModel = (
         : params.taxMode === 'pessimistic'
         ? DEFAULT_TAX_RATES.pessimistic
         : params.customTaxRate;
-      // ИСПРАВЛЕНО: Налог от прибыли, а не от выручки!
-      const taxBase = Math.max(0, grossProfitMonth); // Налог только с положительной прибыли
+      // Налог от выручки
+      const taxBase = totalRevenueMonth;
       const taxMonth = taxBase > 0 ? taxBase * (taxRateMonth / 100) : 0;
       const netProfitMonth = grossProfitMonth - taxMonth;
       
