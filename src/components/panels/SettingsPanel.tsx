@@ -60,7 +60,7 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({
               onClick={() => setTaxMode('optimistic')}
               data-testid="btn-tax-optimistic"
             >
-              Оптимистичный (9%, ПВТ)
+              Оптимистичный (6%, ПВТ)
             </button>
             <button
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
@@ -98,7 +98,7 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({
             </div>
           )}
           <div className="mt-2 text-xs text-gray-500">
-            {taxMode === 'optimistic' && 'Налоговая ставка: 9%'}
+            {taxMode === 'optimistic' && 'Налоговая ставка: 6%'}
             {taxMode === 'pessimistic' && 'Налоговая ставка: 35%'}
             {taxMode === 'custom' && `Налоговая ставка: ${customTaxRate}%`}
           </div>
