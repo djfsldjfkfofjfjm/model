@@ -106,6 +106,8 @@ export const useFinancialModelImproved = (
     let cumulativeRevenue = 0;
     let cumulativeExpenses = 0; 
     let cumulativeProfit = 0;
+
+    let totalChurnedRevenueAgg = 0;
     
     // Сообщения и история переноса
     let unusedMessages = {
@@ -164,6 +166,13 @@ export const useFinancialModelImproved = (
       };
       
       const totalChurn = Object.values(churn).reduce((sum, val) => sum + val, 0);
+      const churnedRevenue =
+        churn[75] * clients.subscriptionPrice75 +
+        churn[150] * clients.subscriptionPrice150 +
+        churn[250] * clients.subscriptionPrice250 +
+        churn[500] * clients.subscriptionPrice500 +
+        churn[1000] * clients.subscriptionPrice1000;
+      totalChurnedRevenueAgg += churnedRevenue;
       
       // Обновляем активных клиентов
       activeClients[75] += newClients[75] - churn[75];
@@ -302,10 +311,8 @@ export const useFinancialModelImproved = (
       // ИСПРАВЛЕНО: Правильный расчет NRR
       let nrr = 0;
       if (month > 0 && previousMonthMRR > 0) {
-        const currentMRR = totalSubscriptionRevenue;
         const expansionRevenue = totalUpsellRevenue + totalAdditionalMessagesRevenue;
-        // Правильная формула: (Текущий MRR + Expansion) / Начальный MRR
-        nrr = ((currentMRR + expansionRevenue) / previousMonthMRR) * 100;
+        nrr = ((previousMonthMRR - churnedRevenue + expansionRevenue) / previousMonthMRR) * 100;
       }
       previousMonthMRR = totalSubscriptionRevenue;
       
@@ -343,6 +350,7 @@ export const useFinancialModelImproved = (
         churnClients500: churn[500],
         churnClients1000: churn[1000],
         churnedClients: totalChurn,
+        churnedRevenue,
         // Доходы
         integrationRevenue,
         subscriptionRevenue: totalSubscriptionRevenue,
@@ -500,7 +508,7 @@ export const useFinancialModelImproved = (
       nrr: monthlyDataArray[11]?.nrr || 0,
       avgNrr,
       expansionRevenue: monthlyDataArray.reduce((sum, m) => sum + m.upsellRevenue + m.additionalMessagesRevenue, 0),
-      churnedRevenue: 0, // TODO: Рассчитать потерянную выручку от оттока
+      churnedRevenue: totalChurnedRevenueAgg,
       // Компоненты CAC
       totalPartnerCommissions: monthlyDataArray.reduce((sum, m) => sum + m.partnerCommissions, 0),
       totalSalesTeamCosts: monthlyDataArray.reduce((sum, m) => sum + m.salesTeamCosts, 0),
